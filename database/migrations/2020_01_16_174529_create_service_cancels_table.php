@@ -17,7 +17,6 @@ class CreateServiceCancelsTable extends Migration
             $table->increments('id');
             $table->enum('status',['cancel'])->default('cancel');
             $table->unsignedInteger('Booked_id');
-            $table->foreign('Booked_id')->references('id')->on('service_bookeds')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -17,9 +17,7 @@ class CreateAvailableDatesTable extends Migration
             $table->increments('id');
             $table->date('date');
             $table->unsignedInteger('User_id');
-            $table->foreign('User_id')->references('id')->on('all_users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('Service_id');
-            $table->foreign('Service_id')->references('id')->on('services')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
