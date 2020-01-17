@@ -17,9 +17,7 @@ class CreateServicesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('User_id');
-            $table->foreign('User_id')->references('id')->on('all_users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('Department_id');
-            $table->foreign('Department_id')->references('id')->on('departments')->onDelete('cascade')->onUpdate('cascade');
             $table->longText('Service_description');
             $table->timestamps();
         });

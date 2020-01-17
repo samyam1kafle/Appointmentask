@@ -19,9 +19,7 @@ class CreateServiceReschedulesTable extends Migration
             $table->date('Reschedule_date');
             $table->time('Reschedule_time');
             $table->unsignedInteger('Available_date_id');
-            $table->foreign('Available_date_id')->references('id')->on('available_dates')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedInteger('Available_time_id');
-            $table->foreign('Available_time_id')->references('id')->on('available_times')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

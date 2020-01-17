@@ -16,7 +16,6 @@ class CreateTodosTable extends Migration
         Schema::create('todos', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('User_id');
-            $table->foreign('User_id')->references('id')->on('all_users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('title');
             $table->longText('description');
             $table->date('assignedDate');
