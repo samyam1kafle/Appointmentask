@@ -1,0 +1,1 @@
+<a href="{{route('admin-dashboard')}}"><button class="bg bg-success">Admin</button></a>

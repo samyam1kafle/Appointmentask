@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Auth::routes(['verify'=>true]);
+
+Route::get('/', 'FrontEndControllers\frontEndController@index')->name('index');
+
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
