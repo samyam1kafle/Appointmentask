@@ -22,10 +22,10 @@ Route::get('/', 'FrontEndControllers\frontEndController@index')->name('index');
 
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
-<<<<<<< HEAD
+
     Route::resource('/service','AdminControllers\ServiceDetailsController');
-=======
+
     Route::resource('/user', 'AdminControllers\UserController');
->>>>>>> 64e2f85d547748ffc9463f4e86a532a69d816efd
+
 });
 
