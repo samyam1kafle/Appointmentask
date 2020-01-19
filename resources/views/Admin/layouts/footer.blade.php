@@ -34,6 +34,19 @@
 <script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/summernote/summernote.js')}}"></script>
 <script src="{{asset('Admin/assets/js/pages/summernote/summernote-data.js')}}"></script>
 <!-- end js include path -->
+
+<!-- Data Table -->
+<script src="{{asset('Admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('Admin/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('Admin/assets/plugins/datatables/export/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('Admin/assets/plugins/datatables/export/buttons.flash.min.js')}}"></script>
+<script src="{{asset('Admin/assets/plugins/datatables/export/jszip.min.js')}}"></script>
+<script src="{{asset('Admin/assets/plugins/datatables/export/pdfmake.min.js')}}"></script>
+<script src="{{asset('Admin/assets/plugins/datatables/export/vfs_fonts.js')}}"></script>
+<script src="{{asset('Admin/assets/plugins/datatables/export/buttons.html5.min.js')}}"></script>
+<script src="{{asset('Admin/assets/plugins/datatables/export/buttons.print.min.js')}}"></script>
+<script src="{{asset('Admin/assets/js/pages/table/table_data.js')}}"></script>
+<!-- end js include path -->
 </body>
 
 </html>
