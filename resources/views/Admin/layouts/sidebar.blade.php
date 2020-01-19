@@ -39,6 +39,28 @@
                         </li>
                         <li class="nav-item">
                             <a href="index.html#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Departments</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="all_professors.html" class="nav-link "> <span class="title">All
+												Departments</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="add_professor.html" class="nav-link "> <span class="title">Add
+												Departments</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="edit_professor.html" class="nav-link "> <span class="title">Edit
+												Departments</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.html#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
                                 <span class="title">Professors</span> <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
@@ -69,6 +91,7 @@
                                 </li>
                             </ul>
                         </li>
+
 
                     </ul>
                 </div>

@@ -24,3 +24,4 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
 });
 
+Route::resource('department','DepartmentController');
