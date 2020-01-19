@@ -43,7 +43,7 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
-                                    <a href="all_professors.html" class="nav-link "> <span class="title">All
+                                    <a href="index.blade.php" class="nav-link "> <span class="title">All
 												Departments</span>
                                     </a>
                                 </li>
