@@ -12,6 +12,6 @@ class User_personal_detail extends Model
     ];
 
     public function user_details(){
-        return $this->belongsTo('App\Backend\All_user','user_id');
+        return $this->belongsTo('App\Backend\All_User','user_id');
     }
 }

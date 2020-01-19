@@ -22,4 +22,28 @@ class All_User extends Model
     {
         return $this->belongsTo('App\Backend\Department', 'department_id');
     }
+
+    public function education(){
+        return $this->hasMany('App\Backend\User_education_detail');
+    }
+
+    public function personal_detail(){
+        return $this->hasMany('App\Backend\User_personal_detail');
+    }
+
+    public function available_date_time(){
+        return $this->belongsToMany('App\Backend\date_time','date_times');
+    }
+
+    public function todos(){
+        return $this->hasMany('App\Backend\Todo');
+    }
+
+    public function services(){
+        return $this->hasOne('App\Backend\Service','service_id');
+    }
+
+    public function booking(){
+        return $this->hasMany('App\Backend\booking');
+    }
 }

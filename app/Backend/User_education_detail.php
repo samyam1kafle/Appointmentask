@@ -11,10 +11,10 @@ class User_education_detail extends Model
     ];
 
     public function degree(){
-        return $this->hasMany('App\Backend\Degree','degree_id');
+        return $this->belongsTo('App\Backend\Degree','degree_id');
     }
 
     public function user_education(){
-        return $this->belongsTo('App\Backend\All_user','user_id');
+        return $this->belongsTo('App\Backend\All_User','user_id');
     }
 }

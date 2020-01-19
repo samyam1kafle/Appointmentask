@@ -13,4 +13,8 @@ class Department extends Model
     public function dep_users(){
         return $this->hasMany('App\Backend\All_user');
     }
+
+    public function serv_depart(){
+        return $this->hasMany('App\Backend\Service');
+    }
 }
