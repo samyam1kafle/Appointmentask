@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\AdminControllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DepartmentController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        return view('Admin/Departments/index');
+        return view('Admin/Users/index');
     }
 
     /**
@@ -24,7 +24,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return view('Admin/Departments/create');
+        return view('Admin/Users/create');
     }
 
     /**
