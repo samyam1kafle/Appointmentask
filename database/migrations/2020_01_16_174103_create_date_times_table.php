@@ -14,7 +14,9 @@ class CreateDateTimesTable extends Migration
     public function up()
     {
         Schema::create('date_times', function (Blueprint $table) {
-            $table->increments('id');$table->unsignedInteger('Date_id');
+            $table->increments('id');
+            $table->unsignedInteger('User_id');
+            $table->unsignedInteger('Date_id');
             $table->unsignedInteger('Time_id');
             $table->timestamps();
         });
