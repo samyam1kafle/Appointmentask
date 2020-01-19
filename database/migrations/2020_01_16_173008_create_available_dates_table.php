@@ -15,8 +15,7 @@ class CreateAvailableDatesTable extends Migration
     {
         Schema::create('available_dates', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('date');
-            $table->unsignedInteger('User_id');
+            $table->date('date')->nullable();
             $table->unsignedInteger('Service_id');
             $table->timestamps();
         });
