@@ -1,10 +1,6 @@
 @extends('Admin.layouts.master')
 @section('main_content')
-<<<<<<< HEAD
-    <!-- start page content -->
-=======
 
->>>>>>> 64e2f85d547748ffc9463f4e86a532a69d816efd
     <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
@@ -103,8 +99,5 @@
         </div>
     </div>
     <!-- end page content -->
-<<<<<<< HEAD
-=======
 
->>>>>>> 64e2f85d547748ffc9463f4e86a532a69d816efd
 @endsection
