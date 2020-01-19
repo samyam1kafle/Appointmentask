@@ -1,11 +1,7 @@
-<link href="../assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" rel="stylesheet"
-      type="text/css" />
-<link href="../assets/plugins/datatables/export/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+
 @extends('Admin.layouts.master')
 @section('main_content')
-    <!-- start page container -->
-    <div class="page-container">
-    <!-- start page content -->
+
     <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
@@ -104,16 +100,5 @@
         </div>
     </div>
     <!-- end page content -->
-    </div>
-@endsection
 
-<script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js"></script>
-<script src="../assets/plugins/datatables/export/dataTables.buttons.min.js"></script>
-<script src="../assets/plugins/datatables/export/buttons.flash.min.js"></script>
-<script src="../assets/plugins/datatables/export/jszip.min.js"></script>
-<script src="../assets/plugins/datatables/export/pdfmake.min.js"></script>
-<script src="../assets/plugins/datatables/export/vfs_fonts.js"></script>
-<script src="../assets/plugins/datatables/export/buttons.html5.min.js"></script>
-<script src="../assets/plugins/datatables/export/buttons.print.min.js"></script>
-<script src="../assets/js/pages/table/table_data.js"></script>
+@endsection

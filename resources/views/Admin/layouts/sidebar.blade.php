@@ -1,4 +1,5 @@
 @section('sidebar')
+    <div class="page-container">
         <!-- start sidebar menu -->
         <div class="sidebar-container">
             <div class="sidemenu-container navbar-collapse collapse fixed-menu">
@@ -43,35 +44,21 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.html#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
-                                <span class="title">Professors</span> <span class="arrow"></span>
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Users</span> <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
-                                    <a href="all_professors.html" class="nav-link "> <span class="title">All
-												Professors</span>
+                                    <a href="{{route('user.index')}}" class="nav-link "> <span class="title">
+												View All Users</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add_professor.html" class="nav-link "> <span class="title">Add
-												Professor</span>
+                                    <a href="{{route('user.create')}}" class="nav-link "> <span class="title">
+												Add New User</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="add_professor_bootstrap.html" class="nav-link "> <span
-                                                class="title">Add Professor Bootstrap</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="edit_professor.html" class="nav-link "> <span class="title">Edit
-												Professor</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="professor_profile.html" class="nav-link "> <span class="title">About
-												Professor</span>
-                                    </a>
-                                </li>
+
                             </ul>
                         </li>
 

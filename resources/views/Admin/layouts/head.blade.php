@@ -34,6 +34,11 @@
     <link href="{{ asset('Admin/assets/css/style.css')}}" rel="stylesheet" type="text/css" />
     <!-- favicon -->
     <link rel="shortcut icon" href="{{asset('Admin/assets/img/favicon.ico')}}" />
+
+    <!-- Data Tables -->
+    <link href="{{asset('Admin/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css')}}" rel="stylesheet"
+          type="text/css" />
+    <link href="{{asset('Admin/assets/plugins/datatables/export/buttons.dataTables.min.css')}}" rel="stylesheet" type="text/css" />
 </head>
 <!-- END HEAD -->
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
