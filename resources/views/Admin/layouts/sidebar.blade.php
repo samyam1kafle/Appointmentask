@@ -38,33 +38,29 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.html#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
-                                <span class="title">Professors</span> <span class="arrow"></span>
+                            <a href="" class="nav-link nav-toggle"> <i class="material-icons">info</i>
+                                <span class="title">Service Details</span> <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
-                                    <a href="all_professors.html" class="nav-link "> <span class="title">All
-												Professors</span>
+                                    <a href="{{route('service.index')}}" class="nav-link "> <span class="title">All Details</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add_professor.html" class="nav-link "> <span class="title">Add
-												Professor</span>
+                                    <a href="" class="nav-link "> <span class="title">Service Booked</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add_professor_bootstrap.html" class="nav-link "> <span
-                                                class="title">Add Professor Bootstrap</span>
+                                    <a href="" class="nav-link "> <span class="title">Service Complete</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="edit_professor.html" class="nav-link "> <span class="title">Edit
-												Professor</span>
+                                    <a href="" class="nav-link "> <span
+                                                class="title">Service Cancel</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="professor_profile.html" class="nav-link "> <span class="title">About
-												Professor</span>
+                                    <a href="" class="nav-link "> <span class="title">Service Reschedule</span>
                                     </a>
                                 </li>
                             </ul>
