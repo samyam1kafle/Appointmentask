@@ -1,6 +1,4 @@
 @section('sidebar')
-    <!-- start page container -->
-    <div class="page-container">
         <!-- start sidebar menu -->
         <div class="sidebar-container">
             <div class="sidemenu-container navbar-collapse collapse fixed-menu">
@@ -352,6 +350,6 @@
             </div>
         </div>
         <!-- end chat sidebar -->
-    </div>
+    {{--</div>--}}
     <!-- end page container -->
 @endsection
