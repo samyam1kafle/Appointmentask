@@ -33,6 +33,11 @@
 
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('AvailableDate.index')}}" class="nav-link nav-toggle"> <i class="material-icons">event</i>
+                                <span class="title">Available Date</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
                                 <span class="title">Event Management</span>
                             </a>

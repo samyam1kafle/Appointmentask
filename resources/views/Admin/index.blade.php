@@ -1,3 +1,6 @@
+<link href="../assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.css" rel="stylesheet"
+      type="text/css" />
+<link href="../assets/plugins/datatables/export/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
 @extends('Admin.layouts.master')
 @section('main_content')
     <!-- start page container -->
@@ -12,7 +15,7 @@
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                                               href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                            href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
                         <li class="active">Dashboard</li>
                     </ol>
@@ -103,3 +106,14 @@
     <!-- end page content -->
     </div>
 @endsection
+
+<script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js"></script>
+<script src="../assets/plugins/datatables/export/dataTables.buttons.min.js"></script>
+<script src="../assets/plugins/datatables/export/buttons.flash.min.js"></script>
+<script src="../assets/plugins/datatables/export/jszip.min.js"></script>
+<script src="../assets/plugins/datatables/export/pdfmake.min.js"></script>
+<script src="../assets/plugins/datatables/export/vfs_fonts.js"></script>
+<script src="../assets/plugins/datatables/export/buttons.html5.min.js"></script>
+<script src="../assets/plugins/datatables/export/buttons.print.min.js"></script>
+<script src="../assets/js/pages/table/table_data.js"></script>

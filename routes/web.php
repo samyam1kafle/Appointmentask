@@ -22,5 +22,6 @@ Route::get('/', 'FrontEndControllers\frontEndController@index')->name('index');
 
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
+    Route::resource('/AvailableDate', 'AdminControllers\Available_DateController');
 });
 
