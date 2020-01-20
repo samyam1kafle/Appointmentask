@@ -14,7 +14,7 @@ class Date_TimeController extends Controller
      */
     public function index()
     {
-        //
+       return view('Admin.Date_Time.Index');
     }
 
     /**
