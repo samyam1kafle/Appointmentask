@@ -28,5 +28,7 @@ Route::group(['prefix'=>'admin'],function(){
 
     Route::resource('/user', 'AdminControllers\UserController');
 
+    Route::resource('/department','AdminControllers\DepartmentController');
+    Route::resource('/services','AdminControllers\ServicesController');
 });
 

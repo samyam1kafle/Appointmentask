@@ -38,6 +38,25 @@
                             </a>
                         </li>
                         <li class="nav-item">
+
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
+                                <span class="title">Departments</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('department.index')}}" class="nav-link "> <span class="title">All
+												Departments</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('department.create')}}" class="nav-link "> <span class="title">Add
+												Departments</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link "> <span class="title">Edit
+												Departments</span>
+
                             <a href="" class="nav-link nav-toggle"> <i class="material-icons">info</i>
                                 <span class="title">Service Details</span> <span class="arrow"></span>
                             </a>
@@ -61,13 +80,21 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="" class="nav-link "> <span class="title">Service Reschedule</span>
+
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
+
+                            
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Users</span> <span class="arrow"></span>
+
+
                             <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
                                 <span class="title">Available Date</span> <span class="arrow"></span>
+
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
@@ -116,6 +143,7 @@
                                 </li>
                             </ul>
                         </li>
+
                     </ul>
                 </div>
             </div>
