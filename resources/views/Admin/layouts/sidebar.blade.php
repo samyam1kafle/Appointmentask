@@ -65,7 +65,57 @@
                                 </li>
                             </ul>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Available Date</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('AvailableDate.index')}}" class="nav-link "> <span class="title">
+												View All Available Date</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('AvailableDate.create')}}" class="nav-link "> <span class="title">
+												Add New Date</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Available Time</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('AvailableTime.index')}}" class="nav-link "> <span class="title">
+												View All Available Time</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('AvailableTime.create')}}" class="nav-link "> <span class="title">
+												Add New Time</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Date and Time</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('Date_Time.index')}}" class="nav-link "> <span class="title">
+												View All Date and Time</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('Date_Time.create')}}" class="nav-link "> <span class="title">
+												Add New Date and Time</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
