@@ -1,5 +1,4 @@
 @section('sidebar')
-    <div class="page-container">
         <!-- start sidebar menu -->
         <div class="sidebar-container">
             <div class="sidemenu-container navbar-collapse collapse fixed-menu">
@@ -39,6 +38,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
                                 <span class="title">Departments</span> <span class="arrow"></span>
                             </a>
@@ -56,32 +56,98 @@
                                 <li class="nav-item">
                                     <a href="#" class="nav-link "> <span class="title">Edit
 												Departments</span>
+=======
+                            <a href="" class="nav-link nav-toggle"> <i class="material-icons">info</i>
+                                <span class="title">Service Details</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('service.index')}}" class="nav-link "> <span class="title">All Details</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link "> <span class="title">Service Booked</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link "> <span class="title">Service Complete</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link "> <span
+                                                class="title">Service Cancel</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link "> <span class="title">Service Reschedule</span>
+>>>>>>> 3cb060be38f0deccbbec09235d986fe96ee2b63f
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             
                             <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
                                 <span class="title">Users</span> <span class="arrow"></span>
 
+=======
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Available Date</span> <span class="arrow"></span>
+>>>>>>> 3cb060be38f0deccbbec09235d986fe96ee2b63f
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
-                                    <a href="{{route('user.index')}}" class="nav-link "> <span class="title">
-												View All Users</span>
+                                    <a href="{{route('AvailableDate.index')}}" class="nav-link "> <span class="title">
+												View All Available Date</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('user.create')}}" class="nav-link "> <span class="title">
-												Add New User</span>
+                                    <a href="{{route('AvailableDate.create')}}" class="nav-link "> <span class="title">
+												Add New Date</span>
                                     </a>
                                 </li>
-
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Available Time</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('AvailableTime.index')}}" class="nav-link "> <span class="title">
+												View All Available Time</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('AvailableTime.create')}}" class="nav-link "> <span class="title">
+												Add New Time</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Date and Time</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('Date_Time.index')}}" class="nav-link "> <span class="title">
+												View All Date and Time</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('Date_Time.create')}}" class="nav-link "> <span class="title">
+												Add New Date and Time</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 3cb060be38f0deccbbec09235d986fe96ee2b63f
                     </ul>
                 </div>
             </div>
