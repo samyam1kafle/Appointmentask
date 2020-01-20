@@ -30,7 +30,7 @@
     <link href="{{asset('Admin/assets/css/theme/dark/style.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('Admin/assets/css/responsive.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('Admin/assets/css/theme/dark/theme-color.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('Admin/assets/css/style.css')}}" rel="stylesheet" type="text/css" />
+
     <!-- favicon -->
     <link rel="shortcut icon" href="{{asset('Admin/assets/img/favicon.ico')}}" />
 
