@@ -57,7 +57,8 @@ class Available_DateController extends Controller
      */
     public function show($id)
     {
-        //
+        dd('show');
+
     }
 
     /**
@@ -68,7 +69,12 @@ class Available_DateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->Available_date=$this->Available_date->find($id);
+        if(!$this->Available_date){
+            request()->session()->flash('error','Available date list not found');
+            return redirect()->route('AvailableDate.index');
+        }
+        return view('admin.Available_Date.update')->with('date',$this->Available_date);
     }
 
     /**
@@ -80,7 +86,15 @@ class Available_DateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->Available_date=$this->Available_date->find($id);
+        if(!$this->Available_date){
+            request()->session()->flash('error','Date not found');
+            return redirect()->route('AvailableDate.index');
+        }
+        $data=$request->all();
+        $this->Available_date->fill($data);
+        $success=$this->Available_date->save();
+        return redirect()->route('AvailableDate.index');
     }
 
     /**
@@ -91,6 +105,19 @@ class Available_DateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->Available_date=$this->Available_date->find($id);
+        if(!$this->Available_date){
+            request()->session()->flash('error','Date list not found');
+            return redirect()->route('AvailableDate.index');
+        }
+        $success=$this->Available_date->delete();
+        if($success){
+            request()->session()->flash('success','Date list deleted successfully');
+
+        }
+        else{
+            request()->session()->flash('error','sorry there was an error deleting Date list');
+        }
+        return redirect()->route('AvailableDate.index');
     }
 }
