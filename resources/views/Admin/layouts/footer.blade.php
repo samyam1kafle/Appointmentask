@@ -82,6 +82,26 @@
 <!-- dropzone -->
 <script src="{{asset('Admin/assets/plugins/dropzone/dropzone.js')}}"></script>
 
+<!-- Toastr -->
+
+<script src="{{asset('js/toastr.min.js')}}"></script>
+<script>
+    @if(Session::has('success'))
+    toastr.success("{{Session::get('success')}}")
+
+    @endif
+
+
+    @if(Session::has('delete'))
+    toastr.info("{{Session::get('delete')}}")
+    @endif
+
+    @if(Session::has('Error'))
+    toastr.error("{{Session::get('error')}}")
+    @endif
+
+</script>
+
 </body>
 
 </html>
