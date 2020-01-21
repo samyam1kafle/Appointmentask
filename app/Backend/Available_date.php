@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Available_date extends Model
 {
-    protected $fillable = [ 'date'];
-
+    protected $fillable = [ 'date','service_id'];
 
 }
