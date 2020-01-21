@@ -4,14 +4,16 @@ namespace App\Http\Controllers\AdminControllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Backend\Available_time;
 
 class Available_TimeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $Available_time=null;
+
+    public function __construct( Available_time $Available_time)
+    {
+        $this->Available_time=$Available_time;
+    }
     public function index()
     {
         return view('Admin.Available_Time.index');
@@ -24,7 +26,7 @@ class Available_TimeController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Available_Time.Create');
     }
 
     /**
@@ -35,7 +37,10 @@ class Available_TimeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request->all();
+        $this->Available_time->fill($data);
+        $success=$this->Available_time->save();
+        return redirect()->route('AvailableTime.index');
     }
 
     /**

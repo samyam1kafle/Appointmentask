@@ -2,19 +2,26 @@
 
 namespace App\Http\Controllers\AdminControllers;
 
+use App\Http\Requests\dateValidator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Backend\Available_date;
+
 
 class Available_DateController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    protected $Available_date=null;
+
+    public function __construct( Available_date $Available_date)
+    {
+        $this->Available_date=$Available_date;
+    }
+
     public function index()
     {
-        return view('Admin.Available_Date.index');
+        $all_Available_date = $this->Available_date->orderby('id','DESC')->get();
+        return view('Admin.Available_Date.index')->with('Date', $all_Available_date);
     }
 
     /**
@@ -33,9 +40,13 @@ class Available_DateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(dateValidator $request)
     {
-        dd($request->all());
+
+        $data=$request->all();
+        $this->Available_date->fill($data);
+        $success=$this->Available_date->save();
+        return redirect()->route('AvailableDate.index');
     }
 
     /**
