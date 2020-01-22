@@ -52,15 +52,14 @@
                                         <td class="text-left">
                                         
                                         <form action="{{ route('department.edit', $depart->id)}}" method="GET" style="display: inline-block">
-                                         @csrf
+                                        {{csrf_field()}}
                                         {{method_field('PUT')}}
                                         <button class="btn btn-primary btn-sm" type="submit">Edit</button>
                                         </form>
-
-                                        <!-- <a href="{{ route('department.edit', $depart->id)}}" class="btn btn-primary btn-sm">Edit</a> -->
+                                      
                                         <form action="{{ route('department.destroy', $depart->id)}}" method="post" style="display: inline-block">
-                                         @csrf
-                                         @method('DELETE')
+                                         {{csrf_field()}}
+                                         {{method_field('DELETE')}}
                                         <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                                         </form>
                                         </td>

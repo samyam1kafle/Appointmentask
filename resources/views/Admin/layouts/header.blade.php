@@ -6,7 +6,7 @@
             <div class="page-logo">
                 <a href="{{route('admin-dashboard')}}">
                     <span class="logo-icon material-icons fa-rotate-45">school</span>
-                    <span class="logo-default">Smart</span> </a>
+                    <span class="logo-default">GCN</span> </a>
             </div>
             <!-- logo end -->
             <ul class="nav navbar-nav navbar-left in">
@@ -33,29 +33,7 @@
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="javascript:;" class="fullscreen-btn"><i class="fa fa-arrows-alt"></i></a></li>
                     <!-- start language menu -->
-                    <li class="dropdown language-switch">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <img
-                                    src="../assets/img/flags/gb.png" class="position-left" alt=""> English <span
-                                    class="fa fa-angle-down"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a class="deutsch"><img src="../assets/img/flags/de.png" alt=""> Deutsch</a>
-                            </li>
-                            <li>
-                                <a class="ukrainian"><img src="../assets/img/flags/ua.png" alt=""> Українська</a>
-                            </li>
-                            <li>
-                                <a class="english"><img src="../assets/img/flags/gb.png" alt=""> English</a>
-                            </li>
-                            <li>
-                                <a class="espana"><img src="../assets/img/flags/es.png" alt=""> España</a>
-                            </li>
-                            <li>
-                                <a class="russian"><img src="../assets/img/flags/ru.png" alt=""> Русский</a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                     <!-- end language menu -->
                     <!-- start notification dropdown -->
                     <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">

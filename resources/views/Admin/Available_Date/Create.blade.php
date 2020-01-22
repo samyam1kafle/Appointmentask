@@ -48,7 +48,7 @@
                                             @endif
                                         </div>
                                     </div>
-                                    {{--<div class="form-group row margin-top-20">
+                                    <div class="form-group row margin-top-20">
                                         <label class="col-md-3 control-label"></label>
                                             <input size="30" type="hidden" value="0"  readonly name="service_id">
                                     </div>--}}
