@@ -1,7 +1,5 @@
 @extends('Admin.layouts.master')
 @section('main_content')
-
-
 <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
@@ -30,8 +28,9 @@
                         <div class="card-body" id="bar-parent2">
                             <form action="{{route('department.update',$depart_id->id)}}" id="form_sample_2" class="form-horizontal"
                                   method="post"  autocomplete="on">
-                                  @csrf
-                                  <input type="hidden" name="_method" value="PUT">
+                                {{csrf_field()}}
+
+                                <input type="hidden" name="_method" value="PUT">
                                 <div class="form-body">
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Name

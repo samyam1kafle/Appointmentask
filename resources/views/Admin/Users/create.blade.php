@@ -30,6 +30,9 @@
                             <form action="{{route('user.store')}}" id="form_sample_2" class="form-horizontal"
                                   method="post"
                                   enctype="multipart/form-data" autocomplete="on">
+                                {{csrf_field()}}
+                                <input type="hidden" name="service_id" value="0">
+                                <input type="hidden" name="available_date" value="{{null}}">
                                 <div class="form-body">
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Name
@@ -48,7 +51,7 @@
                                         <div class="col-md-4">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <input type="text" class="form-control" name="email"/></div>
+                                                <input type="email" class="form-control" name="email"/></div>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -69,7 +72,7 @@
                                         <div class="col-md-4">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <input type="password" class="form-control" name="password"/></div>
+                                                <input type="password" class="form-control" name="password_confirmation"/></div>
                                             <span class="help-block"> e.g. xxxxxxx </span>
                                         </div>
                                     </div>
@@ -82,8 +85,9 @@
                                             <select class="form-control  select2" name="role_id">
                                                 <option value=""></option>
                                                 <optgroup label="Roles">
-                                                    <option value="AK">Admin</option>
-                                                    <option value="HI">Super Admin</option>
+                                                    @foreach($roles as $role)
+                                                        <option value="{{$role->id}}">{{$role->name}}</option>
+                                                    @endforeach
                                                 </optgroup>
 
                                             </select>
@@ -144,26 +148,27 @@
                                         <select class="form-control  select2" name="department_id">
                                             <option value=""></option>
                                             <optgroup label="Departments">
-                                                <option value="AK">Hospital</option>
-                                                <option value="HI">Consultancy</option>
+                                                @foreach($depart as $dep)
+                                                    <option value="{{$dep->id}}">{{$dep->name}}</option>
+                                                @endforeach
                                             </optgroup>
 
                                         </select>
                                     </div>
                                 </div>
+                                {{csrf_field()}}
 
-
-                        <div class="form-group">
-                            <div class="offset-md-3 col-md-9">
-                                <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                <button type="reset" class="btn btn-default">Cancel</button>
-                            </div>
+                                <div class="form-group">
+                                    <div class="offset-md-3 col-md-9">
+                                        <button type="submit" class="btn btn-info m-r-20">Submit</button>
+                                        <button type="reset" class="btn btn-default">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection
