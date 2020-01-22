@@ -51,20 +51,19 @@
                                         <td>{{$depart->parent_id}}</td>
                                         <td>{!! $depart->description !!}</td>
                                         <td class="text-left">
+                                        
+                                        <form action="{{ route('department.edit', $depart->id)}}" method="GET" style="display: inline-block">
+                                        {{csrf_field()}}
+                                        {{method_field('PUT')}}
+                                        <button class="btn btn-primary btn-sm" type="submit">Edit</button>
+                                        </form>
+                                      
+                                        <form action="{{ route('department.destroy', $depart->id)}}" method="post" style="display: inline-block">
+                                         {{csrf_field()}}
+                                         {{method_field('DELETE')}}
+                                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                        </form>
 
-                                            <form action="{{ route('department.edit', $depart->id)}}" method="GET"
-                                                  style="display: inline-block">
-                                                {{csrf_field()}}
-                                                {{method_field('PUT')}}
-                                                <button class="btn btn-primary btn-sm" type="submit">Edit</button>
-                                            </form>
-
-                                            <form action="{{ route('department.destroy', $depart->id)}}" method="post"
-                                                  style="display: inline-block">
-                                                {{csrf_field()}}
-                                                {{method_field('DELETE')}}
-                                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
-                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -14,7 +14,7 @@
                         </li>
                         <li><a class="parent-item" href="">Department</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
-                        <li class="active">Create Department</li>
+                        <li class="active">Edit Department</li>
                     </ol>
                 </div>
             </div>

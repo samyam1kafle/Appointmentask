@@ -12,7 +12,7 @@
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="">Department</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        <li><a class="parent-item" href="{{route('department.index')}}">Department</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
                         <li class="active">Create Department</li>
                     </ol>
