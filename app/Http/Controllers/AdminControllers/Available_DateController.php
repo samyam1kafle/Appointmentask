@@ -6,16 +6,19 @@ use App\Http\Requests\dateValidator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Backend\Available_date;
+use App\Backend\All_User;
 
 
 class Available_DateController extends Controller
 {
 
     protected $Available_date=null;
+    protected $All_User=null;
 
-    public function __construct( Available_date $Available_date)
+    public function __construct( Available_date $Available_date, All_User $All_User)
     {
         $this->Available_date=$Available_date;
+        $this->All_User=$All_User;
     }
 
     public function index()
@@ -31,7 +34,8 @@ class Available_DateController extends Controller
      */
     public function create()
     {
-        return view('Admin.Available_Date.Create');
+        $All_User=$this->All_User->get();
+        return view('Admin.Available_Date.Create')->with('All_User', $All_User);
     }
 
     /**
@@ -46,6 +50,13 @@ class Available_DateController extends Controller
         $data=$request->all();
         $this->Available_date->fill($data);
         $success=$this->Available_date->save();
+        if($success){
+            request()->session()->flash('success','Date list added successfully');
+
+        }
+        else{
+            request()->session()->flash('error','sorry there was an error adding Date list');
+        }
         return redirect()->route('AvailableDate.index');
     }
 
@@ -84,7 +95,7 @@ class Available_DateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(dateValidator $request, $id)
     {
         $this->Available_date=$this->Available_date->find($id);
         if(!$this->Available_date){
@@ -94,6 +105,13 @@ class Available_DateController extends Controller
         $data=$request->all();
         $this->Available_date->fill($data);
         $success=$this->Available_date->save();
+        if($success){
+            request()->session()->flash('success','Date list updated successfully');
+
+        }
+        else{
+            request()->session()->flash('error','sorry there was an error updating Date list');
+        }
         return redirect()->route('AvailableDate.index');
     }
 
