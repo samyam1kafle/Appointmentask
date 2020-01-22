@@ -1,5 +1,9 @@
 @section('header')
-
+    @if(count($errors)>0)
+        @foreach($errors->all() as $error)
+            {{Session::flash('Error',$error)}}
+        @endforeach
+    @endif
     <div class="page-header navbar navbar-fixed-top">
         <div class="page-header-inner ">
             <!-- logo start -->
