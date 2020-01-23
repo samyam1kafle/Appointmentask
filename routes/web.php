@@ -32,8 +32,11 @@ Route::group(['prefix'=>'admin'],function(){
     Route::resource('/service_reschedule','AdminControllers\ServiceRescheduleController');
 
     Route::resource('/user', 'AdminControllers\UserController');
+    Route::resource('/roles', 'AdminControllers\RolesController');
 
     Route::resource('/department','AdminControllers\DepartmentController');
+    Route::resource('/bookings','AdminControllers\BookingController');
     Route::resource('/services','AdminControllers\ServicesController');
+    Route::resource('/Todo','AdminControllers\TodoController');
 });
 

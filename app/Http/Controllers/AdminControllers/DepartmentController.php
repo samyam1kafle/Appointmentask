@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Backend\Department;
 
 class DepartmentController extends Controller
 {
@@ -14,7 +15,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        return view('Admin/Departments/index');
+        $department = Department::orderBy('id','desc')->get();
+        return view('Admin/Departments/index',compact('department'));
     }
 
     /**
@@ -24,7 +26,8 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return view('Admin/Departments/create');
+        $department = Department::orderBy('id','desc')->get();
+        return view('Admin/Departments/create',compact('department'));
     }
 
     /**
@@ -34,8 +37,12 @@ class DepartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $data = Department::create($request->all());
+        if($data){
+            return redirect()->route('department.index')->with('success','Department has been created Successfully');
+        }
+        
     }
 
     /**
@@ -57,7 +64,9 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $department = Department::all();
+        $depart_id = Department::findOrFail($id);
+        return view('Admin/Departments/edit', compact('department','depart_id'));
     }
 
     /**
@@ -69,7 +78,14 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update = Department::find($id);
+        $updated = $update->update($request->all());
+        // Department::whereId($id)->update($updateData);
+        if($updated){
+            return redirect()->route('department.index')->with('success', 'Department has been updated');
+        }else{
+            return redirect()->back()->with('error', 'Some error occured while updating departments'); 
+        }
     }
 
     /**
@@ -80,6 +96,9 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $department = Department::findOrFail($id);
+        $department->delete();
+
+        return redirect()->route('department.index')->with('completed', 'Selected Department has been deleted');
     }
 }

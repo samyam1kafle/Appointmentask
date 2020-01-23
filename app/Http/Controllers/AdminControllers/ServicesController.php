@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Backend\Service;
 
 class ServicesController extends Controller
 {
@@ -14,7 +15,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::orderBy('id','desc')->get();
+        return view('Admin/Services/index',compact('services'));
     }
 
     /**
@@ -24,7 +26,8 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::orderBy('id','desc')->get();
+        return view('Admin/Services/create',compact('services'));
     }
 
     /**
@@ -35,7 +38,10 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = Service::create($request->all());
+        if($data){
+            return redirect()->route('services.index')->with('success','Service has been created Successfully');
+        }
     }
 
     /**
@@ -57,7 +63,9 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $services = Service::all();
+        $service_id = Service::findOrFail($id);
+        return view('Admin/Services/edit', compact('services','service_id'));
     }
 
     /**
@@ -69,7 +77,14 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update = Service::find($id);
+        $updated = $update->update($request->all());
+        // Service::whereId($id)->update($updateData);
+        if($updated){
+            return redirect()->route('services.index')->with('success', 'Services has been updated');
+        }else{
+            return redirect()->back()->with('error', 'Some error occured while updating Services'); 
+        }
     }
 
     /**
@@ -80,6 +95,9 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $services = Service::findOrFail($id);
+        $services->delete();
+
+        return redirect()->route('services.index')->with('completed', 'Selected Service has been deleted');
     }
 }
