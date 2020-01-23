@@ -45,8 +45,8 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                            data-close-others="true">
                             <img alt="" class="img-circle "
-                                 src="{{asset('Uploads/users/thumbnails/'.Auth::user()->image)}}"/>
-                            <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
+                                 src="{{@asset('Uploads/users/thumbnails/'.Auth::user()->image)}}"/>
+                            <span class="username username-hide-on-mobile"> {{@Auth::user()->name}} </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">

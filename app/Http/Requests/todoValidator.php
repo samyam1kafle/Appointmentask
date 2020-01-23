@@ -25,12 +25,12 @@ class todoValidator extends FormRequest
     {
         return [
             'User_id' =>'required',
-            'title' => 'required|string',
-            'description' =>'required|',
+            'title' => 'required|string|min:5|max:50',
+            'description' =>'required|min:10',
             'assignedDate' =>'required|date',
             'CompletedDate' =>'required|date',
-            'assignedTo' =>'required|string',
-            'requestedBy' =>'required|string',
+            'assignedTo' =>'required|string|min:3|max:50',
+            'requestedBy' =>'required|string|min:3|max:50',
             'DeadLine' =>'required|date',
             'status' =>'required|integer',
 
