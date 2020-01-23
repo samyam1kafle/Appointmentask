@@ -147,7 +147,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('service_complete.index')}}" class="nav-link "> <span class="title">Service Complete</span>
+                                    <a href="{{route('service_complete.index')}}" class="nav-link "> <span
+                                                class="title">Service Complete</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -156,8 +157,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('service_reschedule.index')}}" class="nav-link "> <span class="title">Service Reschedule</span>
-                                    <a href="" class="nav-link "> <span class="title">Service Reschedule</span>
+                                    <a href="{{route('service_reschedule.index')}}" class="nav-link "> <span
+                                                class="title">Service Reschedule</span>
                                     </a>
                                 </li>
                             </ul>
