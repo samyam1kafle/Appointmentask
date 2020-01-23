@@ -16,7 +16,7 @@
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="">Avalable Time</a>&nbsp;<i
+                        <li><a class="parent-item" href="{{route('AvailableTime.index')}}">Avalable Time</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
                         <li class="active">All Details</li>
