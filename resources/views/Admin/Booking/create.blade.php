@@ -30,7 +30,7 @@
                             <form action="{{route('bookings.store')}}" id="form_sample_2" class="form-horizontal"
                                   method="post"
                                    autocomplete="on">
-                                  @csrf                                      
+                                   {{csrf_field()}}                                    
                                     <div class="form-group row">
                                         <label class="control-label col-md-3">User ID
                                             <span class="required"> * </span>
