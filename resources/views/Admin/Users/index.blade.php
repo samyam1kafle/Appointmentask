@@ -64,11 +64,20 @@
                                             <td>
                                                 <a href="mailto:{{$user->email}}"> {{$user->email}} </a>
                                             </td>
-                                            <td>
-                                                <img src="{{asset('Uploads/users/thumbnails/'.$user->image)}}"
-                                                     alt="Users image" width="auto" height="60px">
-                                            </td>
-                                            <td>{{$user->department->name}}</td>
+                                            @if($user->image)
+                                                <td>
+                                                    <img src="{{asset('Uploads/users/thumbnails/'.$user->image)}}"
+                                                         alt="Users image" width="auto" height="60px">
+                                                </td>
+                                            @else
+                                                <td>No image available</td>
+                                            @endif
+                                            @if($user->department_id)
+                                                <td>{{$user->department->name}}</td>
+
+                                            @else
+                                                <td>No department assigned</td>
+                                            @endif
                                             <td class="valigntop">
                                                 <div class="btn-group">
                                                     <button
@@ -101,7 +110,7 @@
                                                                     {{csrf_field()}}
                                                                     {{method_field('DELETE')}}
                                                                     <button class="btn btn-danger btn-sm" type="submit">
-                                                                       <span class="fa fa-trash-o"></span> Delete
+                                                                        <span class="fa fa-trash-o"></span> Delete
                                                                     </button>
                                                                 </form>
                                                             </a>
