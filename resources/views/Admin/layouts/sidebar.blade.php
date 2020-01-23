@@ -156,12 +156,8 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-<<<<<<< HEAD
                                     <a href="{{route('service_reschedule.index')}}" class="nav-link "> <span class="title">Service Reschedule</span>
-
-=======
                                     <a href="" class="nav-link "> <span class="title">Service Reschedule</span>
->>>>>>> ff2d1c3f217dd197d244a97f9eaadfb994964427
                                     </a>
                                 </li>
                             </ul>
