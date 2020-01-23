@@ -8,7 +8,7 @@
             <div class="page-bar">
                 <div class="page-title-breadcrumb">
                     <div class=" pull-left">
-                        <div class="page-title">Available Date Details</div>
+                        <div class="page-title">Available Todo Details</div>
                     </div>
 
                     <ol class="breadcrumb page-breadcrumb pull-right">
@@ -16,7 +16,7 @@
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="">Avalable Date</a>&nbsp;<i
+                        <li><a class="parent-item" href=""> Todo</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
                         <li class="active">All Details</li>
@@ -27,43 +27,48 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Avaialable Date Details</header>
-                            <a class="parent-item pull-right btn btn-primary" href="{{ route('AvailableDate.create') }}">Add
+                            <header>Avaialable Todo Details</header>
+                            <a class="parent-item pull-right btn btn-primary" href="{{ route('Todo.create') }}">Add
                                 +</a>
-                            @if(session('success'))
-                                <p class="alert alert-success">{{session('success')}}</p>
-                            @endif
-
-                            @if(session('error'))
-                                <p class="alert alert-danger">{{session('error')}}</p>
-                            @endif
                         </div>
                         <div class="card-body " id="bar-parent">
                             <table id="exportTable" class="display nowrap" style="width:100%">
                                 <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>User</th>
-                                    <th>Date</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Assigned Date</th>
+                                    <th>Completed Date</th>
+                                    <th>Assigned To</th>
+                                    <th>Requested By</th>
+                                    <th>Deadline</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($Date as $Date_data)
+                                @foreach($Todos as $Todos_data)
                                     <tr>
-                                        <td>{{$Date_data->id}}</td>
-                                        <td>{{$Date_data->user_id}}</td>
-                                        <td>{{$Date_data->date}}</td>
+                                        <td>{{$Todos_data->User_id}}</td>
+                                        <td>{{$Todos_data->title}}</td>
+                                        <td>{{$Todos_data->description}}</td>
+                                        <td>{{$Todos_data->assignedDate}}</td>
+                                        <td>{{$Todos_data->CompletedDate}}</td>
+                                        <td>{{$Todos_data->assignedTo}}</td>
+                                        <td>{{$Todos_data->requestedBy}}</td>
+                                        <td>{{$Todos_data->DeadLine}}</td>
+                                        <td>{{$Todos_data->status}}</td>
                                         <td class="text-left">
 
-                                            <form action="{{ route('AvailableDate.edit', $Date_data->id)}}" method="GET"
+                                            <form action="{{ route('Todo.edit', $Todos_data->id)}}" method="GET"
                                                   style="display: inline-block">
                                                 {{csrf_field()}}
                                                 <input type="hidden" name="_method" value="PUT">
                                                 <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-pencil"></span></button>
                                             </form>
 
-                                            <form action="{{ route('AvailableDate.destroy', $Date_data->id)}}"
+                                            <form action="{{ route('Todo.destroy', $Todos_data->id)}}"
                                                   method="post" style="display: inline-block">
                                                 {{csrf_field()}}
                                                 <input type="hidden" name="_method" value="DELETE">
@@ -81,8 +86,4 @@
             </div>
         </div>
     </div>
-    <!-- end page content -->
-
-
-
 @endsection

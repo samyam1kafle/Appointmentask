@@ -5,16 +5,16 @@
             <div class="page-bar">
                 <div class="page-title-breadcrumb">
                     <div class=" pull-left">
-                        <div class="page-title">Users</div>
+                        <div class="page-title">Available Date</div>
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="">Add Available Date</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        <li><a class="parent-item" href=""> Available Date</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
-                        <li class="active">Create users</li>
+                        <li class="active">Add</li>
                     </ol>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Add New User</header>
+                            <header>Add New Date</header>
 
                         </div>
                         <div class="card-body" id="bar-parent2">
@@ -30,28 +30,28 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-body">
                                     <div class="form-group row margin-top-20">
+                                        <label class="col-md-3 control-label"></label>
+                                        <div class="">
+                                            <input size="30" type="text"  required value="1" readonly  name="user_id">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row margin-top-20">
 
                                         <label class="col-md-3 control-label">Date:</label>
-                                        <div class="input-append date form_date" data-date-format="yy-m-d H:i:s"
+                                        <div class="input-append date form_date"  data-date-format="yy-m-d H:i:s"
                                              data-date="2013-02-21T15:25:00Z">
-                                            <input size="30" type="text" value="" readonly name="date">
+                                            <input size="30" type="text"  required readonly name="date">
                                             <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
                                             <span class="add-on"><i class="fa fa-calendar"></i></span>
-                                            @if ($errors->any())
-                                                <div class="alert-danger">
-                                                    <ul>
-                                                        @foreach ($errors->all() as $error)
-                                                            <li>{{ $error }}</li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
+                                            @if(count($errors)>0)
+                                                @foreach($errors->all() as $error)
+                                                    {{Session::flash('error',$error)}}
+                                                @endforeach
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="form-group row margin-top-20">
-                                        <label class="col-md-3 control-label"></label>
-                                            <input size="30" type="hidden" value="0"  readonly name="service_id">
-                                    </div>--}}
+
                                 <div class="form-group">
                                     <div class="offset-md-3 col-md-9">
                                         <button type="submit" class="btn btn-info m-r-20">Submit</button>

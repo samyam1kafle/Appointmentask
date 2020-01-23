@@ -17,8 +17,6 @@ class CreateAvailableTimesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('date_id');
             $table->time('time');
-            $table->unsignedInteger('User_id');
-            $table->unsignedInteger('Service_id')->nullable();
              $table->timestamps();
         });
     }
