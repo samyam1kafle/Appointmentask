@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Backend\All_User;
 use App\Backend\Department;
 use App\Backend\Roles;
+use App\Http\Requests\userUpdate;
 use App\Http\Requests\UserValidator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -102,7 +103,7 @@ class UserController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(userUpdate $request, $id)
     {
         $user = All_User::find($id);
 
