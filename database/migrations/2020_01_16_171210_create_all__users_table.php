@@ -25,6 +25,7 @@ class CreateAllUsersTable extends Migration
             $table->integer('service_id')->nullable();
             $table->integer('department_id')->nullable();
             $table->date('available_date')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

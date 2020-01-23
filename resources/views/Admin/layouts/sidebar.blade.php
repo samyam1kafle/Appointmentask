@@ -14,12 +14,13 @@
                         <li class="sidebar-user-panel">
                             <div class="user-panel">
                                 <div class="pull-left image">
-                                    <img src="{{asset('Admin/assets/img/dp.jpg')}}" class="img-circle user-img-circle"
+                                    <img src="{{asset('Uploads/users/thumbnails/'.Auth::user()->image)}}"
+                                         class="img-circle user-img-circle"
                                          alt="User Image"/>
                                 </div>
                                 <div class="pull-left info">
-                                    <p> Kiran Patel</p>
-                                    <a href="index.html#"><i class="fa fa-circle user-online"></i><span
+                                    <p> {{Auth::user()->name}}</p>
+                                    <a href="#"><i class="fa fa-circle user-online"></i><span
                                                 class="txtOnline">
 												Online</span></a>
                                 </div>
