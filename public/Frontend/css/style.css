@@ -1,0 +1,257 @@
+.header h1{
+	font-size: 25px;
+	text-align: center;
+	margin-bottom: 50px;
+	margin-top: 100px;
+}
+
+
+.header h2{
+	background: #8a42f5;
+	padding: 10px 10px;
+	display: inline-block;
+	font-size: 15px;
+	margin-top: 10px;
+	border-radius: 3px;
+	color: #fff;
+}
+
+.header h2:hover{
+	background: #ab12e3;
+	transition: 0.5s ease;
+}
+
+
+.header h3{
+	background: #8a42f5;
+	padding: 20px 105px;
+	display: inline-block;
+	font-size: 20px;
+	margin-top: 10px;
+	border-radius: 3px;
+	color: #fff;
+	margin-left: -05px;
+}
+
+.header h3:hover{
+	background: #ab12e3;
+	transition: 0.5s ease;
+}
+
+
+.header h4{
+	background: #8a42f5;
+	padding: 20px 105px;
+	display: inline-block;
+	font-size: 20px;
+	margin-top: 25px;
+	border-radius: 3px;
+	color: #fff;
+	margin-left: 45px;
+}
+
+.header h4:hover{
+	background: #ab12e3;
+	transition: 0.5s ease;
+}
+
+
+.login h1{
+	font-size: 20px;
+	text-align: center;
+}
+
+
+
+
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+.login h2{
+	font-size: 20px;
+	margin-left: 15px;
+	margin-top: 30px;
+	text-align: center;
+	font-weight: 800;
+}
+
+
+.login h3{
+	font-size: 13px;
+	background: #5234eb;
+	padding: 10px 20px;
+	border-radius: 2px;
+	display: inline-block;
+	color: #fff;
+	margin-left: 22px;
+}
+
+.login h3 g{
+	font-family: fontawesome;
+	padding-right: 5px;
+}
+
+
+.login h4{
+	font-size: 13px;
+	background: #c34349;
+	padding: 10px 20px;
+	border-radius: 2px;
+	display: inline-block;
+	color: #fff;
+	margin-left: 0px;
+}
+
+.login h4 g{
+	font-family: fontawesome;
+	padding-right: 5px;
+}
+
+
+
+.border_class{
+	border: 1px solid #ddd;
+	padding-bottom: 30px;
+	box-shadow: 0px 0px 5px 1px #dedede;
+	margin-top: 60px;
+}
+
+
+
+.Username input{
+	width: 400px;
+	height: 40px;
+	border-radius: 5px;
+	border: none;
+	padding: 5px 20px;
+	border: 1px solid #ddd;
+	margin-bottom: 15px;
+	outline: none;
+	background-color: #fff;
+}
+
+
+.register h1{
+	margin-bottom: 10px;
+	font-size: 20px;
+	margin-top: 10px;
+	text-align: center;
+	font-weight: 800;
+
+}
+
+
+.Username_1{
+	padding: 100px 20px;
+}
+
+
+.Username_1 button{
+	padding: 5px 5px;
+	background: #4CAF50;
+	width: 400px;
+	margin-top: -5px;
+	border-radius: 3px;
+}
+
+
+.register{
+	background: #2c2fc9;
+	color: #fff;
+}
+
+
+.email_01{
+	margin-top: 8px;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.login h4{
+		margin-top: 10px;
+		margin-left: 20px;
+	}
+}
+
+
+@media only screen and (max-width: 800px) {
+	.login h4{
+		margin-top: 10px;
+		margin-left: 20px;
+	}
+}
+
+
+@media only screen and (max-width: 1200px) {
+	.Username input {
+	width: 200px;
+	}
+}
+
+
+@media only screen and (max-width: 600px) {
+	.Username input {
+	width: 400px;
+	background-color: #fff;
+	}
+}
+
+

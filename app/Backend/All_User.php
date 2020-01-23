@@ -3,8 +3,9 @@
 namespace App\Backend;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Auth;
 
-class All_User extends Model
+class All_User extends Auth
 {
     protected $fillable = [
         'id', 'name', 'email', 'role_id', 'password'
