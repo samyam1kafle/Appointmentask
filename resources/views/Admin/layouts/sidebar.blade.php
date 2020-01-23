@@ -68,24 +68,24 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
-                                    <a href="{{route('service.index')}}" class="nav-link "> <span class="title">All Details</span>
+                                    <a href="{{route('service_details.index')}}" class="nav-link "> <span class="title">All Details</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link "> <span class="title">Service Booked</span>
+                                    <a href="{{route('service_booked.index')}}" class="nav-link "> <span class="title">Service Booked</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link "> <span class="title">Service Complete</span>
+                                    <a href="{{route('service_complete.index')}}" class="nav-link "> <span class="title">Service Complete</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link "> <span
+                                    <a href="{{route('service_cancel.index')}}" class="nav-link "> <span
                                                 class="title">Service Cancel</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link "> <span class="title">Service Reschedule</span>
+                                    <a href="{{route('service_reschedule.index')}}" class="nav-link "> <span class="title">Service Reschedule</span>
 
                                     </a>
                                 </li>

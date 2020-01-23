@@ -14,7 +14,7 @@ class ServiceRescheduleController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.ServiceDetails.ServiceReschedule.view');
     }
 
     /**

@@ -14,7 +14,7 @@ class Available_DateController extends Controller
      */
     public function index()
     {
-        return view('Admin.Available_Date.index');
+        return view('Admin.Available_Date.Index');
     }
 
     /**

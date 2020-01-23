@@ -14,7 +14,7 @@ class ServiceCancelController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.ServiceDetails.ServiceCancel.view');
     }
 
     /**
