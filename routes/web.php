@@ -24,7 +24,12 @@ Route::group(['prefix'=>'admin'],function(){
     Route::resource('/AvailableTime', 'AdminControllers\Available_TimeController');
     Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
 
-    Route::resource('/service','AdminControllers\ServiceDetailsController');
+//    Service Details Route
+    Route::resource('/service_details','AdminControllers\ServiceDetailsController');
+    Route::resource('/service_booked','AdminControllers\ServiceBookedController');
+    Route::resource('/service_complete','AdminControllers\ServiceCompleteController');
+    Route::resource('/service_cancel','AdminControllers\ServiceCancelController');
+    Route::resource('/service_reschedule','AdminControllers\ServiceRescheduleController');
 
     Route::resource('/user', 'AdminControllers\UserController');
     Route::resource('/roles', 'AdminControllers\RolesController');
