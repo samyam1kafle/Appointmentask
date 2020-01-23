@@ -18,6 +18,7 @@ class adminSeeder extends Seeder
                 'email'=>'admin@admin.com',
                 'password'=>bcrypt('admin123'),
                 'role_id'=>'1',
+                'department_id'=>'1',
                 'created_at'=> date("Y-m-d H:i:s"),
             )
         );

@@ -11,7 +11,6 @@ class All_User extends Auth
         'id', 'name', 'email', 'role_id', 'password'
         , 'image', 'status', 'gender', 'service_id',
         'department_id', 'available_date'
-
     ];
 
     public function roles()
