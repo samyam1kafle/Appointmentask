@@ -14,7 +14,7 @@ class ServiceCompleteController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.ServiceDetails.ServiceComplete.view');
     }
 
     /**

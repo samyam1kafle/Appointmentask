@@ -14,7 +14,7 @@ class ServiceBookedController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.ServiceDetails.ServiceBooked.view');
     }
 
     /**

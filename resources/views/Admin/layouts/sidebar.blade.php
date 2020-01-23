@@ -140,23 +140,24 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
-                                    <a href="{{route('service.index')}}" class="nav-link "> <span class="title">All Details</span>
+                                    <a href="{{route('service_details.index')}}" class="nav-link "> <span class="title">All Details</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link "> <span class="title">Service Booked</span>
+                                    <a href="{{route('service_booked.index')}}" class="nav-link "> <span class="title">Service Booked</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link "> <span class="title">Service Complete</span>
+                                    <a href="{{route('service_complete.index')}}" class="nav-link "> <span class="title">Service Complete</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link "> <span
+                                    <a href="{{route('service_cancel.index')}}" class="nav-link "> <span
                                                 class="title">Service Cancel</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="{{route('service_reschedule.index')}}" class="nav-link "> <span class="title">Service Reschedule</span>
                                     <a href="" class="nav-link "> <span class="title">Service Reschedule</span>
                                     </a>
                                 </li>
@@ -210,6 +211,24 @@
                                 <li class="nav-item">
                                     <a href="{{route('Date_Time.create')}}" class="nav-link "> <span class="title">
 												Add New Date and Time</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">ToDo</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('Todo.index')}}" class="nav-link "> <span class="title">
+												View All ToDo</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('Todo.create')}}" class="nav-link "> <span class="title">
+												Add New ToDo</span>
                                     </a>
                                 </li>
                             </ul>

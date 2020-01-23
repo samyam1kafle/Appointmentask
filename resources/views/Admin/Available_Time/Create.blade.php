@@ -5,16 +5,16 @@
             <div class="page-bar">
                 <div class="page-title-breadcrumb">
                     <div class=" pull-left">
-                        <div class="page-title">Users</div>
+                        <div class="page-title">Available time</div>
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="">Add Available Date</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        <li><a class="parent-item" href="{{route('AvailableTime.index')}}">Add Available Time</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
-                        <li class="active">Create users</li>
+                        <li class="active">Add Time</li>
                     </ol>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Add New User</header>
+                            <header>Add Time</header>
 
                         </div>
                         <div class="card-body" id="bar-parent2">
@@ -31,51 +31,32 @@
                                 <div class="form-body">
                                     <div class="form-group row margin-top-20">
 
-                                        <label class="col-md-3 control-label">Time:</label>
-                                            <div class="input-append date form_time">
-                                                <input size="30" type="text" value="" name="time" readonly>
-                                                <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
-                                                <span class="add-on"><i class="fa fa-clock-o"></i></span>
-                                                @if ($errors->any())
-                                                    <div class="alert-danger">
-                                                        <ul>
-                                                            @foreach ($errors->all() as $error)
-                                                                <li>{{ $error }}</li>
+                                        <label class="col-md-3 control-label">Date:</label>
+                                            <div class="input-append timepicker-orient-bottom ">
+                                                    <select class="form-control col-12 input-append  " name="date_id">
+                                                        <option value="" disabled selected hidden>Select A Date</option>
+                                                        @if($date)
+                                                            @foreach($date as $key=>$date_data)
+
+                                                                <option value="{{$date_data->id}}">{{$date_data->date}}</option>
                                                             @endforeach
-                                                        </ul>
-                                                    </div>
-                                                @endif
+                                                        @endif
+                                                    </select>
                                             </div>
-                                        <div class="" >
-                                            <input type="hidden" name="date_id" value="0" >
-                                            @if ($errors->any())
-                                                <div class="alert-danger">
-                                                    <ul>
-                                                        @foreach ($errors->all() as $error)
-                                                            <li>{{ $error }}</li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                            @endif
-                                        </div>
-                                        <div class="" >
-                                            <input type="hidden" name="User_id" value="0" >
-                                            @if ($errors->any())
-                                                <div class="alert-danger">
-                                                    <ul>
-                                                        @foreach ($errors->all() as $error)
-                                                            <li>{{ $error }}</li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                            @endif
-                                        </div>
+                                    </div>
+
+                                    <div class="form-group row margin-top-20">
+
+                                        <label class="col-md-3 control-label">Time
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="input-append date timepicker-orient-bottom form_time">
+                                            <input size="30" type="text" value="" required name="time" readonly>
+                                            <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
+                                            <span class="add-on"><i class="fa fa-clock-o"></i></span>
                                         </div>
                                     </div>
-                                    {{--<div class="form-group row margin-top-20">
-                                        <label class="col-md-3 control-label"></label>
-                                            <input size="30" type="hidden" value="0"  readonly name="service_id">
-                                    </div>--}}
+
                                     <div class="form-group">
                                         <div class="offset-md-3 col-md-9">
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
