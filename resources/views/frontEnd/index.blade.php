@@ -8,7 +8,12 @@
         @endif
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                @if(Auth::user())
+                <div class="col-md-2">
+                    <a href="{{route('admin-dashboard')}}"><h2>Admin</h2></a>
+                </div>
+                @endif
+                <div class="col-md-8">
                 </div>
 
                 <div class="col-md-2">
