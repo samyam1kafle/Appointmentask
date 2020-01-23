@@ -23,12 +23,8 @@ class Available_DateController extends Controller
 
     public function index()
     {
-<<<<<<< HEAD
-        return view('Admin.Available_Date.Index');
-=======
         $all_Available_date = $this->Available_date->orderby('id','DESC')->get();
         return view('Admin.Available_Date.index')->with('Date', $all_Available_date);
->>>>>>> ff2d1c3f217dd197d244a97f9eaadfb994964427
     }
 
     /**
