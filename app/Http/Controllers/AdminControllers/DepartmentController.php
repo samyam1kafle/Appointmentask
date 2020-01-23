@@ -40,8 +40,8 @@ class DepartmentController extends Controller
     {   
         $data = Department::create($request->all());
         if($data){
-            return redirect()->route('department.index')->with('success','Department created Successfully');
-        };
+            return redirect()->route('department.index')->with('success','Department has been created Successfully');
+        }
         
     }
 
@@ -99,6 +99,6 @@ class DepartmentController extends Controller
         $department = Department::findOrFail($id);
         $department->delete();
 
-        return redirect()->route('department.index')->with('completed', 'Department has been deleted');
+        return redirect()->route('department.index')->with('completed', 'Selected Department has been deleted');
     }
 }
