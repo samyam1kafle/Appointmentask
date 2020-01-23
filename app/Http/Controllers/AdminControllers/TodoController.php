@@ -40,7 +40,7 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(todoValidator $request)
     {
         $data=$request->all();
         $this->Todo->fill($data);
@@ -89,7 +89,7 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(todoValidator $request, $id)
     {
         $this->Todo=$this->Todo->find($id);
         if(!$this->Todo){
