@@ -31,7 +31,7 @@
                                 <div class="form-body">
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">User
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <div class="input-icon right">
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Title
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <div class="input-icon right">
@@ -52,7 +52,7 @@
 
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Description
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <div class="input-icon right">
@@ -64,12 +64,12 @@
 
                                     <div class="form-group row margin-top-20">
                                         <label class="col-md-3 control-label">Assigned Date
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                         <div class="input-append  date form_date"  data-date-format="yy-m-d H:i:s"
                                              data-date="2013-02-21T15:25:00Z">
-                                            <input size="30" type="text"  required readonly name="assignedDate">
+                                            <input size="30" type="text"   readonly name="assignedDate">
                                             <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
                                             <span class="add-on"><i class="fa fa-calendar"></i></span>
                                             @if(count($errors)>0)
@@ -83,12 +83,12 @@
 
                                     <div class="form-group row margin-top-20">
                                         <label class="col-md-3 control-label">Completed Date
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <div class="input-append  date form_date"  data-date-format="yy-m-d H:i:s"
                                                  data-date="2013-02-21T15:25:00Z">
-                                                <input size="30" type="text"  required readonly name="CompletedDate">
+                                                <input size="30" type="text"   readonly name="CompletedDate">
                                                 <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
                                                 <span class="add-on"><i class="fa fa-calendar"></i></span>
                                                 @if(count($errors)>0)
@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Assigned TO
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <div class="input-icon right">
@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Requested BY
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <div class="input-icon right">
@@ -121,12 +121,12 @@
                                     </div>
                                     <div class="form-group row margin-top-20">
                                         <label class="col-md-3 control-label">Deadline
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <div class="input-append  date form_date"  data-date-format="yy-m-d H:i:s"
                                                  data-date="2013-02-21T15:25:00Z">
-                                                <input size="30" type="text"  required readonly name="DeadLine">
+                                                <input size="30" type="text"   readonly name="DeadLine">
                                                 <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
                                                 <span class="add-on"><i class="fa fa-calendar"></i></span>
                                                 @if(count($errors)>0)
@@ -139,7 +139,7 @@
                                     </div>
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Status
-                                            <span class="required"> * </span>
+                                            <span class=""> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <div class="input-icon right">
@@ -149,7 +149,7 @@
                                                 <option value="0">Pending</option>
                                                 <option value="1">Completed</option>
                                                 </select>
-                                                @if ($errors->any())
+                                               {{-- @if ($errors->any())
                                                     <div class="alert-danger">
                                                         <ul>
                                                             @foreach ($errors->all() as $error)
@@ -157,7 +157,7 @@
                                                             @endforeach
                                                         </ul>
                                                     </div>
-                                                @endif
+                                                @endif--}}
                                             </div>
                                     </div>
                                     </div>
