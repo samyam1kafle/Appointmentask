@@ -15,11 +15,12 @@
                             <div class="user-panel">
                                 <div class="pull-left image">
                                     <img src="{{asset('Admin/assets/img/dp.jpg')}}" class="img-circle user-img-circle"
-                                         alt="User Image" />
+                                         alt="User Image"/>
                                 </div>
                                 <div class="pull-left info">
                                     <p> Kiran Patel</p>
-                                    <a href="index.html#"><i class="fa fa-circle user-online"></i><span class="txtOnline">
+                                    <a href="index.html#"><i class="fa fa-circle user-online"></i><span
+                                                class="txtOnline">
 												Online</span></a>
                                 </div>
                             </div>
@@ -38,6 +39,25 @@
                                 <span class="title">Event Management</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">Users</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('user.index')}}" class="nav-link "> <span class="title">
+												View All User</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('user.create')}}" class="nav-link "> <span class="title">
+												Add New User</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
                                 <span class="title">Departments</span> <span class="arrow"></span>
@@ -71,34 +91,10 @@
                                     <a href="{{route('bookings.create')}}" class="nav-link "> <span class="title">Add
 												Bookings</span>
                                     </a>
-                                </li>                
+                                </li>
                             </ul>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">work</i>
-                                <span class="title">Services</span> <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item">
-                                    <a href="{{route('services.index')}}" class="nav-link "> <span class="title">All
-												Services</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('services.create')}}" class="nav-link "> <span class="title">Add
-												Services</span>
 
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('bookings.create')}}" class="nav-link "> <span class="title">Add
-												Bookings</span>
-                                    </a>
-                                </li>                
-                            </ul>
-                        </li>
-                        
                         <li class="nav-item">
                             <a href="#" class="nav-link nav-toggle"> <i class="material-icons">work</i>
                                 <span class="title">Services</span> <span class="arrow"></span>
@@ -137,7 +133,6 @@
                         </li>
 
 
-
                         <li class="nav-item">
                             <a href="" class="nav-link nav-toggle"> <i class="material-icons">info</i>
                                 <span class="title">Service Details</span> <span class="arrow"></span>
@@ -165,25 +160,6 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
-                                <span class="title">Users</span> <span class="arrow"></span>
-                            </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{route('user.index')}}" class="nav-link "> <span class="title">
-												View All User</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="{{route('user.create')}}" class="nav-link "> <span class="title">
-												Add New User</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
@@ -301,8 +277,9 @@
                                     <li class="media">
                                         <div class="media-status">
                                             <span class="badge badge-success">5</span>
-                                        </div> <img class="media-object" src="../assets/img/prof/prof1.jpg"
-                                                    width="35" height="35" alt="...">
+                                        </div>
+                                        <img class="media-object" src="../assets/img/prof/prof1.jpg"
+                                             width="35" height="35" alt="...">
                                         <i class="busy dot"></i>
                                         <div class="media-body">
                                             <h5 class="media-heading">Rajesh</h5>
@@ -320,8 +297,9 @@
                                     <li class="media">
                                         <div class="media-status">
                                             <span class="badge badge-danger">8</span>
-                                        </div> <img class="media-object" src="../assets/img/prof/prof4.jpg"
-                                                    width="35" height="35" alt="...">
+                                        </div>
+                                        <img class="media-object" src="../assets/img/prof/prof4.jpg"
+                                             width="35" height="35" alt="...">
                                         <i class="online dot"></i>
                                         <div class="media-body">
                                             <h5 class="media-heading">Kehn Anderson</h5>
@@ -352,8 +330,9 @@
                                     <li class="media">
                                         <div class="media-status">
                                             <span class="badge badge-warning">4</span>
-                                        </div> <img class="media-object" src="../assets/img/prof/prof6.jpg"
-                                                    width="35" height="35" alt="...">
+                                        </div>
+                                        <img class="media-object" src="../assets/img/prof/prof6.jpg"
+                                             width="35" height="35" alt="...">
                                         <i class="offline dot"></i>
                                         <div class="media-body">
                                             <h5 class="media-heading">Jennifer Maklen</h5>
@@ -373,8 +352,9 @@
                                     <li class="media">
                                         <div class="media-status">
                                             <span class="badge badge-success">9</span>
-                                        </div> <img class="media-object" src="../assets/img/prof/prof9.jpg"
-                                                    width="35" height="35" alt="...">
+                                        </div>
+                                        <img class="media-object" src="../assets/img/prof/prof9.jpg"
+                                             width="35" height="35" alt="...">
                                         <i class="offline dot"></i>
                                         <div class="media-body">
                                             <h5 class="media-heading">Jeff Adam</h5>

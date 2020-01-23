@@ -65,7 +65,8 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role = Roles::findOrFail($id);
+        return view('Admin/Roles/edit',compact('role'));
     }
 
     /**
@@ -75,9 +76,15 @@ class RolesController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RolesValidate $request, $id)
     {
-        //
+        $role = Roles::find($id);
+        $update = $role->update($request->all());
+        if(!$update){
+            return redirect()->back()->with('error','Sorry the changes couldn\'t be made');
+        }else{
+            return redirect()->back()->with('success','Role updated successfully');
+        }
     }
 
     /**
@@ -88,6 +95,14 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Roles::findOrFail($id);
+        if($delete == null){
+            return redirect()->back()->with('Error','The Role you are looking for is not available');
+        }else{
+            $deleted = $delete->delete();
+            if($deleted){
+                return redirect()->back()->with('success','The Role Deleted Successfully');
+            }
+        }
     }
 }
