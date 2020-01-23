@@ -1,0 +1,5 @@
+@include('frontEnd.layers.header')
+@include('frontEnd.layers.scripts')
+@yield('header')
+@yield('body')
+@yield('scripts')

@@ -30,7 +30,7 @@
                         <div class="card-body" id="bar-parent2">
                             <form action="{{route('bookings.update',$book_id->id)}}" id="form_sample_2" class="form-horizontal"
                                   method="post" autocomplete="on">
-                                  @csrf
+                                  {{csrf_field()}}
                                   <input type="hidden" name="_method" value="PUT">                                     
                                     <div class="form-group row">
                                         <label class="control-label col-md-3">User ID

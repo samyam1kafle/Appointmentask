@@ -5,7 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Backend\Department;
-
+use App\Http\Requests\DepartmentValidator;
 class DepartmentController extends Controller
 {
     /**
@@ -36,8 +36,9 @@ class DepartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DepartmentValidator $request)
     {   
+       
         $data = Department::create($request->all());
         if($data){
             return redirect()->route('department.index')->with('success','Department has been created Successfully');
@@ -76,12 +77,17 @@ class DepartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DepartmentValidator $request, $id)
     {
-        $update = Department::find($id);
-        $updated = $update->update($request->all());
-        // Department::whereId($id)->update($updateData);
-        if($updated){
+        $department = Department::find($id);
+
+        $department->name = $request->name;
+        $department->parent_id = $request->parent_id;
+        $department->description = $request->description;
+        
+        $update = $department->save();
+        
+        if($update){
             return redirect()->route('department.index')->with('success', 'Department has been updated');
         }else{
             return redirect()->back()->with('error', 'Some error occured while updating departments'); 

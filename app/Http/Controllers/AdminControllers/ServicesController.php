@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Backend\Service;
+use App\Http\Requests\ServicesValidator;
 
 class ServicesController extends Controller
 {
@@ -36,7 +37,7 @@ class ServicesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ServicesValidator $request)
     {
         $data = Service::create($request->all());
         if($data){
@@ -75,12 +76,18 @@ class ServicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ServicesValidator $request, $id)
     {
-        $update = Service::find($id);
-        $updated = $update->update($request->all());
-        // Service::whereId($id)->update($updateData);
-        if($updated){
+        $serv = Service::find($id);
+
+        $serv->name = $request->name;
+        $serv->User_id = $request->User_id;
+        $serv->Department_id = $request->Department_id;
+        $serv->Service_description = $request->Service_description;
+        
+        $update = $serv->save();
+
+        if($update){
             return redirect()->route('services.index')->with('success', 'Services has been updated');
         }else{
             return redirect()->back()->with('error', 'Some error occured while updating Services'); 

@@ -3,14 +3,14 @@
 namespace App\Backend;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Auth;
 
-class All_User extends Model
+class All_User extends Auth
 {
     protected $fillable = [
         'id', 'name', 'email', 'role_id', 'password'
         , 'image', 'status', 'gender', 'service_id',
         'department_id', 'available_date'
-
     ];
 
     public function roles()

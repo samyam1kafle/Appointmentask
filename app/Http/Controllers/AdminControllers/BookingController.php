@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Backend\Booking;
 use App\Backend\All_User;
+use App\Http\Requests\BookingValidator;
 
 class BookingController extends Controller
 {
@@ -37,7 +38,7 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookingValidator $request)
     {
         $data = Booking::create($request->all());
         if($data){
@@ -77,13 +78,20 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BookingValidator $request, $id)
     {
-        $update = Booking::find($id);
-        $updated = $update->update($request->all());
-       
-        // Department::whereId($id)->update($updateData);
-        if($updated){
+        $book = Booking::find($id);
+
+
+        $book->User_id = $request->User_id;
+        $book->service_id = $request->service_id;
+        $book->booking_date = $request->booking_date;
+        $book->booking_time = $request->booking_time;
+        $book->status = $request->status;
+
+        $update = $book->save();
+        
+        if($update){
             return redirect()->route('bookings.index')->with('success', 'Booking has been updated');
         }else{
             return redirect()->back()->with('error', 'Some error occured while updating bookings'); 
