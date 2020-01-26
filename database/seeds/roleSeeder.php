@@ -13,9 +13,33 @@ class roleSeeder extends Seeder
     public function run()
     {
         $role = array(
-            'name'=>'admin',
-            'description'=>'It\'s admin section',
-            'created_at'=>date("Y-m-d H:i:s")
+            array(
+                'name' => 'super_admin',
+                'description' => 'It\'s super admin section',
+                'created_at' => date("Y-m-d H:i:s")
+            ),
+            array(
+                'name' => 'admin',
+                'description' => 'It\'s admin section',
+                'created_at' => date("Y-m-d H:i:s")
+            ),
+            array(
+                'name' => 'employee',
+                'description' => 'It\'s employee section',
+                'created_at' => date("Y-m-d H:i:s")
+            ),
+            array(
+                'name' => 'subscriber',
+                'description' => 'It\'s subscriber section',
+                'created_at' => date("Y-m-d H:i:s")
+            ),
+            array(
+                'name' => 'guest',
+                'description' => 'It\'s guest section',
+                'created_at' => date("Y-m-d H:i:s")
+            ),
+
+
         );
         DB::table('roles')->insert($role);
     }

@@ -517,6 +517,7 @@ ul.labels-info li a {
     position: relative;
     display: block;
     padding: 10px 15px;
+	margin-right: 21px;
 }
 .nav.nav-pills.nav-stacked.labels-info p {
     margin-bottom: 0;

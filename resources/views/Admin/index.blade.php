@@ -1,7 +1,6 @@
 
 @extends('Admin.layouts.master')
 @section('main_content')
-
     <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">

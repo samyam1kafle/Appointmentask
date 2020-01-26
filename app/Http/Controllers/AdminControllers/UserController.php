@@ -118,6 +118,8 @@ class UserController extends Controller
             $resize->resize('600','600')->save('Uploads/users/thumbnails/' .$name);
 
             $user->image = $name;
+        }else{
+            $user->image = $user->image;
         }
         $user->name = $request->name;
         $user->email = $request->email;
