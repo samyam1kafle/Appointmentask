@@ -26,8 +26,8 @@ class BookingValidator extends FormRequest
         return [
             'User_id' => 'required|integer',
             'service_id' => 'required|integer',
-            'booking_date' => 'required|date',
-            'booking_time' => 'required|time',
+            'booking_date' => 'required',
+            'booking_time' => 'required',
             'status' => 'required',
         ];
     }

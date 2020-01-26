@@ -42,7 +42,7 @@ class RolesController extends Controller
         $create = $request->all();
         $roles = Roles::create($create);
         if($roles){
-            return redirect()->back()->with('success','Role Created Successfully');
+            return redirect()->route('roles.index')->with('success','Role Created Successfully');
         }
     }
 
@@ -83,7 +83,7 @@ class RolesController extends Controller
         if(!$update){
             return redirect()->back()->with('error','Sorry the changes couldn\'t be made');
         }else{
-            return redirect()->back()->with('success','Role updated successfully');
+            return redirect()->route('roles.index')->with('success','Role updated successfully');
         }
     }
 

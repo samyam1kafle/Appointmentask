@@ -39,9 +39,14 @@
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="User_id">
-                                                <option value=""></option>
+                                            <option value="0" selected>None</option>
                                                 <optgroup label="User">
-                                                <option value="0" selected>None</option>
+                                                
+                                                @foreach($users as $user)
+                                                    @foreach($user as $usr)
+                                                        <option value="{{ $usr->id }}">{{$usr->name}}</option>
+                                                    @endforeach
+                                                    @endforeach
                                                 </optgroup>
 
                                             </select>
@@ -54,9 +59,12 @@
                                         </label>
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="service_id">
-                                                <option value=""></option>
+                                            <option value="0" selected>None</option> 
                                                 <optgroup label="Services">
-                                                    <option value="0" selected>None</option>                                                                                          
+                                                   
+                                                    @foreach($services as $service)                   
+                                                    <option value="{{ $service->id }}">{{$service->name}}</option>  
+                                                    @endforeach                                                                                             
                                                 </optgroup>
                                             </select>
                                         </div>

@@ -39,7 +39,7 @@
                                         <th>Id</th>
                                         <th>Name</th>
                                         <th>User</th>
-                                        <th>Service</th>
+                                        <th>Department</th>
                                         <th>Description</th>
                                         <th>Action</th>
                                     </tr>

@@ -37,8 +37,9 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>User ID</th>
-                                        <th>Service ID</th>
+                                        <th>Title</th>
+                                        <th>User</th>
+                                        <th>Service</th>
                                         <th>Booking Date</th>
                                         <th>Booking Time</th>
                                         <th>Booking Status</th>
@@ -49,7 +50,8 @@
                                     @foreach($bookings as $book)
                                     <tr>
                                         <td>{{$book->id}}</td>
-                                        <td>{{$book->User_id}}</td>
+                                        <td>{{$book->name}}</td>
+                                        <td>{{$book->user->name}}</td>
                                         <td>{{$book->service_id}}</td>
                                         <td>{{$book->booking_date}}</td>
                                         <td>{{$book->booking_time}}</td>
