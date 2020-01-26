@@ -31,13 +31,10 @@
                                 <input type="hidden" name="_method" value="PUT">
                                 <div class="form-body">
                                     <div class="form-group row  margin-top-20">
-                                        <label class="control-label col-md-3">User
-                                            <span class="required"> * </span>
-                                        </label>
                                         <div class="col-md-8">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <input type="text" class="form-control" value="{{@$Todo->User_id}}" required name="User_id"/></div>
+                                                <input type="hidden" class="form-control" value="{{@$Todo->User_id}}" readonly required name="User_id"/></div>
                                         </div>
                                     </div>
                                     <div class="form-group row  margin-top-20">
@@ -58,7 +55,7 @@
                                         <div class="col-md-8">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <textarea name="description" class="form-control" value="{{@$Todo->description}}" required  id="editor" cols="30" rows="10" ></textarea>
+                                                <textarea name="description" class="form-control" required  id="editor" cols="30" rows="10" >{{@$Todo->description}}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -78,15 +75,11 @@
                                     </div>
 
                                     <div class="form-group row margin-top-20">
-                                        <label class="col-md-3 control-label">Completed Date
-                                            <span class="required"> * </span>
-                                        </label>
+
                                         <div class="col-md-8">
-                                            <div class="input-append  date form_date"  data-date-format="yy-m-d H:i:s"
-                                                 data-date="2013-02-21T15:25:00Z">
-                                                <input size="30" type="text"  required readonly name="CompletedDate" value="{{@$Todo->CompletedDate}}" >
-                                                <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
-                                                <span class="add-on"><i class="fa fa-calendar"></i></span>
+                                            <div>
+                                                <input size="30" type="hidden"   readonly name="CompletedDate" value="{{@$Todo->CompletedDate}}" >
+
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +90,15 @@
                                         <div class="col-md-8">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <input type="text" class="form-control" name="assignedTo" required value="{{@$Todo->assignedTo}}" /></div>
+                                                <select class="form-control col-12 input-append" required name="assignedTo">
+                                                    @if(isset($employee))
+                                                    @foreach($employee as $employee_data)
+                                                            <option value="" disabled selected hidden>{{$employee_data->name}}</option>
+                                                            <option value="{{$employee_data->id}}">{{$employee_data->name}}</option>
+                                                        @endforeach
+                                                    @endif
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group row  margin-top-20">
@@ -107,7 +108,15 @@
                                         <div class="col-md-8">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <input type="text" class="form-control" name="requestedBy" required value="{{@$Todo->requestedBy}}" /></div>
+                                                <select class="form-control col-12 input-append" required name="requestedBy">
+                                                    @if(isset($superadmin))
+                                                    @foreach($superadmin as $superadmin_data)
+                                                            <option value="">{{$superadmin_data->name}}</option>
+                                                            <option value="{{$superadmin_data->id}}">{{$superadmin_data->name}}</option>
+                                                        @endforeach
+                                                    @endif
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group row margin-top-20">
@@ -131,10 +140,9 @@
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
                                                 <select class="form-control col-12 input-append" required name="status">
-                                                    <option value="{{@$Todo->date_id}}" disabled selected hidden>
-                                                        @if($Todo->date_id==0)
+                                                    <option value="{{@$Todo->status}}" disabled selected hidden>
+                                                        @if($Todo->status==0)
                                                          Pending
-
                                                             @else
                                                         Completed
                                                             @endif

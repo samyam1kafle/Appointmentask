@@ -19,11 +19,13 @@ class CreateTodosTable extends Migration
             $table->string('title');
             $table->longText('description');
             $table->date('assignedDate');
-            $table->date('CompletedDate');
+            $table->date('CompletedDate')->nullable();
             $table->string('assignedTo');
             $table->string('requestedBy');
+            $table->string('reassignedto')->nullable();
             $table->date('DeadLine');
             $table->boolean('status')->default(0);
+            $table->longText('remarks')->nullable();
             $table->timestamps();
         });
     }

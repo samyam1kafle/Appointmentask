@@ -29,7 +29,7 @@ Route::group(['prefix' => '/'], function () {
 });
 
 
-Route::group(['prefix' => 'admin' , /*'middleware' => 'auth'*/], function () {
+Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function () {
     Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
 
 
@@ -54,6 +54,10 @@ Route::group(['prefix' => 'admin' , /*'middleware' => 'auth'*/], function () {
     Route::resource('/bookings','AdminControllers\BookingController');
     Route::resource('/services','AdminControllers\ServicesController');
     Route::resource('/Todo','AdminControllers\TodoController');
+    Route::put('/Todo-Pending/{id}','AdminControllers\TodoController@pending')->name('pending');
+    Route::put('/Todo-Complete/{id}','AdminControllers\TodoController@complete')->name('complete');
+    Route::put('/Todo-ReAssign/{id}','AdminControllers\TodoController@ReAssign')->name('ReAssign');
+    Route::put('/Todo-reassign/{id}','AdminControllers\TodoController@reaassign')->name('reassign');
 
 });
 
