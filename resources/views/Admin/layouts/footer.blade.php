@@ -91,7 +91,6 @@
 
     @endif
 
-
     @if(Session::has('delete'))
     toastr.info("{{Session::get('delete')}}")
     @endif

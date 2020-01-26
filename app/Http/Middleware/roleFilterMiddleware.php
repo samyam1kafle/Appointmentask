@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Support\Facades\Auth;
+
+class roleFilterMiddleware
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        if (!(Auth::user()->roles->name == 'super_admin' || Auth::user()->roles->name == 'admin')) {
+            return redirect()->route('index')->with('delete', 'Sorry You are not authorized to view the Admin page');
+        }
+
+        if ((Auth::user()->roles->name == 'super_admin' || Auth::user()->roles->name == 'admin' )) {
+            return $next($request);
+        } else {
+            return redirect()->route('index')->with('delete', 'Sorry You are not authorized to view the Admin page');
+        }
+
+    }
+}
