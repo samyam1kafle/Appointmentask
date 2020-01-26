@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Requests\timeValidator;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Backend\Available_time;
@@ -20,7 +21,7 @@ class Available_TimeController extends Controller
     }
     public function index()
     {
-        $this->Available_time=$this->Available_time->GetDate();
+        $this->Available_time=$this->Available_time->Get();
         return view('Admin.Available_Time.index')->with('time',$this->Available_time);
     }
 
