@@ -90,35 +90,41 @@
 												Departments</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{route('department.create')}}" class="nav-link "> <span class="title">Add
-												Departments</span>
-                                    </a>
-                                </li>
+                                
                             </ul>
                         </li>
 
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">book</i>
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">work</i>
+                                <span class="title">Services</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('services.index')}}" class="nav-link "> <span class="title">All
+												Services</span>
+
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                        <a href="#" class="nav-link nav-toggle"> <i class="material-icons">book</i>
                                 <span class="title">Bookings</span> <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item">
                                     <a href="{{route('bookings.index')}}" class="nav-link "> <span class="title">All
 												Bookings</span>
-
-                                    </a>
+                          </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{route('bookings.create')}}" class="nav-link "> <span class="title">Add
-												Bookings</span>
-                                    </a>
-                                </li>
+                               
                             </ul>
-                        </li>
+                        </li>  
 
                         <li class="nav-item">
+                          
                             <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
                                 <span class="title">ToDo</span> <span class="arrow"></span>
                             </a>
@@ -133,6 +139,7 @@
 												Add New ToDo</span>
                                     </a>
                                 </li>
+                               
                             </ul>
                         </li>
 
