@@ -24,8 +24,8 @@ class timeValidator extends FormRequest
     public function rules()
     {
         return [
-            'date_id'=> 'required|date',
-            'time'=> 'required|time',
+            'date_id'=> 'required|integer',
+            'time'=> 'required',
         ];
     }
 }

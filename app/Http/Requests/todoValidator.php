@@ -28,11 +28,13 @@ class todoValidator extends FormRequest
             'title' => 'required|string|min:5|max:50',
             'description' =>'required|min:10',
             'assignedDate' =>'required|date',
-            'CompletedDate' =>'required|date',
-            'assignedTo' =>'required|string|min:3|max:50',
-            'requestedBy' =>'required|string|min:3|max:50',
+            'CompletedDate' =>'nullable',
+            'assignedTo' =>'required|integer',
+            'requestedBy' =>'required|integer',
+            'reassignedto'=>'nullable|integer',
             'DeadLine' =>'required|date',
-            'status' =>'required|integer',
+            'status' =>'required|boolean',
+            'remarks'=>'nullable',
 
         ];
     }

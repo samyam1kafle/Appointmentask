@@ -5,16 +5,16 @@
             <div class="page-bar">
                 <div class="page-title-breadcrumb">
                     <div class=" pull-left">
-                        <div class="page-title">Available time</div>
+                        <div class="page-title">ToDos</div>
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="{{route('AvailableTime.index')}}">Add Available Time</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        <li><a class="parent-item" href="{{route('Todo.index')}}">ToDos</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
-                        <li class="active">Add Time</li>
+                        <li class="active">Re-Assign</li>
                     </ol>
                 </div>
             </div>
@@ -22,38 +22,28 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Add Time</header>
-
+                            <header></header>
                         </div>
                         <div class="card-body" id="bar-parent2">
-                            <form action="{{route('AvailableTime.store')}}" method="post" id="form_sample_2" class="form-horizontal"  enctype="multipart/form-data" autocomplete="on">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <div class="form-body">
-                                    <div class="form-group row margin-top-20">
-
-                                        <label class="col-md-3 control-label">Date:</label>
-                                            <div class="input-append timepicker-orient-bottom ">
-                                                    <select class="form-control col-12 input-append  " name="date_id">
-                                                        <option value="" disabled selected hidden>Select A Date</option>
-                                                        @if($date)
-                                                            @foreach($date as $key=>$date_data)
-
-                                                                <option value="{{$date_data->id}}">{{$date_data->date}}</option>
-                                                            @endforeach
-                                                        @endif
-                                                    </select>
-                                            </div>
-                                    </div>
-
-                                    <div class="form-group row margin-top-20">
-
-                                        <label class="col-md-3 control-label">Time
+                            <form action="{{route('ReAssign',$Todo->id)}}" method="post" id="form_sample_2" class="form-horizontal"  enctype="multipart/form-data" autocomplete="on">
+                                {{csrf_field()}}
+                                <input type="hidden" name="_method" value="PUT">
+                                    <div class="form-group row  margin-top-20">
+                                        <label class="control-label col-md-3">Re-Assigned TO
                                             <span class="required"> * </span>
                                         </label>
-                                        <div class="input-append date timepicker-orient-bottom form_time">
-                                            <input size="30" type="text" value="" required name="time" readonly>
-                                            <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
-                                            <span class="add-on"><i class="fa fa-clock-o"></i></span>
+                                        <div class="col-md-8">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <select class="form-control col-12 input-append" required name="reassignedto">
+                                                    @if(isset($employee))
+                                                        @foreach($employee as $employee_data)
+                                                            <option value="" disabled selected hidden>{{$employee_data->name}}</option>
+                                                            <option value="{{$employee_data->id}}">{{$employee_data->name}}</option>
+                                                        @endforeach
+                                                    @endif
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -79,7 +69,7 @@
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                                               href="index.blade.php">Home</a>&nbsp;<i
+                                                               href="index.html">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
                         <li><a class="parent-item" href="">Forms</a>&nbsp;<i class="fa fa-angle-right"></i>

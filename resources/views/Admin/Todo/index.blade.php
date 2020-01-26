@@ -23,9 +23,9 @@
                     </ol>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="card card-box">
+            <div class="row" style="max-width:100%;">
+                <div class="col-md-12 col-sm-12" style="max-width:100%;">
+                    <div class="card card-box" style="max-width:100%;">
                         <div class="card-head">
                             <header>Avaialable Todo Details</header>
                             <a class="parent-item pull-right btn btn-primary" href="{{ route('Todo.create') }}">Add
@@ -35,45 +35,116 @@
                             <table id="exportTable" class="display nowrap" style="width:100%">
                                 <thead>
                                 <tr>
-                                    <th>User</th>
                                     <th>Title</th>
                                     <th>Description</th>
                                     <th>Assigned Date</th>
                                     <th>Completed Date</th>
                                     <th>Assigned To</th>
-                                    <th>Requested By</th>
+                                    <th>Re-Assigned To</th>
+                                    <th>Assigned By</th>
                                     <th>Deadline</th>
-                                    <th>Status</th>
+                                    <th>Remarks</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($Todos as $Todos_data)
                                     <tr>
-                                        <td>{{$Todos_data->User_id}}</td>
                                         <td>{{$Todos_data->title}}</td>
-                                        <td>{{$Todos_data->description}}</td>
+                                        <td>{!!$Todos_data->description!!}</td>
                                         <td>{{$Todos_data->assignedDate}}</td>
+                                        @if($Todos_data->status==0)
+                                            {{$Todos_data->CompletedDate='Pending'}}
+                                        @else
+                                            {{$Todos_data->CompletedDate}}
+                                        @endif
                                         <td>{{$Todos_data->CompletedDate}}</td>
-                                        <td>{{$Todos_data->assignedTo}}</td>
-                                        <td>{{$Todos_data->requestedBy}}</td>
+                                        <td>{{$Todos_data->employee['name']}}</td>
+                                        <td>{{$Todos_data->reassignto['name']}}</td>
+                                        <td>{{$Todos_data->superadmin['name']}}</td>
                                         <td>{{$Todos_data->DeadLine}}</td>
-                                        <td>{{$Todos_data->status}}</td>
-                                        <td class="text-left">
+                                        <td>{{$Todos_data->remarks  }}</td>
 
-                                            <form action="{{ route('Todo.edit', $Todos_data->id)}}" method="GET"
-                                                  style="display: inline-block">
-                                                {{csrf_field()}}
-                                                <input type="hidden" name="_method" value="PUT">
-                                                <button class="btn btn-primary btn-sm" type="submit"><span class="fa fa-pencil"></span></button>
-                                            </form>
+                                        <td class="valigntop">
+                                            <div class="btn-group">
+                                                <button
+                                                        class="btn btn-xs  dropdown-toggle no-margin"
+                                                        type="button" data-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                    @if($Todos_data->status==0)
+                                                        Pending
+                                                    @else
+                                                        Completed
+                                                    @endif
+                                                    <i class="fa fa-angle-down"></i>
+                                                </button>
+                                                <ul class="dropdown-menu pull-left" role="menu">
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <form action="{{route('pending',$Todos_data->id)}}"
+                                                                  method="post">
+                                                                {{csrf_field()}}
+                                                                <input type="hidden" name="_method" value="PUT">
+                                                                <button class="btn "
+                                                                        type="submit"><span
+                                                                            class=""></span> Pending
+                                                                </button>
+                                                            </form>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <form action="{{route('complete',$Todos_data->id)}}"
+                                                                  method="post">
+                                                                {{csrf_field()}}
+                                                                <input type="hidden" name="_method" value="PUT">
+                                                                <button class="btn " type="submit">
+                                                                    <span class=""></span> Completed
+                                                                </button>
+                                                            </form>
+                                                        </a>
+                                                    </li>
 
-                                            <form action="{{ route('Todo.destroy', $Todos_data->id)}}"
-                                                  method="post" style="display: inline-block">
-                                                {{csrf_field()}}
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <button class="btn btn-danger btn-sm" type="submit"><span class="fa fa-trash-o"></span></button>
-                                            </form>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <form action="{{route('reassign',$Todos_data->id)}}"
+                                                                  method="post">
+                                                                {{csrf_field()}}
+                                                                <input type="hidden" name="_method" value="PUT">
+                                                                <button class="btn " type="submit">
+                                                                    <span class=""></span> Re-assign
+                                                                </button>
+                                                            </form>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <form action="{{ route('Todo.edit', $Todos_data->id)}}"
+                                                                  method="GET"
+                                                                  style="display: inline-block">
+                                                                {{csrf_field()}}
+                                                                <input type="hidden" name="_method" value="PUT">
+                                                                <button class="btn btn-primary btn-sm" type="submit">
+                                                                    <span class="fa fa-pencil"></span></button>
+                                                            </form>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <form action="{{ route('Todo.destroy', $Todos_data->id)}}"
+                                                                  method="post" style="display: inline-block">
+                                                                {{csrf_field()}}
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <button class="btn btn-danger btn-sm" type="submit">
+                                                                    <span class="fa fa-trash-o"></span></button>
+                                                            </form>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
