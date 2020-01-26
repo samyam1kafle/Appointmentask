@@ -32,11 +32,8 @@
                         <div class="card-body ">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6 col-6">
-                                    <div class="btn-group">
-                                        <button id="addRow1" class="btn btn-info">
-                                            Add New <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
+                                    <a class="parent-item btn btn-primary" href="{{ route('service_booked.create') }}">Add
+                                        +</a>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-6">
                                     <div class="btn-group pull-right">
@@ -67,36 +64,35 @@
                                         id="example4">
                                     <thead>
                                     <tr>
-                                        <th>
-                                            <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
-                                                <input type="checkbox" class="group-checkable"
-                                                       data-set="#sample_1 .checkboxes" />
-                                                <span></span>
-                                            </label>
-                                        </th>
-                                        <th> Username </th>
-                                        <th> Email </th>
-                                        <th> Status </th>
-                                        <th> Joined </th>
-                                        <th> Actions </th>
+                                        <th>S.N.</th>
+                                        <th> Booking Id </th>
+                                        <th> Service Id </th>
+                                        <th> Provider Id </th>
+                                        <th> Reciever Id </th>
+                                        <th> Role Id </th>
+                                        <th>Booked Date</th>
+                                        <th>Booked Time</th>
+                                        <th>Available Date</th>
+                                        <th>Available Time</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr class="odd gradeX">
-                                        <td>
-                                            <label class="rt-chkbox rt-chkbox-single rt-chkbox-outline">
-                                                <input type="checkbox" class="checkboxes" value="1" />
-                                                <span></span>
-                                            </label>
-                                        </td>
-                                        <td> shuxer </td>
-                                        <td>
-                                            <a href="mailto:shuxer@gmail.com"> shuxer@gmail.com </a>
-                                        </td>
-                                        <td>
-                                            <span class="label label-sm label-success"> Approved </span>
-                                        </td>
-                                        <td> 12 Jan 2012 </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td class="valigntop">
                                             <div class="btn-group">
                                                 <button
@@ -109,23 +105,32 @@
                                                 <ul class="dropdown-menu pull-left" role="menu">
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <i class="icon-docs"></i> New Post </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-tag"></i> New Comment </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-user"></i> New User </a>
-                                                    </li>
-                                                    <li class="divider"> </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <i class="icon-flag"></i> Comments
-                                                            <span class="badge badge-success">4</span>
+                                                            <form action=""
+                                                                  method="GET"
+                                                                  style="display: inline-block">
+                                                                {{csrf_field()}}
+                                                                {{method_field('PUT')}}
+                                                                <button class="btn btn-primary btn-sm"
+                                                                        type="submit"><span
+                                                                            class="note-icon-pencil"></span> Update
+                                                                </button>
+                                                            </form>
                                                         </a>
                                                     </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <form action=""
+                                                                  method="post"
+                                                                  style="display: inline-block">
+                                                                {{csrf_field()}}
+                                                                {{method_field('DELETE')}}
+                                                                <button class="btn btn-danger btn-sm" type="submit">
+                                                                    <span class="fa fa-trash-o"></span> Delete
+                                                                </button>
+                                                            </form>
+                                                        </a>
+                                                    </li>
+
                                                 </ul>
                                             </div>
                                         </td>

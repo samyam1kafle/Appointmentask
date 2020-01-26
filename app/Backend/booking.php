@@ -11,4 +11,5 @@ class booking extends Model
     public function user_booking(){
         return $this->belongsTo('App\Backend\All_User','User_id');
     }
+
 }

@@ -33,11 +33,8 @@
                         <div class="card-body ">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6 col-6">
-                                    <div class="btn-group">
-                                        <button id="addRow1" class="btn btn-info">
-                                            Add New <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
+                                    <a class="parent-item btn btn-primary" href="{{ route('service_details.create') }}">Add
+                                        +</a>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-6">
                                     <div class="btn-group pull-right">
