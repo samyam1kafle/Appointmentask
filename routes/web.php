@@ -21,7 +21,7 @@ Route::group(['prefix' => '/'], function () {
 
     Route::any('/logout', 'FrontEndControllers\frontEndController@logout')->name('log-out');
 
-    Route::get('/register', 'FrontEndControllers\frontEndController@register')->name('register');
+    Route::any('/register', 'FrontEndControllers\frontEndController@register')->name('register');
 
 
 
@@ -29,7 +29,7 @@ Route::group(['prefix' => '/'], function () {
 });
 
 
-Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin' , 'middleware' => ['auth','super_admin']], function () {
     Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
 
 

@@ -36,6 +36,9 @@
             <div class="top-menu">
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="javascript:;" class="fullscreen-btn"><i class="fa fa-arrows-alt"></i></a></li>
+
+                    <li><a href="{{route('index')}}"><i class="fa fa-home pull-left">Home</i></a></li>
+
                     <!-- start language menu -->
 
                     <!-- end language menu -->
