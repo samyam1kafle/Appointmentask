@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BookingValidator extends FormRequest
+class ServiceCancelValidator extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class BookingValidator extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,11 +24,8 @@ class BookingValidator extends FormRequest
     public function rules()
     {
         return [
-            'User_id' => 'required|integer',
-            'service_id' => 'required|integer',
-            'booking_date' => 'required|date',
-            'booking_time' => 'required',
-            'status' => 'required',
+            'status' => 'nullable|in:1',
+            'Booked_id' => 'required|integer',
         ];
     }
 }

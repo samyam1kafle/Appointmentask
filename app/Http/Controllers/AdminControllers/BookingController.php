@@ -91,7 +91,7 @@ class BookingController extends Controller
     {
         $book = Booking::find($id);
 
-
+        $book->name = $request->name;
         $book->User_id = $request->User_id;
         $book->service_id = $request->service_id;
         $book->booking_date = $request->booking_date;

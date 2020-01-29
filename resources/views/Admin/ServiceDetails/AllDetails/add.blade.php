@@ -27,7 +27,7 @@
 
                         </div>
                         <div class="card-body" id="bar-parent2">
-                            <form action="{{route('service_details.update',$service_details_id->id)}}" id="form_sample_2" class="form-horizontal"
+                            <form action="{{route('service_details.store')}}" id="form_sample_2" class="form-horizontal"
                                   method="post"
                                   autocomplete="on">
                                 {{ csrf_field() }}
@@ -40,11 +40,11 @@
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="users">
                                                 <option value="0" selected>None</option>
-                                                @foreach($users as $user)
-                                                    @foreach($user as $us)
-                                                        <option value="{{$us->id}}">{{$us->name}}</option>
+                                                    @foreach($users as $user)
+                                                        @foreach($user as $us)
+                                                            <option value="{{$us->id}}">{{$us->name}}</option>
+                                                        @endforeach
                                                     @endforeach
-                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -57,9 +57,9 @@
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="booked_id">
                                                 <option value="0" selected>None</option>
-                                                @foreach($servBookedId as $servBooked)
-                                                    <option value="{{$servBooked->id}}">{{$servBooked->name}}</option>
-                                                @endforeach
+                                                    @foreach($servBookedId as $servBooked)
+                                                        <option value="{{$servBooked->id}}">{{$servBooked->name}}</option>
+                                                    @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -72,9 +72,9 @@
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="cancel_id">
                                                 <option value="0" selected>None</option>
-                                                @foreach($servCancelId as $servCancel)
+                                                    @foreach($servCancelId as $servCancel)
                                                     <option value="{{$servCancel->id}}">{{$servCancel->id}}</option>
-                                                @endforeach
+                                                        @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -86,10 +86,10 @@
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="reschedule_id">
-                                                <option value="0" selected>None</option>
-                                                @foreach($servRescheduleId as $servReschedule)
+                                                    <option value="0" selected>None</option>
+                                                    @foreach($servRescheduleId as $servReschedule)
                                                     <option value="{{$servReschedule->id}}">{{$servReschedule->name}}</option>
-                                                @endforeach
+                                                        @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -103,8 +103,8 @@
                                             <select class="form-control  select2" name="complete_id">
                                                 <option value="0" selected>None</option>
                                                 @foreach($servCompleteId as $servComplete)
-                                                    <option value="{{$servComplete->id}}">{{$servComplete->name}}</option>
-                                                @endforeach
+                                                <option value="{{$servComplete->id}}">{{$servComplete->name}}</option>
+                                                    @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -118,8 +118,8 @@
                                             <select class="form-control  select2" name="booking_id">
                                                 <option value="0" selected>None</option>
                                                 @foreach($bookingId as $booking)
-                                                    <option value="{{$booking->id}}">{{$booking->name}}</option>
-                                                @endforeach
+                                                <option value="{{$booking->id}}">{{$booking->name}}</option>
+                                                    @endforeach
                                             </select>
                                         </div>
                                     </div>
