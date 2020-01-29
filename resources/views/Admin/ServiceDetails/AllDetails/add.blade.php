@@ -32,35 +32,19 @@
                                   autocomplete="on">
                                 {{ csrf_field() }}
                                 <div class="form-body">
-                                    {{--<div class="form-group row  margin-top-20">--}}
-                                    {{--<label class="control-label col-md-3">Name--}}
-                                    {{--<span class="required"> * </span>--}}
-                                    {{--</label>--}}
-                                    {{--<div class="col-md-8">--}}
-                                    {{--<div class="input-icon right">--}}
-                                    {{--<i class="fa"></i>--}}
-                                    {{--<input type="text" class="form-control" name="name"/></div>--}}
-                                    {{--</div>--}}
-                                    {{--</div>--}}
-
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">User
+                                        <label class="control-label col-md-3">Username
                                             <span class="required"> * </span>
                                         </label>
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="users">
                                                 <option value="0" selected>None</option>
-                                                <optgroup label="User">
-                                                    @foreach($user as $users)
-                                                        @foreach($user as $usr)
-                                                            @foreach($usr as $u )
-                                                                <option value="{{ $u->id }}">{{ $u->name }}</option>
-                                                            @endforeach
+                                                    @foreach($users as $user)
+                                                        @foreach($user as $us)
+                                                            <option value="{{$us->id}}">{{$us->name}}</option>
                                                         @endforeach
-
                                                     @endforeach
-                                                </optgroup>
                                             </select>
                                         </div>
                                     </div>
@@ -73,13 +57,9 @@
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="booked_id">
                                                 <option value="0" selected>None</option>
-
-                                                <optgroup label="Booked">
-                                                    @foreach($bookingId as $booked)
-                                                        <option value="{{$booked->id}}">{{$booked->name}}</option>
+                                                    @foreach($servBookedId as $servBooked)
+                                                        <option value="{{$servBooked->id}}">{{$servBooked->name}}</option>
                                                     @endforeach
-                                                </optgroup>
-
                                             </select>
                                         </div>
                                     </div>
@@ -91,12 +71,10 @@
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="cancel_id">
-                                                <option value=""></option>
-                                                <optgroup label="Cancel">
-                                                    <option value="0" selected>None</option>
-
-                                                </optgroup>
-
+                                                <option value="0" selected>None</option>
+                                                    @foreach($servCancelId as $servCancel)
+                                                    <option value="{{$servCancel->id}}">{{$servCancel->id}}</option>
+                                                        @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -108,12 +86,10 @@
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="reschedule_id">
-                                                <option value=""></option>
-                                                <optgroup label="Rescheduled">
                                                     <option value="0" selected>None</option>
-
-                                                </optgroup>
-
+                                                    @foreach($servRescheduleId as $servReschedule)
+                                                    <option value="{{$servReschedule->id}}">{{$servReschedule->name}}</option>
+                                                        @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -125,12 +101,10 @@
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="complete_id">
-                                                <option value=""></option>
-                                                <optgroup label="Complete">
-                                                    <option value="0" selected>None</option>
-
-                                                </optgroup>
-
+                                                <option value="0" selected>None</option>
+                                                @foreach($servCompleteId as $servComplete)
+                                                <option value="{{$servComplete->id}}">{{$servComplete->name}}</option>
+                                                    @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -142,18 +116,14 @@
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="booking_id">
-                                                <option value=""></option>
-                                                <optgroup label="Booking">
-                                                    <option value="0" selected>None</option>
-
-                                                </optgroup>
-
+                                                <option value="0" selected>None</option>
+                                                @foreach($bookingId as $booking)
+                                                <option value="{{$booking->id}}">{{$booking->name}}</option>
+                                                    @endforeach
                                             </select>
                                         </div>
                                     </div>
-
                                 </div>
-
 
                                 <div class="form-group">
                                     <div class="offset-md-3 col-md-9">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Backend\Booking;
+use App\Backend\Roles;
+use App\Backend\Service;
 use App\Backend\All_User;
 use App\Http\Requests\BookingValidator;
 
@@ -28,8 +30,15 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $bookings = Booking::orderBy('id','desc')->get();
-        return view('Admin/Booking/create',compact('bookings'));
+        $role = Roles::where('name','=','subscriber')->first();
+        $guest = Roles::where('name','=','guest')->first();
+        $users = All_User::where('role_id','=',$role->id)->get();
+        $guests = All_User::where('role_id','=',$guest->id)->get();
+        $users = [$users ,$guests];
+
+        $services = Service::orderBy('id','desc')->get();
+
+        return view('Admin/Booking/create',compact('users','services','role'));
     }
 
     /**
@@ -68,7 +77,7 @@ class BookingController extends Controller
         $bookings = Booking::all();
         $book_id = Booking::findOrFail($id);
         $users = All_User::all();
-        return view('Admin/Booking/edit', compact('bookings','book_id'));
+        return view('Admin/Booking/edit', compact('bookings','book_id','users'));
     }
 
     /**
@@ -82,7 +91,7 @@ class BookingController extends Controller
     {
         $book = Booking::find($id);
 
-
+        $book->name = $request->name;
         $book->User_id = $request->User_id;
         $book->service_id = $request->service_id;
         $book->booking_date = $request->booking_date;

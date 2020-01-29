@@ -48,7 +48,11 @@
                                     <tr>
                                         <td>{{$depart->id}}</td>
                                         <td>{{$depart->name}}</td>
+                                        @if($depart->parent_id)
                                         <td>{{$depart->parent_id}}</td>
+                                        @else
+                                        <td>Default Parent</td>
+                                        @endif
                                         <td>{!! $depart->description !!}</td>
                                         <td class="text-left">
                                         

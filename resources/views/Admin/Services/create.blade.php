@@ -44,16 +44,19 @@
                                     </div>                            
                                     
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">User ID
+                                        <label class="control-label col-md-3">User
                                             <span class="required"> * </span>
                                         </label>
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="User_id">
-                                                <option value=""></option>
+                                            <option value="0" selected>None</option>
                                                 <optgroup label="User">
-                                                <option value="0" selected>None</option>
-                                               
+                                                @foreach($users as $usr)
+                                                     @foreach($usr as $u)                                                                
+                                                    <option value="{{ $u->id }}">{{ $u->name }}</option>
+                                                    @endforeach
+                                                @endforeach
                                                 </optgroup>
 
                                             </select>
@@ -61,16 +64,17 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Department ID
+                                        <label class="control-label col-md-3">Department
                                             <span class="required"> * </span>
                                         </label>
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="Department_id">
-                                                <option value=""></option>
+                                                <option value="0" selected>None</option>                                        
                                                 <optgroup label="Department">
-                                                <option value="0" selected>None</option>
-                                                
+                                                @foreach($department as $dept) 
+                                                     <option value="{{ $dept->id }}">{{ $dept->name }}</option>
+                                                @endforeach
                                                 </optgroup>
 
                                             </select>

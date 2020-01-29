@@ -5,6 +5,9 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Backend\Service;
+use App\Backend\All_User;
+use App\Backend\Roles;
+use App\Backend\Department;
 use App\Http\Requests\ServicesValidator;
 
 class ServicesController extends Controller
@@ -27,8 +30,14 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        $services = Service::orderBy('id','desc')->get();
-        return view('Admin/Services/create',compact('services'));
+        $role = Roles::where('name','=','subscriber')->first();
+        $guest = Roles::where('name','=','guest')->first();
+        $users = All_User::where('role_id','=',$role->id)->get();
+        $guests = All_User::where('role_id','=',$guest->id)->get();
+        $users = [$users ,$guests];
+        $department = Department::orderBy('id','desc')->get();
+ 
+        return view('Admin/Services/create',compact('users','department'));
     }
 
     /**
@@ -66,7 +75,15 @@ class ServicesController extends Controller
     {
         $services = Service::all();
         $service_id = Service::findOrFail($id);
-        return view('Admin/Services/edit', compact('services','service_id'));
+
+        $role = Roles::where('name','=','subscriber')->first();
+        $guest = Roles::where('name','=','guest')->first();
+        $users = All_User::where('role_id','=',$role->id)->get();
+        $guests = All_User::where('role_id','=',$guest->id)->get();
+        $users = [$users ,$guests];
+        $department = Department::orderBy('id','desc')->get();
+
+        return view('Admin/Services/edit', compact('services','service_id','users','department'));
     }
 
     /**

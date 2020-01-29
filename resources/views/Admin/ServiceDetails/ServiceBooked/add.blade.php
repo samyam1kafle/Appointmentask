@@ -44,21 +44,17 @@
                                     {{--</div>--}}
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">User
+                                        <label class="control-label col-md-3">Booking Id
                                             <span class="required"> * </span>
                                         </label>
 
                                         <div class="col-md-8">
-                                            <select class="form-control  select2" name="users">
+                                            <select class="form-control  select2" name="booking_id">
                                                 <option value="0" selected>None</option>
-                                                <optgroup label="User">
-                                                    {{--@foreach($user as $users)--}}
-                                                    {{--@foreach($user as $usr)--}}
-                                                    {{--@foreach($usr as $u )--}}
-                                                    {{--<option value="{{ $u->id }}">{{ $u->name }}</option>--}}
-                                                    {{--@endforeach--}}
-                                                    {{--@endforeach--}}
-                                                    {{--@endforeach--}}
+                                                <optgroup label="Booking">
+                                                    @foreach($bookingId as $bookingIds)
+                                                        <option value="{{$bookingIds->id}}">{{$bookingIds->name}}</option>
+                                                    @endforeach
                                                 </optgroup>
                                             </select>
                                         </div>

@@ -46,4 +46,5 @@ class All_User extends Auth
     public function booking(){
         return $this->hasMany('App\Backend\booking');
     }
+
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminControllers;
 use App\Http\Controllers\Controller;
 use App\Backend\service_cancel;
 use App\Backend\service_detail;
+use App\Http\Requests\ServiceCancelValidator;
 use Illuminate\Http\Request;
 
 class ServiceCancelController extends Controller
@@ -39,11 +40,9 @@ class ServiceCancelController extends Controller
      */
     public function store(ServiceCancelValidator $request)
     {
-        $servCancel = new service_cancel([
-            'Booked_id' => $request->Booked_id,
-            'status' => 1
-        ]);
-
+        $servCancel = new service_cancel;
+        $servCancel->status = $request->status;
+        $servCancel->Booked_id = $request->Booked_id;
         $servCancels = $servCancel->save();
         if ($servCancels) {
             return redirect()->route('service_cancel.index')->with('success', 'Service Cancel Successful');

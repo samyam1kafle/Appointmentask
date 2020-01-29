@@ -24,7 +24,7 @@ class ServiceCancelValidator extends FormRequest
     public function rules()
     {
         return [
-            'status' => 'required|integer',
+            'status' => 'nullable|in:1',
             'Booked_id' => 'required|integer',
         ];
     }

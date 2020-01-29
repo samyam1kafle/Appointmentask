@@ -30,13 +30,10 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-body">
                                     <div class="form-group row  margin-top-20">
-                                        <label class="control-label col-md-3">User
-                                            <span class="required"> * </span>
-                                        </label>
                                         <div class="col-md-8">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <input type="text" class="form-control" value="1" required name="User_id"/></div>
+                                                <input type="hidden" class="form-control" value="{{Auth::user()->id}}" required readonly name="User_id"/></div>
                                         </div>
                                     </div>
                                     <div class="form-group row  margin-top-20">
@@ -77,16 +74,9 @@
                                     </div>
 
                                     <div class="form-group row margin-top-20">
-                                        <label class="col-md-3 control-label">Completed Date
-                                            <span class="required"> * </span>
-                                        </label>
                                         <div class="col-md-8">
-                                            <div class="input-append  date form_date"  data-date-format="yy-m-d H:i:s"
-                                                 data-date="2013-02-21T15:25:00Z">
-                                                <input size="30" type="text"  required readonly name="CompletedDate">
-                                                <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
-                                                <span class="add-on"><i class="fa fa-calendar"></i></span>
-
+                                            <div>
+                                                <input size="30" type="hidden"   readonly name="CompletedDate">
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +87,15 @@
                                         <div class="col-md-8">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <input type="text" class="form-control" required name="assignedTo"/></div>
+                                                <select class="form-control col-12 input-append" required name="assignedTo">
+                                                    <option value="" disabled selected hidden>--Select--</option>
+                                                    @if(isset($employee))
+                                                        @foreach($employee as $employee_data)
+                                                            <option value="{{$employee_data->id}}">{{$employee_data->name}}</option>
+                                                        @endforeach
+                                                    @endif
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group row  margin-top-20">
@@ -107,9 +105,17 @@
                                         <div class="col-md-8">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <input type="text" class="form-control" required name="requestedBy"/></div>
+                                                <select class="form-control col-12 input-append" required name="requestedBy">
+                                                    <option value="" disabled selected hidden>--Select--</option>
+                                                    @if(isset($superadmin))
+                                                        @foreach($superadmin as $superadmin_data)
+                                                    <option value="{{$superadmin_data->id}}">{{$superadmin_data->name}}</option>
+                                                        @endforeach
+                                                    @endif
+                                                </select>
                                         </div>
                                     </div>
+                                </div>
                                     <div class="form-group row margin-top-20">
                                         <label class="col-md-3 control-label">Deadline
                                             <span class="required"> * </span>
@@ -137,6 +143,17 @@
                                                 </select>
                                             </div>
                                     </div>
+                                    </div>
+                                    <div class="form-group row  margin-top-20">
+                                        <label class="control-label col-md-3">Remarks
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-8">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <textarea name="remarks" class="form-control" id="editor" cols="30" required rows="10" ></textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="offset-md-3 col-md-9">

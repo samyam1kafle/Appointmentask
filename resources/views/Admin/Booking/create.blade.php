@@ -30,17 +30,33 @@
                             <form action="{{route('bookings.store')}}" id="form_sample_2" class="form-horizontal"
                                   method="post"
                                    autocomplete="on">
-                                   {{csrf_field()}}                                    
+                                   {{csrf_field()}}    
+
+                                   {{--<div class="form-group row  margin-top-20">--}}
+                                        {{--<label class="control-label col-md-3">Name--}}
+                                            {{--<span class="required"> * </span>--}}
+                                        {{--</label>--}}
+                                        {{--<div class="col-md-8">--}}
+                                            {{--<div class="input-icon right">--}}
+                                                {{--<i class="fa"></i>--}}
+                                                {{--<input type="text" class="form-control" value="" name="name"/></div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">User ID
+                                        <label class="control-label col-md-3">User
                                             <span class="required"> * </span>
                                         </label>
 
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="User_id">
-                                                <option value=""></option>
-                                                <optgroup label="User">
                                                 <option value="0" selected>None</option>
+                                                <optgroup label="User">
+                                                    @foreach($users as $user)
+                                                    @foreach($user as $usr)
+                                                        <option value="{{ $usr->id }}">{{$usr->name}}</option>
+                                                    @endforeach
+                                                    @endforeach
                                                 </optgroup>
 
                                             </select>
@@ -48,14 +64,16 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Service ID
+                                        <label class="control-label col-md-3">Service
                                             <span class="required"> * </span>
                                         </label>
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="service_id">
-                                                <option value=""></option>
+                                            <option value="0" selected>None</option> 
                                                 <optgroup label="Services">
-                                                    <option value="0" selected>None</option>                                                                                          
+                                                @foreach($services as $service)                   
+                                                    <option value="{{ $service->id }}">{{$service->name}}</option>  
+                                                @endforeach                                                                                          
                                                 </optgroup>
                                             </select>
                                         </div>

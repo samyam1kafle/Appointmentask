@@ -72,22 +72,20 @@
                                     </thead>
                                     <tbody>
                                     <tr class="odd gradeX">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        @foreach($serv_cancel as $key => $servCancel)
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{$servCancel->Booked_id}}</td>
+                                        <td>
+                                            @if($servCancel->status == 1)
+                                                <span class="label label-rouded label-menu label-success">Active</span>
+                                            @else
+                                                <span class="label label-rouded label-menu label-danger">InActive</span>
+                                            @endif
+                                        </td>
                                         <td class="valigntop">
-                                            <div class="btn-group">
-                                                <button
-                                                        class="btn btn-xs deepPink-bgcolor dropdown-toggle no-margin"
-                                                        type="button" data-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                    Actions
-                                                    <i class="fa fa-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu pull-left" role="menu">
-                                                    <li>
+
                                                         <a href="javascript:;">
-                                                            <form action=""
+                                                            <form action="{{ route('service_cancel.edit', $servCancel->id)}}"
                                                                   method="GET"
                                                                   style="display: inline-block">
                                                                 {{csrf_field()}}
@@ -98,10 +96,9 @@
                                                                 </button>
                                                             </form>
                                                         </a>
-                                                    </li>
-                                                    <li>
+
                                                         <a href="javascript:;">
-                                                            <form action=""
+                                                            <form action="{{ route('service_cancel.destroy', $servCancel->id)}}"
                                                                   method="post"
                                                                   style="display: inline-block">
                                                                 {{csrf_field()}}
@@ -111,11 +108,8 @@
                                                                 </button>
                                                             </form>
                                                         </a>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
                                         </td>
+                                            @endforeach
                                     </tr>
                                     </tbody>
                                 </table>

@@ -77,86 +77,29 @@
                                     </thead>
                                     <tbody>
                                     <tr class="odd gradeX">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="valigntop">
-                                            <div class="btn-group">
-                                                <button
-                                                        class="btn btn-xs deepPink-bgcolor dropdown-toggle no-margin"
-                                                        type="button" data-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                    Actions
-                                                    <i class="fa fa-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu pull-left" role="menu">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <form action=""
-                                                                  method="GET"
-                                                                  style="display: inline-block">
-                                                                {{csrf_field()}}
-                                                                {{method_field('PUT')}}
-                                                                <button class="btn btn-primary btn-sm"
-                                                                        type="submit"><span
-                                                                            class="note-icon-pencil"></span> Update
-                                                                </button>
-                                                            </form>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <form action=""
-                                                                  method="post"
-                                                                  style="display: inline-block">
-                                                                {{csrf_field()}}
-                                                                {{method_field('DELETE')}}
-                                                                <button class="btn btn-danger btn-sm" type="submit">
-                                                                    <span class="fa fa-trash-o"></span> Delete
-                                                                </button>
-                                                            </form>
-                                                        </a>
-                                                    </li>
+                                        @foreach($service_details as $key=> $service_detail)
+                                        <td>{{ $key+1 }}</td>
+                                        <td>{{$service_detail->users}}</td>
+                                        <td>{{$service_detail->booked_id}}</td>
+                                        <td>{{$service_detail->cancel_id}}</td>
+                                        <td>{{$service_detail->reschedule_id}}</td>
+                                        <td>{{$service_detail->complete_id}}</td>
+                                        <td>{{$service_detail->booking_id}}</td>
+                                        <td class="text-left">
 
-                                                </ul>
-                                            </div>
+                                            <form action="{{ route('service_details.edit', $service_detail->id)}}" method="GET" style="display: inline-block">
+                                                {{csrf_field()}}
+                                                {{method_field('PUT')}}
+                                                <button class="btn btn-primary btn-sm" type="submit">Edit</button>
+                                            </form>
+
+                                            <form action="{{ route('service_details.destroy', $service_detail->id)}}" method="post" style="display: inline-block">
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+                                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                            </form>
                                         </td>
-                                        {{--<td class="valigntop">--}}
-                                            {{--<div class="btn-group">--}}
-                                                {{--<button--}}
-                                                        {{--class="btn btn-xs deepPink-bgcolor dropdown-toggle no-margin"--}}
-                                                        {{--type="button" data-toggle="dropdown"--}}
-                                                        {{--aria-expanded="false">--}}
-                                                    {{--Actions--}}
-                                                    {{--<i class="fa fa-angle-down"></i>--}}
-                                                {{--</button>--}}
-                                                {{--<ul class="dropdown-menu pull-left" role="menu">--}}
-                                                    {{--<li>--}}
-                                                        {{--<a href="javascript:;">--}}
-                                                            {{--<i class="icon-docs"></i> New Post </a>--}}
-                                                    {{--</li>--}}
-                                                    {{--<li>--}}
-                                                        {{--<a href="javascript:;">--}}
-                                                            {{--<i class="icon-tag"></i> New Comment </a>--}}
-                                                    {{--</li>--}}
-                                                    {{--<li>--}}
-                                                        {{--<a href="javascript:;">--}}
-                                                            {{--<i class="icon-user"></i> New User </a>--}}
-                                                    {{--</li>--}}
-                                                    {{--<li class="divider"></li>--}}
-                                                    {{--<li>--}}
-                                                        {{--<a href="javascript:;">--}}
-                                                            {{--<i class="icon-flag"></i> Comments--}}
-                                                            {{--<span class="badge badge-success">4</span>--}}
-                                                        {{--</a>--}}
-                                                    {{--</li>--}}
-                                                {{--</ul>--}}
-                                            {{--</div>--}}
-                                        {{--</td>--}}
+                                        @endforeach
                                     </tr>
                                     </tbody>
                                 </table>
