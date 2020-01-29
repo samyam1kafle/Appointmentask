@@ -92,19 +92,36 @@
                                     <li class="nav-item">
                                         <a href="{{route('department.index')}}" class="nav-link "> <span class="title">All
 												Departments</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </li>
 
-                            <li class="nav-item">
 
-                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
-                                    <span class="title">ToDo</span> <span class="arrow"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{route('Todo.index')}}" class="nav-link "> <span class="title">
+
+                        <li class="nav-item">
+                        <a href="#" class="nav-link nav-toggle"> <i class="material-icons">book</i>
+                                <span class="title">Bookings</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('bookings.index')}}" class="nav-link "> <span class="title">All
+												Bookings</span>
+                          </a>
+                                </li>
+                               
+                            </ul>
+                        </li>  
+
+                        <li class="nav-item">
+                          
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                                <span class="title">ToDo</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('Todo.index')}}" class="nav-link "> <span class="title">
 												View All ToDo</span>
                                         </a>
                                     </li>
@@ -128,6 +145,8 @@
                                     </li>
                                 </ul>
                             </li>
+
+
 
                         @endif
 
@@ -187,12 +206,16 @@
                             <ul class="sub-menu">
                                 <li class="nav-item">
                                     <a href="{{route('Date_Time.index')}}" class="nav-link "> <span class="title">
-												View All Date and Time</span>
+
+												View Date and Time</span>
+
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('Date_Time.create')}}" class="nav-link "> <span class="title">
-												Add New Date and Time</span>
+
+												Add Date and Time</span>
+
                                     </a>
                                 </li>
                             </ul>
