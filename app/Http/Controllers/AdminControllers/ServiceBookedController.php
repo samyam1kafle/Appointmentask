@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\AdminControllers;
 
 use App\Http\Controllers\Controller;
+use App\Backend\booking;
+use App\Backend\Service;
 use Illuminate\Http\Request;
 
 class ServiceBookedController extends Controller
@@ -14,7 +16,7 @@ class ServiceBookedController extends Controller
      */
     public function index()
     {
-        return view('Admin.ServiceDetails.ServiceBooked.view');
+        return view('Admin/ServiceDetails/ServiceBooked.view');
     }
 
     /**
@@ -24,7 +26,11 @@ class ServiceBookedController extends Controller
      */
     public function create()
     {
-        //
+        $bookingId= booking::orderBy('id','desc')->get();
+        $serviceId= Service::orderBy('id','desc')->get();
+
+        return view('Admin/ServiceDetails/ServiceBooked/add',compact('bookingId','serviceId'));
+
     }
 
     /**
@@ -35,7 +41,11 @@ class ServiceBookedController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $serviceId->service_id = $request->service_id;
+        $add = $serviceId->save();
+        if($add){
+            return redirect()->route('service_booked.index')->with('success','New Service Details has been created Successfully');
+        }
     }
 
     /**

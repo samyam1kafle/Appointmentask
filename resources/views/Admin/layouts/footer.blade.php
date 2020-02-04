@@ -38,6 +38,7 @@
 <!-- Data Table -->
 <script src="{{asset('Admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('Admin/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('Admin/assets/js/pages/table/table_data.js')}}"></script>
 <script src="{{asset('Admin/assets/plugins/datatables/export/dataTables.buttons.min.js')}}"></script>
 <script src="{{asset('Admin/assets/plugins/datatables/export/buttons.flash.min.js')}}"></script>
 <script src="{{asset('Admin/assets/plugins/datatables/export/jszip.min.js')}}"></script>
@@ -45,7 +46,6 @@
 <script src="{{asset('Admin/assets/plugins/datatables/export/vfs_fonts.js')}}"></script>
 <script src="{{asset('Admin/assets/plugins/datatables/export/buttons.html5.min.js')}}"></script>
 <script src="{{asset('Admin/assets/plugins/datatables/export/buttons.print.min.js')}}"></script>
-<script src="{{asset('Admin/assets/js/pages/table/table_data.js')}}"></script>
 <!-- end js include path -->
 
 <!-- Date Time Picker scripts -->
@@ -68,14 +68,12 @@
 <script src="{{asset('Admin/assets/js/pages/select2/select2-init.js')}}"></script>
 <!--select2-->
 
-<!--Ck Editor CDN-->
-<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+<!--Unisharp Ck Editor -->
+<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    $('textarea').ckeditor();
+    // $('.textarea').ckeditor(); // if class is prefered.
 </script>
 <!--Ck Editor -->
 
@@ -100,6 +98,9 @@
     @endif
 
 </script>
+
+<script src="{{asset('Admin/assets/js/front_js/global.js')}}"></script>
+<script src="{{asset('Admin/assets/js/front_js/jquery-ui.min.js')}}"></script>
 
 </body>
 

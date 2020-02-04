@@ -69,6 +69,18 @@
                         Forgot Password?
                     </a>
                 </div>
+                <br>
+                <div class="social-auth-links text-center mb-3">
+                    <a href="{{url('login/google')}}" class="btn btn-block btn-danger">
+                    <i class="fa fa-google-plus mr-2"></i> Sign in using Google+
+                    </a>
+                    <p>- OR -</p>
+                    <a href="{{url('login/facebook')}}" class="btn btn-block btn-primary">
+                        <i class="fa fa-facebook mr-2"></i> Sign in using Facebook
+                    </a>
+
+                </div>
+
             </form>
         </div>
     </div>

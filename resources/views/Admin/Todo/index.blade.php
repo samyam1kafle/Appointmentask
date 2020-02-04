@@ -31,7 +31,7 @@
                             <a class="parent-item pull-right btn btn-primary" href="{{ route('Todo.create') }}">Add
                                 +</a>
                         </div>
-                        <div class="card-body " id="bar-parent">
+                        <div class="table-scrollable " id="bar-parent">
                             <table id="exportTable" class="display nowrap" style="width:100%">
                                 <thead>
                                 <tr>
