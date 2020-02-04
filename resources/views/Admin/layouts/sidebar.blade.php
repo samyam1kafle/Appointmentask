@@ -198,6 +198,8 @@
                                 <li class="nav-item">
                                     <a href="{{route('Date_Time.create')}}" class="nav-link "> <span class="title">
 
+												Add New Date and Time</span>
+
 												Add Date and Time</span>
 
                                     </a>

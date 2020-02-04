@@ -49,8 +49,8 @@
                                     <tr>
                                         <td>{{$service->id}}</td>
                                         <td>{{$service->name}}</td>
-                                        <td>{{$service->User_id}}</td>
-                                        <td>{{$service->Department_id}}</td>
+                                        <td>{{$service->user_service['name']}}</td>
+                                        <td>{{$service->ser_depart['name']}}</td>
                                         <td>{!! $service->Service_description !!}</td>
                                         <td class="text-left">
                                         
