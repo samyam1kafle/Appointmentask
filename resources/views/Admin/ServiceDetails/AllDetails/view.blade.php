@@ -67,11 +67,11 @@
                                     <tr>
                                         <th>S.N</th>
                                         <th> Username</th>
-                                        <th> Booked_id</th>
-                                        <th> Cancel_id</th>
-                                        <th> Reschedule_id</th>
-                                        <th> Complete_id </th>
-                                        <th> Booking_id </th>
+                                        <th> Service Booked</th>
+                                        <th> Service Cancel</th>
+                                        <th> Service Reschedule</th>
+                                        <th> Service Complete </th>
+                                        <th> Booking </th>
                                         <th> Actions</th>
                                     </tr>
                                     </thead>
