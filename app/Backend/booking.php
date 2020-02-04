@@ -12,4 +12,8 @@ class booking extends Model
         return $this->belongsTo('App\Backend\All_User','User_id');
     }
 
+
+    public function ser_booking(){
+        return $this->belongsTo('App\Backend\Service','service_id');
+    }
 }
