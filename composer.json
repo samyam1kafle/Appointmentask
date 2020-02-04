@@ -5,9 +5,10 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.2.18",
+        "php": ">=7.4.2",
         "intervention/image": "^2.5",
-        "laravel/framework": "5.4.36",
+        "laravel/framework": "5.8.*",
+        "laravel/socialite": "^4.3",
         "laravel/tinker": "~1.0",
         "unisharp/laravel-ckeditor": "^4.7",
         "uxweb/sweet-alert": "^1.4"
