@@ -13,6 +13,7 @@
 
 Auth::routes(['verify' => true]);
 
+
 Route::group(['prefix' => '/'], function () {
 
     Route::get('/', 'FrontEndControllers\frontEndController@index')->name('index');
@@ -22,6 +23,10 @@ Route::group(['prefix' => '/'], function () {
     Route::any('/logout', 'FrontEndControllers\frontEndController@logout')->name('log-out');
 
     Route::any('/register', 'FrontEndControllers\frontEndController@register')->name('register');
+
+    /*Social Login Routes*/
+    Route::get('login/{service}', 'AdminControllers\socialLoginController@redirectToProvider');
+    Route::get('login/{service}/callback', 'AdminControllers\socialLoginController@handleProviderCallback');
 
 
 });
