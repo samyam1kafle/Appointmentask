@@ -66,7 +66,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">school</i>
+                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">people</i>
                                     <span class="title">User Roles</span> <span class="arrow"></span>
                                 </a>
                                 <ul class="sub-menu">
@@ -116,7 +116,7 @@
 
                         <li class="nav-item">
                           
-                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">assignment</i>
                                 <span class="title">ToDo</span> <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
@@ -133,18 +133,7 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">book</i>
-                                    <span class="title">Bookings</span> <span class="arrow"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{route('bookings.index')}}" class="nav-link "> <span class="title">All
-												Bookings</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                            
 
 
 
@@ -200,7 +189,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">date_range</i>
                                 <span class="title"> Date And Time</span> <span class="arrow"></span>
                             </a>
                             <ul class="sub-menu">
@@ -229,6 +218,6 @@
         <!-- end sidebar menu -->
 
 
-    {{--</div>--}}
+   
     <!-- end page container -->
 @endsection

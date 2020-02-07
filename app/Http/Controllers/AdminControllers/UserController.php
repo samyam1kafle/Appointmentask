@@ -48,7 +48,7 @@ class UserController extends Controller
     {
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $name = time() . $image->getClientOriginalExtension();
+            $name = time() .'.'. $image->getClientOriginalExtension();
             $resize = Image::make($image);
             $resize->resize('600', '600')->save('Uploads/users/thumbnails/' . $name);
         }
@@ -112,7 +112,7 @@ class UserController extends Controller
                 unlink(public_path() . '/Uploads/users/thumbnails/' . $user->image);
             }
             $featured = $request->file('image');
-            $name = time(). $featured->getClientOriginalExtension();
+            $name = time().'.'. $featured->getClientOriginalExtension();
 
             $resize = Image::make($featured);
             $resize->resize('600','600')->save('Uploads/users/thumbnails/' .$name);
