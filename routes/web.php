@@ -35,15 +35,8 @@ Route::group(['prefix' => '/'], function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
 
-
-    Route::resource('/AvailableDate', 'AdminControllers\Available_DateController');
-    Route::resource('/AvailableTime', 'AdminControllers\Available_TimeController');
     Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
-
     Route::resource('/bookings', 'AdminControllers\BookingController');
-
-
-
 //    Service Details Route
 
     Route::resource('/services', 'AdminControllers\ServicesController');
