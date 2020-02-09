@@ -20,7 +20,16 @@ class ServicesController extends Controller
     public function index()
     {
         $services = Service::orderBy('id','desc')->get();
-        return view('Admin/Services/index',compact('services'));
+
+        $role = Roles::where('name','=','subscriber')->first();
+        $guest = Roles::where('name','=','guest')->first();
+        $users = All_User::where('role_id','=',$role->id)->get();
+        $guests = All_User::where('role_id','=',$guest->id)->get();
+        $users = [$users ,$guests];
+
+        $department = Department::orderBy('id','desc')->get();
+        
+        return view('Admin/Services/index',compact('services','users','department'));
     }
 
     /**
