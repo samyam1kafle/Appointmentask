@@ -72,6 +72,13 @@
                             <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
                     </div>
+                    <div class="container-login100-form">
+                        <label for="image">Upload Profile picture</label>
+                        <button class="login100-form-btn form-control">
+                            <input type="file" name="image">
+                        </button>
+                    </div>
+
 
                     <div class="col-lg-12">
                         <div class="container card-body" id="bar-parent3">
@@ -88,28 +95,34 @@
                             </label>
                         </div>
 
-                        <br>
+
                     </div>
 
 
-                    <div class="container-login100-form-btn">
-                        <label for="image">Upload Profile picture</label>
-                        <button class="login100-form-btn">
-                            <input type="file" name="image">
-                        </button>
-                    </div>
+
                 </div>
                 <br>
-                <div class="contact100-form-checkbox">
-                    <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember" value="1">
-                    <label class="label-checkbox100" for="ckb1">
-                        Remember me
-                    </label>
-                </div>
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                {{--<div class="contact100-form-checkbox">--}}
+                    {{--<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember" value="1">--}}
+                    {{--<label class="label-checkbox100" for="ckb1">--}}
+                        {{--Remember me--}}
+                    {{--</label>--}}
+                {{--</div>--}}
+                <div class="container-login100-form form-group">
+                    <button class="login100-form-btn form-control">
                         Register
                     </button>
+                </div>
+                <br>
+                <div class="social-auth-links text-center mb-3">
+                    <a href="{{url('login/google')}}" class="btn btn-block btn-danger">
+                        <i class="fa fa-google-plus mr-2"></i> Sign up using Google+
+                    </a>
+                    <p>- OR -</p>
+                    <a href="{{url('login/facebook')}}" class="btn btn-block btn-primary">
+                        <i class="fa fa-facebook mr-2"></i> Sign up using Facebook
+                    </a>
+
                 </div>
                 <div class="text-center p-t-30">
                     <a class="txt1" href="{{route('login')}}">

@@ -69,6 +69,12 @@
                         Forgot Password?
                     </a>
                 </div>
+
+                <div class="text-center p-t-30">
+                    New to the site ?  <a class="txt1" href="{{route('register')}}">
+                        <u>Register now </u>
+                    </a>
+                </div>
                 <br>
                 <div class="social-auth-links text-center mb-3">
                     <a href="{{url('login/google')}}" class="btn btn-block btn-danger">
@@ -97,7 +103,6 @@
 <script>
     @if(Session::has('success'))
     toastr.success("{{Session::get('success')}}")
-
     @endif
 
 
