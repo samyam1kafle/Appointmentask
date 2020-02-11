@@ -99,4 +99,12 @@ return [
         ],
     ],
 
+    /*
+    Verify mail expiry time Configuration
+    */
+
+    'verification' => [
+        'expire' => 1440, // 1440 minutes ie 24 hrs.
+    ],
+
 ];

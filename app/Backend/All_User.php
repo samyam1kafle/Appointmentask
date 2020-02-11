@@ -2,11 +2,15 @@
 
 namespace App\Backend;
 
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Auth;
+use Illuminate\Notifications\Notifiable;
 
-class All_User extends Auth
+class All_User extends Auth implements MustVerifyEmail
 {
+    use Notifiable;
+
     protected $fillable = [
         'id', 'name', 'email', 'role_id', 'password'
         , 'image', 'status', 'gender', 'service_id',

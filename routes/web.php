@@ -18,11 +18,11 @@ Route::group(['prefix' => '/'], function () {
 
     Route::get('/', 'FrontEndControllers\frontEndController@index')->name('index');
 
-    Route::any('/login', 'FrontEndControllers\frontEndController@login_index')->name('login');
+    Route::any('/login/user', 'FrontEndControllers\frontEndController@login_index')->name('login');
 
-    Route::any('/logout', 'FrontEndControllers\frontEndController@logout')->name('log-out');
+    Route::any('/logout/user', 'FrontEndControllers\frontEndController@logout')->name('log-out');
 
-    Route::any('/register', 'FrontEndControllers\frontEndController@register')->name('register');
+    Route::any('/register/user', 'FrontEndControllers\frontEndController@register')->name('register');
 
     /*Social Login Routes*/
     Route::get('login/{service}', 'AdminControllers\socialLoginController@redirectToProvider');
@@ -72,3 +72,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
