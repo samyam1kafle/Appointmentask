@@ -4,13 +4,25 @@ namespace App\Backend;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Auth;
+use Illuminate\Notifications\Notifiable;
 
 class All_User extends Auth
 {
+    use Notifiable;
+
     protected $fillable = [
         'id', 'name', 'email', 'role_id', 'password'
         , 'image', 'status', 'gender', 'service_id',
         'department_id', 'available_date'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 
     public function roles()
