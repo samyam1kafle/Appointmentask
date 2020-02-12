@@ -64,10 +64,13 @@
                         Login
                     </button>
                 </div>
+
                 <div class="text-center p-t-30">
-                    <a class="txt1" href="#">
-                        Forgot Password?
-                    </a>
+                    @if (Route::has('password.request'))
+                        <a class="txt1 btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('Forgot Password?') }}
+                        </a>
+                    @endif
                 </div>
 
                 <div class="text-center p-t-30">

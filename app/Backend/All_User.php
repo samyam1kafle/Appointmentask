@@ -6,8 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Auth;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Auth\Passwords\CanResetPassword;
 
-class All_User extends Auth implements MustVerifyEmail
+
+class All_User extends Auth implements MustVerifyEmail , \Illuminate\Contracts\Auth\CanResetPassword
 {
     use Notifiable;
 

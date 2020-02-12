@@ -95,7 +95,7 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
-            'expire' => 60,
+            'expire' => 1440, // password reset token expires in 24 hrs ie 1440 minutes
         ],
     ],
 

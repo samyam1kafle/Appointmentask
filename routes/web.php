@@ -37,6 +37,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
     Route::resource('/bookings', 'AdminControllers\BookingController');
+    /*
+     * Auth User Profile route*/
+    Route::get('/profile', 'AdminControllers\userProfileController@auth_prof')->name('user_profile');
+
 //    Service Details Route
 
     Route::resource('/services', 'AdminControllers\ServicesController');
@@ -66,8 +70,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::put('/Todo-ReAssign/{id}', 'AdminControllers\TodoController@ReAssign')->name('ReAssign');
         Route::put('/Todo-reassign/{id}', 'AdminControllers\TodoController@reaassign')->name('reassign');
     });
-
-
 
 
 });
