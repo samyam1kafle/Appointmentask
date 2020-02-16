@@ -153,6 +153,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group row  margin-top-20">
+                                        <label class="control-label col-md-3">Remarks
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-8">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <textarea name="remarks" class="form-control" id="editor" cols="auto"
+                                                          required rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <div class="offset-md-3 col-md-9">
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
