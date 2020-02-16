@@ -63,7 +63,7 @@
                                         @endif
                                         <td>{{$Todos_data->CompletedDate}}</td>
                                         <td>{{$Todos_data->employee['name']}}</td>
-                                        <td>{{$Todos_data->reassignto['name']}}</td>
+                                        <td>{{@$Todos_data->reassignto['name']}}</td>
                                         <td>{{$Todos_data->superadmin['name']}}</td>
                                         <td>{{$Todos_data->DeadLine}}</td>
                                         <td>{{$Todos_data->remarks  }}</td>
