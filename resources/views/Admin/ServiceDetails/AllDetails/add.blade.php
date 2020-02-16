@@ -50,7 +50,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Booked
+                                        <label class="control-label col-md-3">Service Booked
                                             <span class="required"> * </span>
                                         </label>
 
@@ -65,7 +65,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Cancel ID
+                                        <label class="control-label col-md-3">Service Cancel
                                             <span class="required"> * </span>
                                         </label>
 
@@ -80,7 +80,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Reschedule ID
+                                        <label class="control-label col-md-3">Service Reschedule
                                             <span class="required"> * </span>
                                         </label>
 
@@ -95,7 +95,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Complete ID
+                                        <label class="control-label col-md-3">Service Complete
                                             <span class="required"> * </span>
                                         </label>
 

@@ -70,7 +70,6 @@
                                                         <option value="{{$role->id}}">{{$role->name}}</option>
                                                     @endforeach
                                                 </optgroup>
-
                                             </select>
                                         </div>
                                     </div>
