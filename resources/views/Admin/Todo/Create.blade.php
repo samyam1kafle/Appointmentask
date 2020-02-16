@@ -1,7 +1,5 @@
 @extends('Admin.layouts.master')
 @section('main_content')
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-
     <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
@@ -95,7 +93,7 @@
                                         <div class="col-md-8">
                                             <div class="input-icon right ">
                                                 <i class="fa"></i>
-                                                <select class="form-control col-12 input-append" required
+                                                <select class="form-control col-12" multiple required
                                                         name="assignedTo">
                                                     <option value=""  disabled selected hidden>--Select--</option>
                                                     @if(isset($employee))
@@ -174,7 +172,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </form>
                         </div>
                     </div>
@@ -183,3 +180,4 @@
         </div>
     </div>
 @endsection
+
