@@ -95,8 +95,16 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
-            'expire' => 60,
+            'expire' => 1440, // password reset token expires in 24 hrs ie 1440 minutes
         ],
+    ],
+
+    /*
+    Verify mail expiry time Configuration
+    */
+
+    'verification' => [
+        'expire' => 1440, // 1440 minutes ie 24 hrs.
     ],
 
 ];

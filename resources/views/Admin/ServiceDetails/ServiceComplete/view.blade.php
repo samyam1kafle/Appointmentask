@@ -75,13 +75,14 @@
                                     </thead>
                                     <tbody>
                                     <tr class="odd gradeX">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="valigntop">
+                                        @foreach($serviceComplete as $key => $servCompletes)
+                                        <td>{{$key+1}}</td>
+                                        <td>{{$servCompletes->service_booked_id}}</td>
+                                        <td>{{$servCompletes->service_reschedule_id}}</td>
+                                        <td>{{$servCompletes->complete_date}}</td>
+                                            <td>{{$servCompletes->complete_time}}</td>
+                                            <td>{{$servCompletes->status}}</td>
+                                            <td class="valigntop">
                                             <div class="btn-group">
                                                 <button
                                                         class="btn btn-xs deepPink-bgcolor dropdown-toggle no-margin"
@@ -93,7 +94,7 @@
                                                 <ul class="dropdown-menu pull-left" role="menu">
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <form action=""
+                                                            <form action="{{route('service_complete.edit',$servCompletes->id)}}"
                                                                   method="GET"
                                                                   style="display: inline-block">
                                                                 {{csrf_field()}}
@@ -107,7 +108,7 @@
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <form action=""
+                                                            <form action="{{route('service_complete.destroy')}}"
                                                                   method="post"
                                                                   style="display: inline-block">
                                                                 {{csrf_field()}}
@@ -122,6 +123,7 @@
                                                 </ul>
                                             </div>
                                         </td>
+                                            @endforeach
                                     </tr>
                                     </tbody>
                                 </table>

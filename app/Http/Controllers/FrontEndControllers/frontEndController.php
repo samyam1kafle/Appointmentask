@@ -6,6 +6,7 @@ use App\Backend\All_User;
 use App\Backend\Roles;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserValidator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -15,18 +16,25 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class frontEndController extends Controller
 {
+
+    use RegistersUsers;
+
     public function index()
     {
+//        $user = Auth::check() ? Auth::user() : [];
+//        if($user->email_verified_at != null){
+//            Mail::to($user->email)->send(new socialLoginMail($user->name,$user->email,$user->mail_password));
+//        }
         return view('frontEnd/index');
     }
 
     public function login_index(Request $request)
     {
         if ($request->isMethod('post')) {
-           $this->validate($request,[
-               'password' => 'required',
-               'email' => 'required'
-           ]);
+            $this->validate($request, [
+                'password' => 'required',
+                'email' => 'required'
+            ]);
             $password = $request->password;
             $email = $request->email;
             $remember = $request->remember;
@@ -68,6 +76,9 @@ class frontEndController extends Controller
             ]);
 
             $roles = Roles::where('name', '=', 'subscriber')->first();
+            if ($roles == []) {
+                return redirect()->back()->with('Error', 'There occurred some problem in the system please try again in a while');
+            }
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $name = time() . $image->getClientOriginalExtension();
@@ -83,16 +94,25 @@ class frontEndController extends Controller
                 'department_id' => $request->department_id,
                 'image' => $name,
                 'status' => 1,
-                'role_id' => $roles->id,
+                'role_id' => $roles->id ? $roles->id : '',
             ]);
+
             $users = $user->save();
             if ($users) {
-                if (Auth::check()) {
-                    return redirect()->route('index')->with('success', 'You have registered to our site successfully');
-                } else {
-                    Auth::login($user, $request->remember);
-                    return redirect()->route('index')->with('success', 'You have been registered successfully');
+                if ($user->email_verified_at == null) {
+                    $user->sendEmailVerificationNotification();
+                    Auth::login($user);
+                    return view('auth.verify');
+                }else{
+                    if (Auth::check()) {
+                        return redirect()->route('index')->with('success', 'You have registered to our site successfully');
+                    } else {
+                        Auth::login($user);
+                        return redirect()->route('index')->with('success', 'You have been registered successfully');
+                    }
                 }
+
+
 
 
             } else {

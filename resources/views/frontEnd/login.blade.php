@@ -64,9 +64,18 @@
                         Login
                     </button>
                 </div>
+
                 <div class="text-center p-t-30">
-                    <a class="txt1" href="#">
-                        Forgot Password?
+                    @if (Route::has('password.request'))
+                        <a class="txt1 btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('Forgot Password?') }}
+                        </a>
+                    @endif
+                </div>
+
+                <div class="text-center p-t-30">
+                    New to the site ?  <a class="txt1" href="{{route('register')}}">
+                        <u>Register now </u>
                     </a>
                 </div>
                 <br>
@@ -97,7 +106,6 @@
 <script>
     @if(Session::has('success'))
     toastr.success("{{Session::get('success')}}")
-
     @endif
 
 
