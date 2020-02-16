@@ -68,13 +68,13 @@
 <script src="{{asset('Admin/assets/js/pages/select2/select2-init.js')}}"></script>
 <!--select2-->
 
-<!--Unisharp Ck Editor -->
-<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-<script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
-<script>
-    $('textarea').ckeditor();
-    // $('.textarea').ckeditor(); // if class is prefered.
-</script>
+    <!--Unisharp Ck Editor -->
+    {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
+    <script>
+        $('textarea').ckeditor();
+        // $('.textarea').ckeditor(); // if class is prefered.
+    </script>--}}
 <!--Ck Editor -->
 
 <!-- dropzone -->
