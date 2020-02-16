@@ -25,7 +25,7 @@ class RolesValidate extends FormRequest
     {
         return [
             'name' => 'required',
-            'description'=>'required | min:10 | max:50'
+            'description'=>'required'
         ];
     }
 }
