@@ -1,5 +1,7 @@
 @extends('Admin.layouts.master')
 @section('main_content')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
     <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
@@ -30,6 +32,7 @@
                             <form action="{{route('Todo.store')}}" method="post" id="form_sample_2"
                                   class="form-horizontal" enctype="multipart/form-data" autocomplete="on">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
                                 <div class="form-body">
                                     <div class="form-group row  margin-top-20">
                                         <div class="col-md-8">
@@ -90,11 +93,11 @@
                                             <span class="required"> * </span>
                                         </label>
                                         <div class="col-md-8">
-                                            <div class="input-icon right">
+                                            <div class="input-icon right ">
                                                 <i class="fa"></i>
                                                 <select class="form-control col-12 input-append" required
                                                         name="assignedTo">
-                                                    <option value="" disabled selected hidden>--Select--</option>
+                                                    <option value=""  disabled selected hidden>--Select--</option>
                                                     @if(isset($employee))
                                                         @foreach($employee as $employee_data)
                                                             <option value="{{$employee_data->id}}">{{$employee_data->name}}</option>
@@ -111,7 +114,7 @@
                                         <div class="col-md-8">
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
-                                                <select class="form-control col-12 input-append" required
+                                                <select  class="form-control col-12 input-append" required
                                                         name="requestedBy">
                                                     <option value="" disabled selected hidden>--Select--</option>
                                                     @if(isset($superadmin))
@@ -136,6 +139,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Status
                                             <span class="required"> * </span>
@@ -170,6 +174,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -177,123 +182,8 @@
             </div>
         </div>
     </div>
-    {{--<div class="page-content-wrapper">
-        <div class="page-content">
-            <div class="page-bar">
-                <div class="page-title-breadcrumb">
-                    <div class=" pull-left">
-                        <div class="page-title">Advance Form</div>
-                    </div>
-                    <ol class="breadcrumb page-breadcrumb pull-right">
-                        <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
-                                                               href="index.html">Home</a>&nbsp;<i
-                                    class="fa fa-angle-right"></i>
-                        </li>
-                        <li><a class="parent-item" href="">Forms</a>&nbsp;<i class="fa fa-angle-right"></i>
-                        </li>
-                        <li class="active">Advance Form</li>
-                    </ol>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="card card-box">
-                        <div class="card-head">
-                            <header>Date &amp; Time Picker</header>
-                            <button id="panel-button4"
-                                    class="mdl-button mdl-js-button mdl-button--icon pull-right"
-                                    data-upgraded=",MaterialButton">
-                                <i class="material-icons">more_vert</i>
-                            </button>
-                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                                data-mdl-for="panel-button4">
-                                <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
-                                </li>
-                                <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
-                                </li>
-                                <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
-                                    here
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-body " id="bar-parent5">
-                            <form>
-                                <div class="form-group row">
-                                    <label class="col-md-4 control-label">Basic</label>
-                                    <input type="text" size="30" value="" id="dp1">
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-4 control-label">Read Only</label>
-                                    <div class="input-append date" id="dp3" data-date="12-02-2012"
-                                         data-date-format="dd-mm-yyyy">
-                                        <input size="30" type="text" readonly> <span class="add-on"><i
-                                                    class="fa fa-calendar icon-th"></i></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-4 control-label">Basic Date &amp; Time</label>
-                                    <input size="30" type="text" value="2012-06-15 14:45" readonly
-                                           class="form_datetime">
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-4 control-label">With Button</label>
-                                    <div class="input-append date form_datetime">
-                                        <input size="30" type="text" value="" readonly>
-                                        <span class="add-on"><i class="fa fa-calendar icon-th"></i></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-4 control-label">With Clear Button</label>
-                                    <div class="input-append date form_datetime"
-                                         data-date="2013-02-21T15:25:00Z">
-                                        <input size="30" type="text" value="" readonly>
-                                        <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
-                                        <span class="add-on"><i class="fa fa-calendar"></i></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-4 control-label">Date Only</label>
-                                    <div class="input-append date form_date" data-date-format="dd MM yyyy"
-                                         data-date="2013-02-21T15:25:00Z">
-                                        <input size="30" type="text" value="" readonly>
-                                        <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
-                                        <span class="add-on"><i class="fa fa-calendar"></i></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-4 control-label">Time Picking</label>
-                                    <div class="input-append date form_time" data-date-format="dd MM yyyy"
-                                         data-date="2013-02-21T15:25:00Z">
-                                        <input size="30" type="text" value="" readonly>
-                                        <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
-                                        <span class="add-on"><i class="fa fa-clock-o"></i></span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="card card-box">
-                    <div class="card-head">
-                        <header>SELECT SINGLE &amp; MULTIPLE</header>
-                        <button id="panel-button8"
-                                class="mdl-button mdl-js-button mdl-button--icon pull-right"
-                                data-upgraded=",MaterialButton">
-                            <i class="material-icons">more_vert</i>
-                        </button>
-                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                            data-mdl-for="panel-button8">
-                            <li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
-                            </li>
-                            <li class="mdl-menu__item"><i class="material-icons">print</i>Another action
-                            </li>
-                            <li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
-                                here</li>
-                        </ul>
-                    </div>
+    <html>
+    <head>
 
                     <div class="card-body " id="bar-parent10">
                         <form class="form-horizontal">

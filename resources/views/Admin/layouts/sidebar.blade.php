@@ -189,8 +189,6 @@
 
 												Add New Date and Time</span>
 
-												Add Date and Time</span>
-
                                     </a>
                                 </li>
                             </ul>

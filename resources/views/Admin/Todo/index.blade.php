@@ -1,7 +1,5 @@
 @extends('Admin.layouts.master')
 @section('main_content')
-
-
     <!-- start page content -->
     <div class="page-content-wrapper" >
         <div class="page-content">
@@ -10,7 +8,6 @@
                     <div class=" pull-left">
                         <div class="page-title">Available Todo Details</div>
                     </div>
-
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
@@ -152,7 +149,6 @@
                                     </tr>
                                 @endforeach
                                 </tbody>
-
                             </table>
                         </div>
                     </div>
@@ -160,4 +156,3 @@
             </div>
         </div>
     </div>
-@endsection

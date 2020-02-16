@@ -34,4 +34,5 @@ class socialLoginMail extends Mailable
     {
         return $this->markdown('emails.socialLogin.userPassword');
     }
+
 }
