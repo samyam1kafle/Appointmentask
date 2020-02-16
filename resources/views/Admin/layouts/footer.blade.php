@@ -69,26 +69,26 @@
 <!--select2-->
 
 <!--Unisharp Ck Editor -->
-<<<<<<< HEAD
+
 <!-- <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
 <script>
     $('textarea').ckeditor();
     // $('.textarea').ckeditor(); // if class is prefered.
 </script> -->
-=======
-{{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>--}}
+
+<!-- {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>--}}
 {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>--}}
 {{--<script>--}}
-    {{--$('textarea').ckeditor();--}}
+    {{--$('textarea').ckeditor();}}
     {{--// $('.textarea').ckeditor(); // if class is prefered.--}}
-{{--</script>--}}
+{{--</script>--}} -->
 
-<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+<!-- <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
 <script>
     CKEDITOR.replace( 'editor' );
-</script>
->>>>>>> 794442d2d8a9e0ba63ee1dc2048dd39c4ca568f8
+</script> -->
+
 <!--Ck Editor -->
 
 <!-- dropzone -->
