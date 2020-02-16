@@ -3,7 +3,7 @@
 
 
     <!-- start page content -->
-    <div class="page-content-wrapper">
+    <div class="page-content-wrapper" >
         <div class="page-content">
             <div class="page-bar">
                 <div class="page-title-breadcrumb">
@@ -23,14 +23,16 @@
                     </ol>
                 </div>
             </div>
-            <div class="row" style="max-width:100%;">
-                <div class="col-md-12 col-sm-12" style="max-width:100%;">
-                    <div class="card card-box" style="max-width:100%;">
+            <div class="row" >
+                <div class="col-md-12 col-sm-12" >
+                    <div class="card card-box">
                         <div class="card-head">
                             <header>Avaialable Todo Details</header>
                             <a class="parent-item pull-right btn btn-primary" href="{{ route('Todo.create') }}">Add
                                 +</a>
                         </div>
+                        <div class="card-body " id="bar-parent">
+                            <table id="exportTable" class="display nowrap">
                         <div class="table-scrollable " id="bar-parent">
                             <table id="exportTable" class="display nowrap" style="width:100%">
                                 <thead>
@@ -48,6 +50,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+
                                 @foreach($Todos as $Todos_data)
                                     <tr>
                                         <td>{{$Todos_data->title}}</td>
