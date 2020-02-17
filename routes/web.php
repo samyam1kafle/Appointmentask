@@ -41,6 +41,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
      * Auth User Profile route*/
     Route::get('/profile', 'AdminControllers\userProfileController@auth_prof')->name('user_profile');
 
+    Route::any('/update-user-profile', 'AdminControllers\userProfileController@prof_update')->name('update_profile');
+
+/*
+     * User details Update routes*/
+
+    Route::resource('/education','AdminControllers\UsersUpdateControllers\EducationController');
+
+    Route::PUT('/update-profile-password/{id}','AdminControllers\userProfileController@update_user')->name('update-profile');
+
 //    Service Details Route
 
     Route::resource('/services', 'AdminControllers\ServicesController');

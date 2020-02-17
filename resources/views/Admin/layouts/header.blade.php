@@ -58,8 +58,8 @@
                                     <i class="icon-user"></i> Profile </a>
                             </li>
                             <li>
-                                <a href="index.html#">
-                                    <i class="icon-settings"></i> Settings
+                                <a href="{{route('update_profile')}}">
+                                    <i class="icon-settings"></i> Update Details
                                 </a>
                             </li>
 
