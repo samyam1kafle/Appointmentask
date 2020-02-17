@@ -66,7 +66,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
         Route::resource('/user', 'AdminControllers\UserController');
 //    roles route
         Route::resource('/roles', 'AdminControllers\RolesController');
-
+//    User Degree
+        Route::resource('/Degree', 'AdminControllers\DegreeController');
 //    Department Routes
 
         Route::resource('/department', 'AdminControllers\DepartmentController');

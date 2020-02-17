@@ -62,6 +62,12 @@
 												Add New User</span>
                                         </a>
                                     </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{route('Degree.index')}}" class="nav-link "> <span class="title">
+												User Degree</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 
