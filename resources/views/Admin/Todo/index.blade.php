@@ -31,7 +31,7 @@
                         <div class="card-body " id="bar-parent">
                             <table id="exportTable" class="display nowrap">
                         <div class="table-scrollable " id="bar-parent">
-                            <table id="exportTable" class="display nowrap" style="width:100%">
+                            <table id="exportTable" class="display nowrap" style="width:100%;">
                                 <thead>
                                 <tr>
                                     <th>Title</th>

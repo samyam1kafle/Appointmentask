@@ -65,7 +65,6 @@
 
     <!--Toastr-->
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
-
 </head>
 <!-- END HEAD -->
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
