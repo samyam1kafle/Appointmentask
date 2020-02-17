@@ -39,6 +39,7 @@ class RolesController extends Controller
      */
     public function store(RolesValidate $request)
     {
+        /*dd($request->all());*/
         $create = $request->all();
         $roles = Roles::create($create);
         if($roles){
