@@ -123,23 +123,6 @@
 <script src="{{asset('Admin/assets/js/front_js/global.js')}}"></script>
 <script src="{{asset('Admin/assets/js/front_js/jquery-ui.min.js')}}"></script>
 
-{{--=========multiple select==============--}}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-<script
-        type="text/javascript"
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"
-></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#multiple-checkboxes").multiselect({
-            includeSelectAllOption: true
-        });
-    });
-</script>
-{{--===end of multi select=====--}}
-
 </body>
 
 </html>

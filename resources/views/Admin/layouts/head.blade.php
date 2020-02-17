@@ -65,18 +65,6 @@
 
     <!--Toastr-->
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
-
-    {{--multi select--}}
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css"
-    />
-    {{--<link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
-    />--}}
-    --}}
-
 </head>
 <!-- END HEAD -->
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
