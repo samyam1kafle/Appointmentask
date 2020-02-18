@@ -88,3 +88,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/Employee', 'FrontEndControllers\EmployeeController@GetList')->name('Employee')->middleware(['employee']);
+Route::get('/EmployeeDetails/{title}', 'FrontEndControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails')->middleware(['employee']);
+

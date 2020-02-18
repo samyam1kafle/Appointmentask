@@ -34,6 +34,10 @@
                             <a href="{{route('log-out')}}"><h4>Sign-out</h4></a>
                         </div>
 
+                        <div class="col-md-8">
+                            <a href="{{route('EmployeeDetails')}}"><h4>employee</h4></a>
+                        </div>
+
                     @else
                         <div class="col-md-3">
                             <a href="{{route('login')}}"><h3>Login</h3></a>

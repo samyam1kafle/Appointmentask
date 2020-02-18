@@ -6,6 +6,7 @@ use App\Backend\Roles;
 use App\Http\Requests\RolesValidate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Backend\All_User;
 
 class RolesController extends Controller
 {
