@@ -24,7 +24,7 @@
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Education
-                                        Detail</a></li>
+                                        Details</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Personal
                                         Details</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#work" data-toggle="tab">Work
@@ -116,7 +116,19 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">Passed Date
+                                                    <label class="control-label col-md-3">Division Obtained
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-4">
+                                                        <div class="input-icon right">
+                                                            <i class="fa"></i>
+                                                            <input type="text" class="form-control"
+                                                                   name="passed_division"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="control-label col-md-3">Passed Year
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
@@ -124,7 +136,7 @@
                                                             <div class="input-append date form_date"
                                                                  data-date-format="yy-m-d H:i:s" data-date="{{now()}}">
                                                                 <input size="30" type="text" required="" readonly=""
-                                                                       name="date" aria-required="true">
+                                                                       name="passed_year" aria-required="true">
                                                                 <span class="add-on"><i
                                                                             class="fa fa-remove icon-remove"></i></span>
                                                                 <span class="add-on"><i
@@ -183,48 +195,75 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">Password
+                                                    <label class="control-label col-md-3">Current Address
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
                                                         <div class="input-icon right">
                                                             <i class="fa"></i>
-                                                            <input type="password" class="form-control"
-                                                                   name="password"/></div>
-                                                        <span class="help-block"> e.g. xxxxxxx </span>
+                                                            <input type="text" class="form-control" name="address1"/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">Confirm Password
+                                                    <label class="control-label col-md-3">Permanent Address
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
                                                         <div class="input-icon right">
                                                             <i class="fa"></i>
-                                                            <input type="password" class="form-control"
-                                                                   name="password_confirmation"/></div>
-                                                        <span class="help-block"> e.g. xxxxxxx </span>
+                                                            <input type="text" class="form-control" name="address2"/>
+                                                        </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">User Role
+                                                    <label class="control-label col-md-3">Telephone No.
                                                         <span class="required"> * </span>
                                                     </label>
-
-                                                    <div class="col-lg-4 col-md-8">
-                                                        <select class="form-control  select2" name="role_id">
-                                                            <option value=""></option>
-                                                            <optgroup label="Roles">
-                                                                {{--@foreach($roles as $role)--}}
-                                                                {{--<option value="{{$role->id}}">{{$role->name}}</option>--}}
-                                                                {{--@endforeach--}}
-                                                            </optgroup>
-
-                                                        </select>
+                                                    <div class="col-md-4">
+                                                        <div class="input-icon right">
+                                                            <i class="fa"></i>
+                                                            <input type="text" class="form-control" name="phone1"/>
+                                                        </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="form-group row">
+                                                    <label class="control-label col-md-3">Mobile No.
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-4">
+                                                        <div class="input-icon right">
+                                                            <i class="fa"></i>
+                                                            <input type="text" class="form-control" name="phone2"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="control-label col-md-3">Date of Birth
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-4">
+                                                        <div class="input-icon right">
+                                                            <div class="input-append date form_date"
+                                                                 data-date-format="yy-m-d H:i:s" data-date="{{now()}}">
+                                                                <input size="30" type="text" required="" readonly=""
+                                                                       name="date_of_birth" aria-required="true">
+                                                                <span class="add-on"><i
+                                                                            class="fa fa-remove icon-remove"></i></span>
+                                                                <span class="add-on"><i
+                                                                            class="fa fa-calendar"></i></span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <!-- <div class="form-group row">
                                                     <label class="control-label col-md-3">Image
                                                         <span class="required"> * </span>
                                                     </label>
@@ -233,7 +272,7 @@
                                                             <input type="file" class="form-control bg-dark"
                                                                    name="image"/></div>
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                                 <div class="form-group row">
                                                     <label class="control-label col-md-3">Gender
@@ -273,23 +312,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label class="control-label col-md-3">User Department
-                                                    <span class="required"> * </span>
-                                                </label>
-
-                                                <div class="col-lg-4 col-md-8">
-                                                    <select class="form-control  select2" name="department_id">
-                                                        <option value=""></option>
-                                                        <optgroup label="Departments">
-                                                            {{--@foreach($depart as $dep)--}}
-                                                            {{--<option value="{{$dep->id}}">{{$dep->name}}</option>--}}
-                                                            {{--@endforeach--}}
-                                                        </optgroup>
-
-                                                    </select>
-                                                </div>
-                                            </div>
+                                            
                                             {{csrf_field()}}
 
                                             <div class="form-group">
@@ -315,133 +338,103 @@
                                             <input type="hidden" name="available_date" value="{{null}}">
                                             <div class="form-body">
                                                 <div class="form-group row  margin-top-20">
-                                                    <label class="control-label col-md-3">Name
+                                                    <label class="control-label col-md-3">Profession
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
                                                         <div class="input-icon right">
                                                             <i class="fa"></i>
-                                                            <input type="text" class="form-control" name="name"/></div>
+                                                            <input type="text" class="form-control" name="profession"/></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">Email
+                                                    <label class="control-label col-md-3">Experience
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
                                                         <div class="input-icon right">
                                                             <i class="fa"></i>
-                                                            <input type="email" class="form-control" name="email"/>
+                                                            <input type="text" class="form-control" name="work_exp"/>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">Password
+                                                    <label class="control-label col-md-3">Organization Name
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
                                                         <div class="input-icon right">
                                                             <i class="fa"></i>
-                                                            <input type="password" class="form-control"
-                                                                   name="password"/></div>
-                                                        <span class="help-block"> e.g. xxxxxxx </span>
+                                                            <input type="text" class="form-control"
+                                                                   name="org_name"/></div>                                                      
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">Confirm Password
+                                                    <label class="control-label col-md-3">Organization Address
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
                                                         <div class="input-icon right">
                                                             <i class="fa"></i>
-                                                            <input type="password" class="form-control"
-                                                                   name="password_confirmation"/></div>
-                                                        <span class="help-block"> e.g. xxxxxxx </span>
+                                                            <input type="text" class="form-control"
+                                                                   name="org_address"/>
+                                                        </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">User Role
+                                                    <label class="control-label col-md-3">Organization Tel. No.
                                                         <span class="required"> * </span>
                                                     </label>
-
-                                                    <div class="col-lg-4 col-md-8">
-                                                        <select class="form-control  select2" name="role_id">
-                                                            <option value=""></option>
-                                                            <optgroup label="Roles">
-                                                                {{--@foreach($roles as $role)--}}
-                                                                {{--<option value="{{$role->id}}">{{$role->name}}</option>--}}
-                                                                {{--@endforeach--}}
-                                                            </optgroup>
-
-                                                        </select>
+                                                    <div class="col-md-4">
+                                                        <div class="input-icon right">
+                                                            <i class="fa"></i>
+                                                            <input type="text" class="form-control"
+                                                                   name="phone_1"/>
+                                                        </div>
                                                     </div>
                                                 </div>
+
                                                 <div class="form-group row">
-                                                    <label class="control-label col-md-3">Image
+                                                    <label class="control-label col-md-3">Organization Mobile No.
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-4">
+                                                        <div class="input-icon right">
+                                                            <i class="fa"></i>
+                                                            <input type="text" class="form-control"
+                                                                   name="phone_2"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group row">
+                                                    <label class="control-label col-md-3">Organization PAN No.
+                                                        <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-4">
+                                                        <div class="input-icon right">
+                                                            <i class="fa"></i>
+                                                            <input type="text" class="form-control"
+                                                                   name="org_pan"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="control-label col-md-3">Document
                                                         <span class="required"> * </span>
                                                     </label>
                                                     <div class="col-md-4">
                                                         <div class="input-icon right">
                                                             <input type="file" class="form-control bg-dark"
-                                                                   name="image"/></div>
+                                                                   name="document"/></div>
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group row">
-                                                    <label class="control-label col-md-3">Gender
-                                                        <span class="required"> * </span>
-                                                    </label>
-                                                    <div class="col-md-4">
-
-
-                                                        <div class="card-body " id="bar-parent3">
-                                                            <div class="row">
-                                                                <div class="radio">
-                                                                    <input id="radiobg1" name="gender" type="radio"
-                                                                           checked="checked" value="Male">
-                                                                    <label for="radiobg1">
-                                                                        Male
-                                                                    </label>
-                                                                </div>
-                                                                <div class="radio">
-                                                                    <input id="radiobg2" name="gender" type="radio"
-                                                                           value="Female">
-                                                                    <label for="radiobg2">
-                                                                        Female
-                                                                    </label>
-                                                                </div>
-                                                                <div class="radio">
-                                                                    <input id="radiobg3" name="gender" type="radio"
-                                                                           value="Other">
-                                                                    <label for="radiobg3">
-                                                                        Others
-                                                                    </label>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
+                                                
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label class="control-label col-md-3">User Department
-                                                    <span class="required"> * </span>
-                                                </label>
-
-                                                <div class="col-lg-4 col-md-8">
-                                                    <select class="form-control  select2" name="department_id">
-                                                        <option value=""></option>
-                                                        <optgroup label="Departments">
-                                                            {{--@foreach($depart as $dep)--}}
-                                                            {{--<option value="{{$dep->id}}">{{$dep->name}}</option>--}}
-                                                            {{--@endforeach--}}
-                                                        </optgroup>
-
-                                                    </select>
-                                                </div>
-                                            </div>
                                             {{csrf_field()}}
 
                                             <div class="form-group">

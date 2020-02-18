@@ -8,7 +8,7 @@ class User_personal_detail extends Model
 {
     protected $fillable = [
         'user_id','address1', 'address2',
-        'phone1', 'phone2','appointment_status','date_of_birth'
+        'phone1', 'phone2','date_of_birth'
     ];
 
     public function user_details(){

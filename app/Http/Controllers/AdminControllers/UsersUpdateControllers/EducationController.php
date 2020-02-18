@@ -4,6 +4,8 @@ namespace App\Http\Controllers\AdminControllers\UsersUpdateControllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Backend\User_education_detail;
+use App\Backend\Degree;
 
 class EducationController extends Controller
 {
@@ -14,7 +16,8 @@ class EducationController extends Controller
      */
     public function index()
     {
-        //
+        dd();
+        // return view('Admin/Users/profile');
     }
 
     /**
@@ -24,7 +27,8 @@ class EducationController extends Controller
      */
     public function create()
     {
-        //
+        $degree = Degree::all();
+        return view('Admin/Users/updateProf',compact('$degree'));
     }
 
     /**
@@ -35,7 +39,10 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-
+        $data = User_education_detail::create($request->all());
+        if($data){
+            return redirect()->route('education.index');
+        }
     }
 
     /**
