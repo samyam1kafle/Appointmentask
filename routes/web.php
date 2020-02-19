@@ -35,7 +35,6 @@ Route::group(['prefix' => '/'], function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/index','AdminControllers\dashboardController@index')->name('admin-dashboard');
 
-    Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
     Route::resource('/bookings', 'AdminControllers\BookingController');
     /*
      * Auth User Profile route*/
@@ -43,42 +42,54 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::any('/update-user-profile', 'AdminControllers\userProfileController@prof_update')->name('update_profile');
 
-/*
-     * User details Update routes*/
+    /*
+         * User details Update routes*/
 
-    Route::resource('/education','AdminControllers\UsersUpdateControllers\EducationController');
+    Route::resource('/education', 'AdminControllers\UsersUpdateControllers\EducationController');
 
-    Route::PUT('/update-profile-password/{id}','AdminControllers\userProfileController@update_user')->name('update-profile');
+    Route::PUT('/update-profile-password/{id}', 'AdminControllers\userProfileController@update_user')->name('update-profile');
 
 //    Service Details Route
 
-    Route::resource('/services', 'AdminControllers\ServicesController');
 
-    Route::resource('/service_details', 'AdminControllers\ServiceDetailsController');
-    Route::resource('/service_booked', 'AdminControllers\ServiceBookedController');
-    Route::resource('/service_complete', 'AdminControllers\ServiceCompleteController');
-    Route::resource('/service_cancel', 'AdminControllers\ServiceCancelController');
-    Route::resource('/service_reschedule', 'AdminControllers\ServiceRescheduleController');
-
-    Route::group(['middleware' => ['super_admin']], function () {
+    Route::group(['middleware' => ['provider']], function () {
+        Route::group(['middleware' => ['super_admin']], function () {
 
 //    User Routes
-        Route::resource('/user', 'AdminControllers\UserController');
+            Route::resource('/user', 'AdminControllers\UserController');
 //    roles route
-        Route::resource('/roles', 'AdminControllers\RolesController');
+            Route::resource('/roles', 'AdminControllers\RolesController');
 //    User Degree
-        Route::resource('/Degree', 'AdminControllers\DegreeController');
+            Route::resource('/Degree', 'AdminControllers\DegreeController');
 //    Department Routes
 
-        Route::resource('/department', 'AdminControllers\DepartmentController');
+            Route::resource('/department', 'AdminControllers\DepartmentController');
 
 //    todo routes
 
-        Route::resource('/Todo', 'AdminControllers\TodoController');
-        Route::put('/Todo-Pending/{id}', 'AdminControllers\TodoController@pending')->name('pending');
-        Route::put('/Todo-Complete/{id}', 'AdminControllers\TodoController@complete')->name('complete');
-        Route::put('/Todo-ReAssign/{id}', 'AdminControllers\TodoController@ReAssign')->name('ReAssign');
-        Route::put('/Todo-reassign/{id}', 'AdminControllers\TodoController@reaassign')->name('reassign');
+            Route::resource('/Todo', 'AdminControllers\TodoController');
+            Route::put('/Todo-Pending/{id}', 'AdminControllers\TodoController@pending')->name('pending');
+            Route::put('/Todo-Complete/{id}', 'AdminControllers\TodoController@complete')->name('complete');
+            Route::put('/Todo-ReAssign/{id}', 'AdminControllers\TodoController@ReAssign')->name('ReAssign');
+            Route::put('/Todo-reassign/{id}', 'AdminControllers\TodoController@reaassign')->name('reassign');
+        });
+        Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
+        Route::resource('/services', 'AdminControllers\ServicesController');
+        Route::resource('/service_details', 'AdminControllers\ServiceDetailsController');
+        Route::resource('/service_booked', 'AdminControllers\ServiceBookedController');
+        Route::resource('/service_complete', 'AdminControllers\ServiceCompleteController');
+        Route::resource('/service_cancel', 'AdminControllers\ServiceCancelController');
+        Route::resource('/service_reschedule', 'AdminControllers\ServiceRescheduleController');
+
+    });
+
+    Route::group(['middleware' => ['employee']], function () {
+//    Task details route
+
+        Route::get('/Employee', 'FrontEndControllers\EmployeeController@GetList')->name('Employee');
+        Route::get('/EmployeeDetails/{title}', 'FrontEndControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
+
+
     });
 
 
@@ -89,6 +100,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/Employee', 'FrontEndControllers\EmployeeController@GetList')->name('Employee')->middleware(['employee']);
-Route::get('/EmployeeDetails/{title}', 'FrontEndControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails')->middleware(['employee']);
 

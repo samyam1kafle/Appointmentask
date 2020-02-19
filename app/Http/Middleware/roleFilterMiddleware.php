@@ -16,11 +16,11 @@ class roleFilterMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!(Auth::user()->roles->name == 'super_admin' || Auth::user()->roles->name == 'admin')) {
+        if (!(Auth::user()->roles->name == 'super_admin' || Auth::user()->roles->name == 'admin' || Auth::user()->roles->name == 'employee')) {
             return redirect()->route('index')->with('delete', 'Sorry You are not authorized to view the Admin page');
         }
 
-        if ((Auth::user()->roles->name == 'super_admin' || Auth::user()->roles->name == 'admin' )) {
+        if ((Auth::user()->roles->name == 'super_admin' || Auth::user()->roles->name == 'admin' || Auth::user()->roles->name == 'employee')) {
             return $next($request);
         } else {
             return redirect()->route('index')->with('delete', 'Sorry You are not authorized to view the Admin page');
