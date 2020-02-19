@@ -129,7 +129,7 @@
             <div class="colon"><p>:</p></div>
             <div class="viewbox">
                 <p>
-                    {{$todo->description}}
+                    {!!$todo->description!!}
                 </p>
             </div>
         </div>

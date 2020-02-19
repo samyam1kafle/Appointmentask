@@ -59,7 +59,7 @@
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
                                                 <textarea name="description" class="form-control" cols="30"
-                                                          required rows="10"></textarea>
+                                                          required rows="10" id="editor"></textarea>
                                             </div>
                                         </div>
                                     </div>
