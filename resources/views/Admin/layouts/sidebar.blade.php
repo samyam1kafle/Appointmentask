@@ -98,8 +98,31 @@
                                     <li class="nav-item">
                                         <a href="{{route('department.index')}}" class="nav-link "> <span class="title">All
 												Departments</span>
+<<<<<<< HEAD
                                         </a>
                                     </li>
+=======
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">book</i>
+                                    <span class="title">Bookings</span> <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="{{route('bookings.index')}}" class="nav-link "> <span class="title">All
+												Bookings</span>
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+
+>>>>>>> 3faca2fca1ce701b88d1260e549d78afac2a2f29
 
                                 </ul>
                             </li>
