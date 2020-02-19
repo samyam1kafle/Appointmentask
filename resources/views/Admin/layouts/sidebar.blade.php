@@ -44,6 +44,20 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">book</i>
+                                <span class="title">Bookings</span> <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item">
+                                    <a href="{{route('bookings.index')}}" class="nav-link "> <span class="title">All
+												Bookings</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
                         @if(Auth::user()->roles->name == 'super_admin')
                             <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle"> <i class="material-icons">person</i>
@@ -99,6 +113,7 @@
                                         <a href="{{route('department.index')}}" class="nav-link "> <span class="title">All
 												Departments</span>
 
+
                                         </a>
                                     </li>
 
@@ -108,23 +123,9 @@
                                     </a>
                                 </li>
                                 
-                                </ul>
-                            </li>
 
-                            <li class="nav-item">
-                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">book</i>
-                                    <span class="title">Bookings</span> <span class="arrow"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-                                        <a href="{{route('bookings.index')}}" class="nav-link "> <span class="title">All
-												Bookings</span>
-                                    </a>
-                                </li>
-                                
-                                </ul>
-                            </li>
-
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -135,6 +136,29 @@
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
+
+                                        <a href="{{route('bookings.index')}}" class="nav-link "> <span class="title">All
+												Bookings</span>
+                                    </a>
+                                </li>
+                                
+                                </ul>
+                            </li>
+
+                                </ul>
+
+                    </ul>
+
+                            </li>
+
+                            <li class="nav-item">
+
+                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">assignment</i>
+                                    <span class="title">ToDo</span> <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+
                                         <a href="{{route('Todo.index')}}" class="nav-link "> <span class="title">
 												View All ToDo</span>
                                         </a>
@@ -146,9 +170,6 @@
                                     </li>
                                 </ul>
                             </li>
-
-
-
 
 
                         @endif
@@ -181,76 +202,76 @@
 
                         @endif
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">work</i>
-                                <span class="title">Services</span> <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item">
-                                    <a href="{{route('services.index')}}" class="nav-link "> <span class="title">All
+                        @if(Auth::user()->roles->name == 'admin' || Auth::user()->roles->name == 'super_admin')
+                            <li class="nav-item">
+                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">work</i>
+                                    <span class="title">Services</span> <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="{{route('services.index')}}" class="nav-link "> <span class="title">All
 												Services</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('services.create')}}" class="nav-link "> <span class="title">Add
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('services.create')}}" class="nav-link "> <span class="title">Add
 												Services</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a href="" class="nav-link nav-toggle"> <i class="material-icons">info</i>
-                                <span class="title">Service Details</span> <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item">
-                                    <a href="{{route('service_details.index')}}" class="nav-link "> <span class="title">All Details</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('service_booked.index')}}" class="nav-link "> <span class="title">Service Booked</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('service_complete.index')}}" class="nav-link "> <span
-                                                class="title">Service Complete</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('service_cancel.index')}}" class="nav-link "> <span
-                                                class="title">Service Cancel</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('service_reschedule.index')}}" class="nav-link "> <span
-                                                class="title">Service Reschedule</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">date_range</i>
-                                <span class="title"> Date And Time</span> <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item">
-                                    <a href="{{route('Date_Time.index')}}" class="nav-link "> <span class="title">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link nav-toggle"> <i class="material-icons">info</i>
+                                    <span class="title">Service Details</span> <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="{{route('service_details.index')}}" class="nav-link "> <span class="title">All Details</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('service_booked.index')}}" class="nav-link "> <span class="title">Service Booked</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('service_complete.index')}}" class="nav-link "> <span
+                                                    class="title">Service Complete</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('service_cancel.index')}}" class="nav-link "> <span
+                                                    class="title">Service Cancel</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('service_reschedule.index')}}" class="nav-link "> <span
+                                                    class="title">Service Reschedule</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">date_range</i>
+                                    <span class="title"> Date And Time</span> <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="{{route('Date_Time.index')}}" class="nav-link "> <span class="title">
 
 												View Date and Time</span>
 
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('Date_Time.create')}}" class="nav-link "> <span class="title">
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{route('Date_Time.create')}}" class="nav-link "> <span class="title">
 
 												Add New Date and Time</span>
 
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -258,5 +279,4 @@
         <!-- end sidebar menu -->
 
 
-        <!-- end page container -->
 @endsection
