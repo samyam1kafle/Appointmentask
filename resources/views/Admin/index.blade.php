@@ -1,4 +1,3 @@
-
 @extends('Admin.layouts.master')
 @section('main_content')
     <div class="page-content-wrapper">
