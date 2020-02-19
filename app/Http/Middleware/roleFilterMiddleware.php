@@ -25,6 +25,5 @@ class roleFilterMiddleware
         } else {
             return redirect()->route('index')->with('delete', 'Sorry You are not authorized to view the Admin page');
         }
-
     }
 }
