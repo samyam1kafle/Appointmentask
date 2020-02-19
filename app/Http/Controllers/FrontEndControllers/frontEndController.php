@@ -49,16 +49,7 @@ class frontEndController extends Controller
             $remember = $request->remember;
 //            dd($remember);
             if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
-                if (Auth::user()->role_id =='1'){
-                    return redirect()->route('admin-dashboard')->with('success', 'Login Successful Welcome to the admin pannel');
-                }
-                if (Auth::user()->role_id =='3'){
-                    return redirect()->route('Employee')->with('success', 'Welcome');
-                }
-                else{
-                    return redirect()->route('index')->with('success', 'Login Successful');
-                }
-//                return redirect()->route('admin-dashboard')->with('success', 'Login Successful Welcome to the admin panel');
+                return redirect()->route('admin-dashboard')->with('success', 'Login Successful Welcome to the admin panel');
 
             } else {
                 return redirect()->back()->with('Error', 'Records Not found');
