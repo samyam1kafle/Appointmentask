@@ -33,7 +33,7 @@ Route::group(['prefix' => '/'], function () {
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
+    Route::get('/index','AdminControllers\dashboardController@index')->name('admin-dashboard');
 
     Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
     Route::resource('/bookings', 'AdminControllers\BookingController');
