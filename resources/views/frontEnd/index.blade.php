@@ -33,13 +33,7 @@
                     <div class="col-md-8">
                         <a href="{{route('log-out')}}"><h4>Sign-out</h4></a>
                     </div>
-                        @if(Auth::user()->roles->name === "employee")
-                            <div class="col-md-8">
-                                @foreach($todo as $todo_list)
-                                    <a href="{{route('EmployeeDetails',$todo_list->title)}}"><h4>employee</h4></a>
-                                @endforeach
-                            </div>
-                        @endif
+
 
 
                 @else

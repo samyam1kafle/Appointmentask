@@ -98,6 +98,15 @@
                                     <li class="nav-item">
                                         <a href="{{route('department.index')}}" class="nav-link "> <span class="title">All
 												Departments</span>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                        </a>
+                                    </li>
+=======
+=======
+                                        </a>
+                                    </li>
+>>>>>>> 5038605ef36cc6de14f5dc2e4243594da6006f65
                                     </a>
                                 </li>
                                 
@@ -117,16 +126,24 @@
                                 
                                 </ul>
                             </li>
+<<<<<<< HEAD
 
+>>>>>>> 3faca2fca1ce701b88d1260e549d78afac2a2f29
 
-                        <li class="nav-item">
-                          
-                            <a href="#" class="nav-link nav-toggle"> <i class="material-icons">assignment</i>
-                                <span class="title">ToDo</span> <span class="arrow"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item">
-                                    <a href="{{route('Todo.index')}}" class="nav-link "> <span class="title">
+=======
+                            
+>>>>>>> 5038605ef36cc6de14f5dc2e4243594da6006f65
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+
+                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">assignment</i>
+                                    <span class="title">ToDo</span> <span class="arrow"></span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="{{route('Todo.index')}}" class="nav-link "> <span class="title">
 												View All ToDo</span>
                                         </a>
                                     </li>
@@ -138,9 +155,37 @@
                                 </ul>
                             </li>
 
-                            
 
 
+
+
+                        @endif
+
+                        @if(Auth::user()->roles->name === "employee")
+
+                            <li class="nav-item">
+                                @foreach($todo as $todo_list)
+                                    <a href="{{route('EmployeeDetails',$todo_list->title)}}"
+                                       class="nav-link nav-toggle"> <i class="material-icons">people</i>
+                                        <span class="title">employee</span> <span class="arrow"></span>
+                                    </a>
+
+                                @endforeach
+
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a href="{{route('roles.index')}}" class="nav-link "> <span class="title">View all
+												roles</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{route('roles.create')}}" class="nav-link "> <span class="title">Add new
+												role</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
                         @endif
 
@@ -221,6 +266,5 @@
         <!-- end sidebar menu -->
 
 
-   
-    <!-- end page container -->
+        <!-- end page container -->
 @endsection
