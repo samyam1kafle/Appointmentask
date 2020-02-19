@@ -98,8 +98,15 @@
                                     <li class="nav-item">
                                         <a href="{{route('department.index')}}" class="nav-link "> <span class="title">All
 												Departments</span>
+<<<<<<< HEAD
+<<<<<<< HEAD
                                         </a>
                                     </li>
+=======
+=======
+                                        </a>
+                                    </li>
+>>>>>>> 5038605ef36cc6de14f5dc2e4243594da6006f65
                                     </a>
                                 </li>
                                 
@@ -119,7 +126,13 @@
                                 
                                 </ul>
                             </li>
+<<<<<<< HEAD
+
+>>>>>>> 3faca2fca1ce701b88d1260e549d78afac2a2f29
+
+=======
                             
+>>>>>>> 5038605ef36cc6de14f5dc2e4243594da6006f65
                                 </ul>
                             </li>
 
