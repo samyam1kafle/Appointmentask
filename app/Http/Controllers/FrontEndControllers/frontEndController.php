@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use App\Backend\Todo;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
@@ -18,6 +19,12 @@ class frontEndController extends Controller
 {
 
     use RegistersUsers;
+    protected $Todo=null;
+
+    public function __construct(Todo $Todo)
+    {
+      $this->Todo=$Todo;
+    }
 
     public function index()
     {
@@ -25,11 +32,13 @@ class frontEndController extends Controller
 //        if($user->email_verified_at != null){
 //            Mail::to($user->email)->send(new socialLoginMail($user->name,$user->email,$user->mail_password));
 //        }
-        return view('frontEnd/index');
+        $this->Todo=$this->Todo->get();
+        return view('frontEnd/index')->with('todo', $this->Todo);
     }
 
     public function login_index(Request $request)
     {
+        $this->Todo=$this->Todo->get();
         if ($request->isMethod('post')) {
             $this->validate($request, [
                 'password' => 'required',
@@ -66,6 +75,8 @@ class frontEndController extends Controller
 
     public function register(Request $request)
     {
+        $this->Todo=$this->Todo->get();
+
         if ($request->isMethod('get')) {
             return view('frontEnd/register');
         }
@@ -109,10 +120,10 @@ class frontEndController extends Controller
                     return view('auth.verify');
                 }else{
                     if (Auth::check()) {
-                        return redirect()->route('index')->with('success', 'You have registered to our site successfully');
+                        return redirect()->route('index')->with('todo', $this->Todo)->with('success', 'You have registered to our site successfully');
                     } else {
                         Auth::login($user);
-                        return redirect()->route('index')->with('success', 'You have been registered successfully');
+                        return redirect()->route('index')->with('todo', $this->Todo)->with('success', 'You have been registered successfully');
                     }
                 }
 
@@ -131,8 +142,9 @@ class frontEndController extends Controller
 
     public function logout()
     {
+        $this->Todo=$this->Todo->get();
         Session::flush();
         Auth::logout();
-        return redirect()->route('index')->with('success', 'Logged Out Successfully');
+        return redirect()->route('index')->with('todo', $this->Todo)->with('success', 'Logged Out Successfully');
     }
 }
