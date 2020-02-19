@@ -113,9 +113,19 @@
                                         <a href="{{route('department.index')}}" class="nav-link "> <span class="title">All
 												Departments</span>
 
+
                                         </a>
                                     </li>
 
+                                        </a>
+                                    </li>
+
+                                    </a>
+                                </li>
+                                
+
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 
