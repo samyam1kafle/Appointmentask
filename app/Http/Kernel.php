@@ -60,5 +60,6 @@ class Kernel extends HttpKernel
         'admin'=>\App\Http\Middleware\roleFilterMiddleware::class,
         'super_admin'=>\App\Http\Middleware\Super_admin::class,
         'employee'=>\App\Http\Middleware\employee::class,
+        'provider'=>\App\Http\Middleware\provider::class,
     ];
 }
