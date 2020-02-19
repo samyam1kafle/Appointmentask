@@ -1,37 +1,38 @@
 @extends('Admin.layouts.master')
 @section('main_content')
+
+
     <!-- start page content -->
-    <div class="page-content-wrapper" >
+    <div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
                 <div class="page-title-breadcrumb">
                     <div class=" pull-left">
-                        <div class="page-title">Available Todo Details</div>
+                        <div class="page-title">ToDoS Details</div>
                     </div>
+
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="{{route('Todo.index')}}"> Todo</a>&nbsp;<i
+                        <li><a class="parent-item" href="">ToDoS</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
                         <li class="active">All Details</li>
                     </ol>
                 </div>
             </div>
-            <div class="row" >
-                <div class="col-md-12 col-sm-12" >
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Avaialable Todo Details</header>
+                            <header>ToDoS Details</header>
                             <a class="parent-item pull-right btn btn-primary" href="{{ route('Todo.create') }}">Add
                                 +</a>
                         </div>
                         <div class="card-body " id="bar-parent">
-                            <table id="exportTable" class="display nowrap">
-                        <div class="table-scrollable " id="bar-parent">
-                            <table id="exportTable" class="display nowrap" style="width:100%;">
+                            <table id="exportTable" class="display nowrap" style="width:100%">
                                 <thead>
                                 <tr>
                                     <th>Title</th>
@@ -149,6 +150,7 @@
                                     </tr>
                                 @endforeach
                                 </tbody>
+
                             </table>
                         </div>
                     </div>
@@ -156,5 +158,8 @@
             </div>
         </div>
     </div>
-    </div>
+    <!-- end page content -->
+
+
+
 @endsection

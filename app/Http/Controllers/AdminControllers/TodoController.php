@@ -18,7 +18,7 @@ class TodoController extends Controller
     public function __construct(Todo $Todo, All_User $All_User)
     {
         $this->Todo = $Todo;
-        $this->$All_User = $All_User;
+        $this->All_User = $All_User;
     }
 
     public function index()
