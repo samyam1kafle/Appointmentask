@@ -119,24 +119,6 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-item">
-
-                                <a href="#" class="nav-link nav-toggle"> <i class="material-icons">assignment</i>
-                                    <span class="title">ToDo</span> <span class="arrow"></span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li class="nav-item">
-
-                                        <a href="{{route('bookings.index')}}" class="nav-link "> <span class="title">All
-												Bookings</span>
-                                    </a>
-                                </li>
-                                
-                                </ul>
-                            </li>
-
-                    </ul>
-                            </li>
 
                             <li class="nav-item">
 
@@ -188,8 +170,7 @@
                             </li>
 
                         @endif
-
-                        @if(Auth::user()->roles->name == 'admin' || Auth::user()->roles->name == 'super_admin')
+                        @if((Auth::user()->roles->name == 'admin' )||(Auth::user()->roles->name == 'super_admin'))
                             <li class="nav-item">
                                 <a href="#" class="nav-link nav-toggle"> <i class="material-icons">work</i>
                                     <span class="title">Services</span> <span class="arrow"></span>
@@ -259,7 +240,11 @@
                                 </ul>
                             </li>
                         @endif
+
                     </ul>
+                    </li>
+
+
                 </div>
             </div>
         </div>
