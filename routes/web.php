@@ -72,6 +72,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
             Route::put('/Todo-Complete/{id}', 'AdminControllers\TodoController@complete')->name('complete');
             Route::put('/Todo-ReAssign/{id}', 'AdminControllers\TodoController@ReAssign')->name('ReAssign');
             Route::put('/Todo-reassign/{id}', 'AdminControllers\TodoController@reaassign')->name('reassign');
+            Route::get('/Todo-detail/{title}', 'AdminControllers\TodoController@GetTaskDetail')->name('Todo-detail');
         });
         Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
         Route::resource('/services', 'AdminControllers\ServicesController');
@@ -86,12 +87,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::group(['middleware' => ['employee']], function () {
 //    Task details route
 
-        Route::get('/Employee', 'FrontEndControllers\EmployeeController@GetList')->name('Employee');
-        Route::get('/EmployeeDetails/{title}', 'FrontEndControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
+        Route::get('/Employee', 'AdminControllers\EmployeeController@GetList')->name('Employee');
+        Route::get('/EmployeeDetails/{title}', 'AdminControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
 
 
     });
-
+    Route::group(['middleware' => ['comment']], function () {
+        Route::resource('/comment' , 'AdminControllers\CommentController');
+    });
 
 });
 
