@@ -16,8 +16,8 @@ class EducationController extends Controller
      */
     public function index()
     {
-        dd();
-        // return view('Admin/Users/profile');
+        // $education = User_education_detail::orderBy('id','desc')->get();
+        // return view('Admin.Users.profile');
     }
 
     /**
@@ -27,8 +27,9 @@ class EducationController extends Controller
      */
     public function create()
     {
-        $degree = Degree::all();
-        return view('Admin/Users/updateProf',compact('$degree'));
+        // $degree = Degree::all();
+        // $education = User_education_detail::orderBy('id','desc')->get();
+        // return view('Admin/Users/updateProf',compact('$degree','education'));
     }
 
     /**
@@ -39,9 +40,22 @@ class EducationController extends Controller
      */
     public function store(Request $request)
     {
-        $data = User_education_detail::create($request->all());
+       $edu = new User_education_detail([
+            'user_id' => $request->user_id,
+            'inst_name' => $request->inst_name,
+            'inst_address' => $request->inst_address,
+            'degree_id' => $request->degree_id,
+            'faculty' => $request->faculty,
+            'board' => $request->board,
+            'passed_year' => $request->passed_year,
+            'passed_division'=> $request->passed_division
+       ]);
+       $data = $edu->save();
+        // $data = User_education_detail::create($request->all());
         if($data){
-            return redirect()->route('education.index');
+            return redirect()->back()->with('delete','Education Details added successfully !!!');
+        }else {
+            return redirect()->back()->with('Error', 'There occurred some problem , please try again after a while.');
         }
     }
 
@@ -64,7 +78,8 @@ class EducationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $educ = User_education_details::findOrFail($id);
+        return view('Admin/Users/updateProf');
     }
 
     /**
@@ -76,7 +91,22 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $educ = User_education_detail::find($id);
+
+             $educ->user_id = $request->user_id;
+             $educ->inst_name = $request->inst_name;
+             $educ->inst_address = $request->inst_address;
+             $educ->degree_id = $request->degree_id;
+             $educ->faculty = $request->faculty;
+             $educ->board = $request->board;
+             $educ->passed_year = $request->passed_year;
+             $educ->passed_division = $request->passed_division;
+             $update = $educ->save();
+             if($update){
+                 return redirect()->back()->with('success','User education details updated successfully');
+             }else{
+                 return redirect()->back()->with('error','Errors Occurred !!!');
+             }
     }
 
     /**

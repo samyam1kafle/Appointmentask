@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\ImageManagerStatic as Image;
+use App\Backend\User_education_detail;
+use App\Backend\User_work_detail;
+use App\Backend\User_personal_detail;
 
 class userProfileController extends Controller
 {
@@ -22,16 +25,22 @@ class userProfileController extends Controller
         $providers = All_User::where('role_id', '=', $prov_id->id)->get()->count();
         $subscriber = All_User::where('role_id', '=', $subs_id->id)->get()->count();
         $employee = All_User::where('role_id', '=', $emp_id->id)->get()->count();
-
-        return view('Admin/Users/profile', compact('providers', 'subscriber', 'employee'));
-
+        $educ =  User_education_detail::where('user_id','=',Auth::user()->id)->first();
+        $wrk =  User_work_detail::where('user_id','=',Auth::user()->id)->first();
+        $prsnl =  User_personal_detail::where('user_id','=',Auth::user()->id)->first();
+        // $degree = Degree::a();
+        return view('Admin/Users/profile', compact('providers', 'subscriber', 'employee','educ','wrk','prsnl'));
     }
 
     public function prof_update(Request $request)
     {
         if ($request->isMethod('get')) {
             $degree = Degree::all();
-            return view('Admin/Users/updateProf', compact('degree'));
+            $educ =  User_education_detail::where('user_id','=',Auth::user()->id)->first();
+            $wrk =  User_work_detail::where('user_id','=',Auth::user()->id)->first();
+            $prsnl =  User_personal_detail::where('user_id','=',Auth::user()->id)->first();
+            // dd($educ);
+            return view('Admin/Users/updateProf', compact('degree','educ','wrk','prsnl'));
         }
     }
 

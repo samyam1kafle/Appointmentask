@@ -129,11 +129,6 @@
                                 </ul>
                             </li>
 
-<<<<<<< HEAD
-                   
-=======
->>>>>>> b0377b00646bbb18ba66f389ad5da419f1e8160d
-
                             <li class="nav-item">
 
                                 <a href="#" class="nav-link nav-toggle"> <i class="material-icons">assignment</i>

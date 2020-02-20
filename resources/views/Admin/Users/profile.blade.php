@@ -106,11 +106,11 @@
                                         <ul class="list-group list-group-unbordered">
                                             <li class="list-group-item">
                                                 <b>Current Address</b>
-                                                <div class="profile-desc-item pull-right"></div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl->address1}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Permanent Address</b>
-                                                <div class="profile-desc-item pull-right">dasfgh</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl->address2}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Gender </b>
@@ -124,27 +124,13 @@
 
                                             <li class="list-group-item">
                                                 <b>Contact No.</b>
-                                                <div class="profile-desc-item pull-right">cvhjkl</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl->phone1.' and  '.$prsnl->phone2}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Date of Birth</b>
-                                                <div class="profile-desc-item pull-right">wreiu</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl->date_of_birth}}</div>
                                             </li>
-                                        </ul>
-                                        <!-- <div class="row list-separated profile  ">
-                                            <div class="col-md-4 col-sm-4 col-6">
-                                                <div class="uppercase profile-stat-title"> 37</div>
-                                                <div class="uppercase profile-stat-text"> Projects</div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-6">
-                                                <div class="uppercase profile-stat-title"> 51</div>
-                                                <div class="uppercase profile-stat-text"> Tasks</div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-6">
-                                                <div class="uppercase profile-stat-title"> 61</div>
-                                                <div class="uppercase profile-stat-text"> Uploads</div>
-                                            </div>
-                                        </div> -->
+                                        </ul>                                        
                                     </div>
                                 </div>
 
@@ -164,32 +150,32 @@
                                         <ul class="list-group list-group-unbordered">
                                             <li class="list-group-item">
                                                 <b>Degree </b>
-                                                <div class="profile-desc-item pull-right">asdfghjk</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->degree->degree_name : ''}}</div>
                                             </li>
                                             
                                             <li class="list-group-item">
                                                 <b>Board</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->board : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Faculty</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->faculty : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Institute Name</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->inst_name : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Institute Address</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->inst_address : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Passed Year</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->passed_year : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Division</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->passed_division : ''}}</div>
                                             </li>
                                         </ul>
                                         
@@ -206,35 +192,37 @@
                                             <li class="list-group-item">
                                              <b> Work Experience</b>
                                                 <div class="profile-desc">
-                                                Hello I am Samyam a web and user interface designer. I love to work
-                                                with the application interface and
-                                                the web elements.
+                                                {{ $wrk ? $wrk->work_exp : ''}}
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Profession </b>
-                                                <div class="profile-desc-item pull-right">asdfghjk</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->profession : ''}}</div>
                                             </li>
                                                                                                                                     
                                             <li class="list-group-item">
                                                 <b>Organization Name</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_name : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Organization Address</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_address : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Organization Phone</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{$wrk ? 'Telephone : '. $wrk->phone_1.' '.' Mobile : '.$wrk->phone_2 : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Organization PAN No.</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_pan : ''}}</div>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Service Fee</b>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->fee : ''}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Document</b>
-                                                <div class="profile-desc-item pull-right">hjygrj</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->document : ''}}</div>
                                             </li>
                                         </ul>
                                         
