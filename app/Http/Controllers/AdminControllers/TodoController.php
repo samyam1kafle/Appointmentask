@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\AdminControllers;
 
 use App\Backend\Roles;
+use App\Events\todoEvent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\todoValidator;
 use App\Backend\Todo;
 use App\Backend\All_User;
+use Illuminate\Support\Facades\Auth;
 
 
 class TodoController extends Controller
@@ -23,6 +25,9 @@ class TodoController extends Controller
 
     public function index()
     {
+//        event(new todoEvent(Auth::user()->name));
+//        return "Event has been sent!";
+
         $this->Todo = $this->Todo->get();
         $superAdmin= Roles::where('name','=','super_admin')->first();
         $employee= Roles::where('name','=','employee')->first();
@@ -39,6 +44,8 @@ class TodoController extends Controller
      */
     public function create()
     {
+
+
         $superAdmin= Roles::where('name','=','super_admin')->first();
         $employee= Roles::where('name','=','employee')->first();
 
@@ -58,6 +65,7 @@ class TodoController extends Controller
         $data = $request->all();
         $this->Todo->fill($data);
         $success = $this->Todo->save();
+        event(new todoEvent('hello world'));
         if ($success) {
             request()->session()->flash('success', 'ToDos list added successfully');
 
