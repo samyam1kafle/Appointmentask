@@ -49,6 +49,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::PUT('/update-profile-password/{id}', 'AdminControllers\userProfileController@update_user')->name('update-profile');
 
+    // User Education Details
+Route::resource('/user_education', 'AdminControllers\UsersUpdateControllers\EducationController');
+
+//User Work Details
+Route::resource('/work', 'AdminControllers\UsersUpdateControllers\WorkController');
+
+//User Personal Details
+Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDetailController');
+
+
 //    Service Details Route
 
 
@@ -101,5 +111,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 
