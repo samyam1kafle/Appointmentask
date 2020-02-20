@@ -33,7 +33,7 @@ Route::group(['prefix' => '/'], function () {
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::get('/index','AdminControllers\dashboardController@index')->name('admin-dashboard');
+    Route::get('/index', 'AdminControllers\dashboardController@index')->name('admin-dashboard');
 
     Route::resource('/bookings', 'AdminControllers\BookingController');
     /*
@@ -96,7 +96,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 });
 
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
