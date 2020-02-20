@@ -10,6 +10,7 @@
     </div>
     <!-- end footer -->
     </div>
+
     <!-- start js include path -->
     <script src="{{asset('Admin/assets/plugins/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('Admin/assets/plugins/popper/popper.js')}}"></script>
@@ -168,3 +169,4 @@
     </html>
 
 @endsection
+

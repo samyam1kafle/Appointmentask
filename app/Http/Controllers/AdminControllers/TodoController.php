@@ -9,18 +9,22 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\todoValidator;
 use App\Backend\Todo;
 use App\Backend\All_User;
+use App\Backend\Comment;
 use Illuminate\Support\Facades\Auth;
+
 
 
 class TodoController extends Controller
 {
     protected $Todo = null;
     protected $All_User = null;
+    protected $Comment = null;
 
-    public function __construct(Todo $Todo, All_User $All_User)
+    public function __construct(Todo $Todo, All_User $All_User,Comment $Comment)
     {
         $this->Todo = $Todo;
         $this->All_User = $All_User;
+        $this->Comment = $Comment;
     }
 
     public function index()
@@ -193,5 +197,14 @@ class TodoController extends Controller
         $update=$todo->update();
         return redirect()->route('Todo.index')->with('success','Task Re-assigned');
 
+    }
+
+    public function GetTaskDetail(Request $request)
+    {
+
+        $this->Todo=$this->Todo->where('title',$request->title)->first();
+        $id=$this->Todo->id;
+        $this->Comment=$this->Comment->where('Todo_id',$id)->get();
+        return view('Admin/Todo/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment);
     }
 }
