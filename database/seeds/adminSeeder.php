@@ -19,6 +19,7 @@ class adminSeeder extends Seeder
                 'password'=>bcrypt('admin123'),
                 'role_id'=>'1',
                 'department_id'=>'1',
+                'gender' => 'male',
                 'created_at'=> date("Y-m-d H:i:s"),
             )
         );

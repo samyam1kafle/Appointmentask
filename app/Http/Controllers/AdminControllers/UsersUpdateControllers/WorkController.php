@@ -105,7 +105,7 @@ class WorkController extends Controller
             $name = time().'.'. $featured->getClientOriginalExtension();
 
             $resize = Image::make($featured);
-            $resize->resize('600','600')->save('Uploads/users/thumbnails/' .$name);
+            $resize->resize('600','600')->save('Uploads/work_document/' .$name);
 
             $wrk->document = $name;
         }else{
