@@ -106,11 +106,11 @@
                                         <ul class="list-group list-group-unbordered">
                                             <li class="list-group-item">
                                                 <b>Current Address</b>
-                                                <div class="profile-desc-item pull-right">{{$prsnl->address1}}</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->address1 : 'Please Update Your Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Permanent Address</b>
-                                                <div class="profile-desc-item pull-right">{{$prsnl->address2}}</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->address2 : 'Please Update Your Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Gender </b>
@@ -124,11 +124,11 @@
 
                                             <li class="list-group-item">
                                                 <b>Contact No.</b>
-                                                <div class="profile-desc-item pull-right">{{$prsnl->phone1.' and  '.$prsnl->phone2}}</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->phone1.' and  '.$prsnl->phone2 : 'Please Update Your Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Date of Birth</b>
-                                                <div class="profile-desc-item pull-right">{{$prsnl->date_of_birth}}</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->date_of_birth : 'Please Update Your Profile'}}</div>
                                             </li>
                                         </ul>                                        
                                     </div>
