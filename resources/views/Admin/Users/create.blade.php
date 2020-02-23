@@ -62,7 +62,7 @@
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
                                                 <input type="password" class="form-control" name="password"/></div>
-                                            <span class="help-block"> e.g. xxxxxxx </span>
+                                            <span class="help-block"> (min:5 ~ max:15 characters) </span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -73,7 +73,7 @@
                                             <div class="input-icon right">
                                                 <i class="fa"></i>
                                                 <input type="password" class="form-control" name="password_confirmation"/></div>
-                                            <span class="help-block"> e.g. xxxxxxx </span>
+                                            <span class="help-block"> (min:5 ~ max:15 characters) </span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
