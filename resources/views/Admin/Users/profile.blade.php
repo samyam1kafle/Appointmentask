@@ -220,10 +220,17 @@
                                                 <b>Service Fee</b>
                                                 <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->fee : ''}}</div>
                                             </li>
+                                            @if($wrk->document)
                                             <li class="list-group-item">
                                                 <b>Document</b>
-                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->document : ''}}</div>
-                                            </li>
+                                                <div class="profile-desc-item pull-right">
+                                                <img src="{{asset('Uploads/work_document'.$wrk->document)}}"
+                                                         alt="" width="auto" height="100px">
+                                                </div>                                                                  
+                                            @else
+                                                <div class="profile-desc-item pull-right">No Document available</div>
+                                                </li> 
+                                            @endif
                                         </ul>
                                         
                                     </div>
