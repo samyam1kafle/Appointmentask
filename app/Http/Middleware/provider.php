@@ -16,7 +16,7 @@ class provider
      */
     public function handle($request, Closure $next)
     {
-         if (Auth::user()->roles->name == 'admin' || Auth::user()->roles->name == 'super_admin') {
+        if (Auth::user()->roles->name == 'admin' || Auth::user()->roles->name == 'super_admin') {
             return $next($request);
         } else {
             return redirect()->route('admin-dashboard')->with('delete', 'Sorry you don\'t have access to view the requested resource');

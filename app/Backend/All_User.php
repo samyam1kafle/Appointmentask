@@ -53,4 +53,5 @@ class All_User extends Auth implements MustVerifyEmail , \Illuminate\Contracts\A
         return $this->hasMany('App\Backend\booking');
     }
 
+
 }

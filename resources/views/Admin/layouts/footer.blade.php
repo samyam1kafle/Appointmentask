@@ -1,137 +1,130 @@
 @section('footer')
-<!-- start footer -->
-<div class="page-footer">
-    <div class="page-footer-inner"> 2020 &copy; Appointment dashboard By
-        <a href="mailto:itservicesnepal@gmail.com" target="_top" class="makerCss">GCN</a>
+    <!-- start footer -->
+    <div class="page-footer">
+        <div class="page-footer-inner"> 2020 &copy; Appointment dashboard By
+            <a href="mailto:itservicesnepal@gmail.com" target="_top" class="makerCss">GCN</a>
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
     </div>
-    <div class="scroll-to-top">
-        <i class="icon-arrow-up"></i>
+    <!-- end footer -->
     </div>
-</div>
-<!-- end footer -->
-</div>
-<!-- start js include path -->
-<script src="{{asset('Admin/assets/plugins/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/popper/popper.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/jquery-blockui/jquery.blockui.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
-<!-- bootstrap -->
-<script src="{{asset('Admin/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/sparkline/jquery.sparkline.js')}}"></script>
-<script src="http://radixtouch.in/templates/admin/smart/source/assets/js/pages/sparkline/sparkline-data.js"></script>
-<!-- Common js-->
-<script src="{{asset('Admin/assets/js/app.js')}}"></script>
-<script src="{{asset('Admin/assets/js/layout.js')}}"></script>
-<script src="{{asset('Admin/assets/js/theme-color.js')}}"></script>
-<!-- material -->
-<script src="{{asset('Admin/assets/plugins/material/material.min.js')}}"></script>
-<!-- chart js -->
-<script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/chart-js/Chart.bundle.js"></script>
-<script src="{{asset('Admin/assets/plugins/chart-js/utils.js')}}"></script>
-<script src="{{asset('Admin/assets/js/pages/chart/chartjs/home-data.js')}}"></script>
-<!-- summernote -->
-<script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/summernote/summernote.js')}}"></script>
-<script src="{{asset('Admin/assets/js/pages/summernote/summernote-data.js')}}"></script>
-<!-- end js include path -->
 
-<!-- Data Table -->
-<script src="{{asset('Admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('Admin/assets/js/pages/table/table_data.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/datatables/export/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/datatables/export/buttons.flash.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/datatables/export/jszip.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/datatables/export/pdfmake.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/datatables/export/vfs_fonts.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/datatables/export/buttons.html5.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/datatables/export/buttons.print.min.js')}}"></script>
-<!-- end js include path -->
+    <!-- start js include path -->
 
-<!-- Date Time Picker scripts -->
-<script src="{{asset('Admin/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/bootstrap-datepicker/datepicker-init.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/popper/popper.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/jquery-blockui/jquery.blockui.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/jquery-slimscroll/jquery.slimscroll.js')}}"></script>
+    <!-- bootstrap -->
+    <script src="{{asset('Admin/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/sparkline/jquery.sparkline.js')}}"></script>
+    <script src="http://radixtouch.in/templates/admin/smart/source/assets/js/pages/sparkline/sparkline-data.js"></script>
+    <!-- Common js-->
+    <script src="{{asset('Admin/assets/js/app.js')}}"></script>
+    <script src="{{asset('Admin/assets/js/layout.js')}}"></script>
+    <script src="{{asset('Admin/assets/js/theme-color.js')}}"></script>
+    <!-- material -->
+    <script src="{{asset('Admin/assets/plugins/material/material.min.js')}}"></script>
 
-<script src="{{asset('Admin/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js')}}" charset="UTF-8"></script>
-<script src="{{asset('Admin/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker-init.js')}}" charset="UTF-8"></script>
-<!-- Date Time Picker scripts end -->
+    <!-- end js include path -->
+        {{--<!-- chart js -->--}}
+        {{--<script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/chart-js/Chart.bundle.js"></script>--}}
+        {{--<script src="{{asset('Admin/assets/plugins/chart-js/utils.js')}}"></script>--}}
+        {{--<script src="{{asset('Admin/assets/js/pages/chart/chartjs/home-data.js')}}"></script>--}}
 
-<!-- Validation form-->
-<script src="{{asset('Admin/assets/plugins/jquery-validation/js/jquery.validate.min.js')}}"></script>
-<script src="{{asset('Admin/assets/plugins/jquery-validation/js/additional-methods.min.js')}}"></script>
-<script src="{{asset('Admin/assets/js/pages/validation/form-validation.js')}}"></script>
+    {{--<!-- summernote -->--}}
+    {{--<script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/summernote/summernote.js"></script>--}}
+    {{--<script src="{{asset('Admin/assets/js/pages/summernote/summernote-data.js')}}"></script>--}}
+    <!-- end js include path -->
 
-<!-- Validation form-->
+    <!-- Data Table -->
+    <script src="{{asset('Admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/datatables/plugins/bootstrap/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/js/pages/table/table_data.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/datatables/export/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/datatables/export/buttons.flash.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/datatables/export/jszip.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/datatables/export/pdfmake.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/datatables/export/vfs_fonts.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/datatables/export/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/datatables/export/buttons.print.min.js')}}"></script>
+    <!-- end js include path -->
 
-<!--select2-->
-<script src="{{asset('Admin/assets/plugins/select2/js/select2.js')}}"></script>
-<script src="{{asset('Admin/assets/js/pages/select2/select2-init.js')}}"></script>
-<!--select2-->
+    <!-- Date Time Picker scripts -->
+    <script src="{{asset('Admin/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/bootstrap-datepicker/datepicker-init.js')}}"></script>
 
-    <!--Unisharp Ck Editor -->
-    {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-    <script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js')}}"
+            charset="UTF-8"></script>
+    <script src="{{asset('Admin/assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker-init.js')}}"
+            charset="UTF-8"></script>
+    <!-- Date Time Picker scripts end -->
+
+    <!-- Validation form-->
+    <script src="{{asset('Admin/assets/plugins/jquery-validation/js/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/plugins/jquery-validation/js/additional-methods.min.js')}}"></script>
+    <script src="{{asset('Admin/assets/js/pages/validation/form-validation.js')}}"></script>
+
+    <!-- Validation form-->
+
+    <!--select2-->
+    <script src="{{asset('Admin/assets/plugins/select2/js/select2.js')}}"></script>
+    <script src="{{asset('Admin/assets/js/pages/select2/select2-init.js')}}"></script>
+    <!--select2-->
+
+
+    {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>--}}
+    {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>--}}
+    {{--<script>--}}
+        {{--$('textarea').ckeditor();--}}
+        {{--// $('.textarea').ckeditor(); // if class is prefered.--}}
+    {{--</script>--}}
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
-        $('textarea').ckeditor();
-        // $('.textarea').ckeditor(); // if class is prefered.
-    </script>--}}
-<!--Unisharp Ck Editor -->
+        CKEDITOR.replace( 'editor' );
+    </script>
 
-<!-- <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-<script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
-<script>
-    $('textarea').ckeditor();
-    // $('.textarea').ckeditor(); // if class is prefered.
-</script> -->
+    {{--<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>--}}
+    {{--<script>--}}
+        {{--ClassicEditor--}}
+             {{--.create( document.querySelector( '#editor' ) )--}}
+            {{--.catch( error => {--}}
+                {{--console.error( error );--}}
+            {{--} );--}}
+    {{--</script>--}}
 
-<!-- {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>--}}
-{{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>--}}
-{{--<script>--}}
-    {{--$('textarea').ckeditor();}}
-    {{--// $('.textarea').ckeditor(); // if class is prefered.--}}
-{{--</script>--}} -->
+    <!--Ck Editor -->
 
- {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>--}}
-{{--<script>--}}
-    {{--CKEDITOR.replace( 'editor' );--}}
-{{--</script>--}}
+    <!-- dropzone -->
+    <script src="{{asset('Admin/assets/plugins/dropzone/dropzone.js')}}"></script>
 
-<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-<script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>
-<script>
-    $('textarea').ckeditor();
-    // $('.textarea').ckeditor(); // if class is prefered.
-</script>
+    <!-- Toastr -->
 
-<!--Ck Editor -->
+    <script src="{{asset('js/toastr.min.js')}}"></script>
+    <script>
+        @if(Session::has('success'))
+        toastr.success("{{Session::get('success')}}")
 
-<!-- dropzone -->
-<script src="{{asset('Admin/assets/plugins/dropzone/dropzone.js')}}"></script>
+        @endif
 
-<!-- Toastr -->
+        @if(Session::has('delete'))
+        toastr.info("{{Session::get('delete')}}")
+        @endif
 
-<script src="{{asset('js/toastr.min.js')}}"></script>
-<script>
-    @if(Session::has('success'))
-    toastr.success("{{Session::get('success')}}")
+        @if(Session::has('Error'))
+        toastr.error("{{Session::get('Error')}}")
+        @endif
 
-    @endif
+    </script>
 
-    @if(Session::has('delete'))
-    toastr.info("{{Session::get('delete')}}")
-    @endif
+    <script src="{{asset('Admin/assets/js/front_js/global.js')}}"></script>
+    <script src="{{asset('Admin/assets/js/front_js/jquery-ui.min.js')}}"></script>
+    </body>
 
-    @if(Session::has('Error'))
-    toastr.error("{{Session::get('Error')}}")
-    @endif
+    </html>
 
-</script>
+@endsection
 
-<script src="{{asset('Admin/assets/js/front_js/global.js')}}"></script>
-<script src="{{asset('Admin/assets/js/front_js/jquery-ui.min.js')}}"></script>
-
-</body>
-
-</html>
-
-    @endsection

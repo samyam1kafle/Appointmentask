@@ -22,4 +22,7 @@ class Todo extends Model
     public function reassignto(){
         return $this->belongsTo('App\Backend\All_User','reassignedto');
     }
+    public function Todo(){
+        return $this->hasMany('App\Backend\Comment');
+    }
 }
