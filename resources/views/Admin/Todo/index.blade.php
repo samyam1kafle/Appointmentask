@@ -72,8 +72,7 @@
                                                         <a href="javascript:;">
                                                             <a href="{{route('Todo-detail',$Todos_data->title)}}">
                                                                 <button class="btn "
-                                                                        type="submit"><span
-                                                                            class="">{{$Todos_data->title}}</span> View Detail
+                                                                        type="submit">View Detail
                                                                 </button>
                                                             </a>
                                                         </a>

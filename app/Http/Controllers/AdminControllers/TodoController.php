@@ -10,6 +10,7 @@ use App\Http\Requests\todoValidator;
 use App\Backend\Todo;
 use App\Backend\All_User;
 use App\Backend\Comment;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -48,13 +49,13 @@ class TodoController extends Controller
     public function create()
     {
 
-
+        $d=Carbon::now();
         $superAdmin= Roles::where('name','=','super_admin')->first();
         $employee= Roles::where('name','=','employee')->first();
 
         $superAdmin= All_User::where('role_id','=',$superAdmin->id)->get();
         $employee= All_User::where('role_id','=',$employee->id)->get();
-        return view('Admin.Todo.create')->with('superadmin',$superAdmin)->with('employee',$employee);
+        return view('Admin.Todo.create')->with('superadmin',$superAdmin)->with('employee',$employee)->with('d',$d);
     }
 
     /**
@@ -66,7 +67,9 @@ class TodoController extends Controller
     public function store(todoValidator $request)
     {
         $data = $request->all();
-        $this->Todo->fill($data);
+       /* dd($data);*/
+        $this->Todo->fill($data,$request->assignedDate);
+        /*$this->Todo->fill($d);*/
         $success = $this->Todo->save();
         if ($success) {
             request()->session()->flash('success', 'ToDos list added successfully');
@@ -199,10 +202,10 @@ class TodoController extends Controller
 
     public function GetTaskDetail(Request $request)
     {
-
         $this->Todo=$this->Todo->where('title',$request->title)->first();
+        $d=Carbon::now();
         $id=$this->Todo->id;
         $this->Comment=$this->Comment->where('Todo_id',$id)->get();
-        return view('Admin/Todo/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment);
+        return view('Admin/Todo/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment)->with('d',$d);
     }
 }
