@@ -29,8 +29,7 @@ class TodoController extends Controller
 
     public function index()
     {
-//        event(new todoEvent(Auth::user()->name));
-//        return "Event has been sent!";
+
 
         $this->Todo = $this->Todo->get();
         $superAdmin= Roles::where('name','=','super_admin')->first();
@@ -69,7 +68,6 @@ class TodoController extends Controller
         $data = $request->all();
         $this->Todo->fill($data);
         $success = $this->Todo->save();
-        event(new todoEvent('hello world'));
         if ($success) {
             request()->session()->flash('success', 'ToDos list added successfully');
 
