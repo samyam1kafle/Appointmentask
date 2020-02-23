@@ -27,7 +27,7 @@ class ServicesValidator extends FormRequest
             'name' => 'required|| min:3 | max:50',
             'User_id' => 'required|integer',
             'Department_id' => 'required|integer',
-            'Service_description' => 'required| min:10 | max:50',
+            'Service_description' => 'required| min:10 | max:150',
         ];
     }
 }

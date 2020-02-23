@@ -30,7 +30,7 @@ class UserValidator extends FormRequest
             'department_id' => 'required',
             'password' => 'confirmed | min:5 | max:15 ',
             'email' => 'required',
-            'name' => 'required | min:3 | max:15'
+            'name' => 'required | min:3 | max:50'
 
         ];
     }
