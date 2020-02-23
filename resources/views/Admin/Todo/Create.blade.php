@@ -55,13 +55,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row margin-top-20">
-                                        <div class="col-md-8">
-                                            <div>
-                                                <input size="30" type="hidden" readonly name="CompletedDate">
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div class="form-group row  margin-top-20">
                                         <label class="control-label col-md-3">Assigned TO
                                             <span class="required"> * </span>
@@ -111,6 +105,9 @@
                                     {{--User Id--}}
                                     <input type="hidden" class="form-control" value="{{Auth::user()->id}}"
                                            required readonly name="User_id"/>
+                                    {{--End--}}
+                                    {{--Completed Date--}}
+                                    <input size="30" type="hidden" readonly name="CompletedDate">
                                     {{--End--}}
                                     {{--Assigned date--}}
                                     <input type="hidden" class="form-control" value="{{$d}}"
