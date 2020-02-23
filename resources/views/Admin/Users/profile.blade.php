@@ -106,11 +106,11 @@
                                         <ul class="list-group list-group-unbordered">
                                             <li class="list-group-item">
                                                 <b>Current Address</b>
-                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->address1 : 'Please Update Your Profile'}}</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->address1 : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Permanent Address</b>
-                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->address2 : 'Please Update Your Profile'}}</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->address2 : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Gender </b>
@@ -124,11 +124,11 @@
 
                                             <li class="list-group-item">
                                                 <b>Contact No.</b>
-                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->phone1.' and  '.$prsnl->phone2 : 'Please Update Your Profile'}}</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->phone1.' and  '.$prsnl->phone2 : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Date of Birth</b>
-                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->date_of_birth : 'Please Update Your Profile'}}</div>
+                                                <div class="profile-desc-item pull-right">{{$prsnl ? $prsnl->date_of_birth : 'Update Profile'}}</div>
                                             </li>
                                         </ul>                                        
                                     </div>
@@ -150,32 +150,32 @@
                                         <ul class="list-group list-group-unbordered">
                                             <li class="list-group-item">
                                                 <b>Degree </b>
-                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->degree->degree_name : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->degree->degree_name : 'Update Profile'}}</div>
                                             </li>
                                             
                                             <li class="list-group-item">
                                                 <b>Board</b>
-                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->board : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->board : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Faculty</b>
-                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->faculty : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->faculty : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Institute Name</b>
-                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->inst_name : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->inst_name : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Institute Address</b>
-                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->inst_address : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->inst_address : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Passed Year</b>
-                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->passed_year : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->passed_year : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Division</b>
-                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->passed_division : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $educ ? $educ->passed_division : 'Update Profile'}}</div>
                                             </li>
                                         </ul>
                                         
@@ -192,45 +192,47 @@
                                             <li class="list-group-item">
                                              <b> Work Experience</b>
                                                 <div class="profile-desc">
-                                                {{ $wrk ? $wrk->work_exp : ''}}
+                                                {{ $wrk ? $wrk->work_exp : 'Please Update Your Profile'}}
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Profession </b>
-                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->profession : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->profession : 'Update Profile'}}</div>
                                             </li>
                                                                                                                                     
                                             <li class="list-group-item">
                                                 <b>Organization Name</b>
-                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_name : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_name : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Organization Address</b>
-                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_address : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_address : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Organization Phone</b>
-                                                <div class="profile-desc-item pull-right">{{$wrk ? 'Telephone : '. $wrk->phone_1.' '.' Mobile : '.$wrk->phone_2 : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{$wrk ? 'Telephone : '. $wrk->phone_1.' '.' Mobile : '.$wrk->phone_2 : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Organization PAN No.</b>
-                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_pan : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->org_pan : 'Update Profile'}}</div>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Service Fee</b>
-                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->fee : ''}}</div>
+                                                <div class="profile-desc-item pull-right">{{ $wrk ? $wrk->fee : 'Update Profile'}}</div>
                                             </li>
-                                            @if($wrk->document)
+                                           
                                             <li class="list-group-item">
-                                                <b>Document</b>
+                                            <b>Document</b>
+                                            @if($wrk != null)
                                                 <div class="profile-desc-item pull-right">
                                                 <img src="{{asset('Uploads/work_document'.$wrk->document)}}"
                                                          alt="" width="auto" height="100px">
                                                 </div>                                                                  
                                             @else
-                                                <div class="profile-desc-item pull-right">No Document available</div>
-                                                </li> 
+                                                <div class="profile-desc-item pull-right">Not Available</div>
+                                                
                                             @endif
+                                            </li> 
                                         </ul>
                                         
                                     </div>
