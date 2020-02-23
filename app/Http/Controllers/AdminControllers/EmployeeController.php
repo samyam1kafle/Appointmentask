@@ -38,5 +38,21 @@ class EmployeeController extends Controller
         return view('Admin/TaskView/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment);
     }
 
+    public function complete(Request $request ,$id){
+        $todo = Todo::findOrFail($id);
+        $todo->status=1;
+        $todo->CompletedDate = date("Y-m-d H:i:s");
+        $todo->update();
+        return redirect()->back()->with('delete','status changed');
+    }
+    public function pending(Request $request, $id)
+    {
+        $todo = Todo::findOrFail($id);
+        $todo->status=0;
+        $todo->CompletedDate = null;
+        $todo->update();
+        return redirect()->back()->with('delete','status changed');
+    }
+
 
 }

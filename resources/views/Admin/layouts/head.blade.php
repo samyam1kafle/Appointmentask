@@ -62,7 +62,6 @@
     <link href="{{asset('Admin/assets/plugins/select2/css/select2.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('Admin/assets/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
 
-
     <!--Toastr-->
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
 </head>
