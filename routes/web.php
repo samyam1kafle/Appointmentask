@@ -49,6 +49,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
 
     Route::PUT('/update-profile-password/{id}', 'AdminControllers\userProfileController@update_user')->name('update-profile');
 
+    /*Notification read*/
+    Route::get('/notification/read','FrontEndControllers\frontEndController@markasread')->name('markedAsRead');
+
+
     // User Education Details
 Route::resource('/user_education', 'AdminControllers\UsersUpdateControllers\EducationController');
 

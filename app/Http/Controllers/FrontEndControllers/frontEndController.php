@@ -19,11 +19,11 @@ class frontEndController extends Controller
 {
 
     use RegistersUsers;
-    protected $Todo=null;
+    protected $Todo = null;
 
     public function __construct(Todo $Todo)
     {
-      $this->Todo=$Todo;
+        $this->Todo = $Todo;
     }
 
     public function index()
@@ -32,13 +32,13 @@ class frontEndController extends Controller
 //        if($user->email_verified_at != null){
 //            Mail::to($user->email)->send(new socialLoginMail($user->name,$user->email,$user->mail_password));
 //        }
-        $this->Todo=$this->Todo->get();
+        $this->Todo = $this->Todo->get();
         return view('frontEnd/index')->with('todo', $this->Todo);
     }
 
     public function login_index(Request $request)
     {
-        $this->Todo=$this->Todo->get();
+        $this->Todo = $this->Todo->get();
         if ($request->isMethod('post')) {
             $this->validate($request, [
                 'password' => 'required',
@@ -66,7 +66,7 @@ class frontEndController extends Controller
 
     public function register(Request $request)
     {
-        $this->Todo=$this->Todo->get();
+        $this->Todo = $this->Todo->get();
 
         if ($request->isMethod('get')) {
             return view('frontEnd/register');
@@ -109,7 +109,7 @@ class frontEndController extends Controller
                     $user->sendEmailVerificationNotification();
                     Auth::login($user);
                     return view('auth.verify');
-                }else{
+                } else {
                     if (Auth::check()) {
                         return redirect()->route('index')->with('todo', $this->Todo)->with('success', 'You have registered to our site successfully');
                     } else {
@@ -117,8 +117,6 @@ class frontEndController extends Controller
                         return redirect()->route('index')->with('todo', $this->Todo)->with('success', 'You have been registered successfully');
                     }
                 }
-
-
 
 
             } else {
@@ -133,9 +131,18 @@ class frontEndController extends Controller
 
     public function logout()
     {
-        $this->Todo=$this->Todo->get();
+        $this->Todo = $this->Todo->get();
         Session::flush();
         Auth::logout();
         return redirect()->route('index')->with('todo', $this->Todo)->with('success', 'Logged Out Successfully');
+    }
+
+    public function markasread()
+    {
+        $user = All_User::find(auth()->user()->id);
+        foreach ($user->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
+        return redirect()->back();
     }
 }
