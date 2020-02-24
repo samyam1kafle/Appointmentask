@@ -29,7 +29,7 @@ class userUpdate extends FormRequest
             'gender' => 'required',
             'department_id' => 'required',
             'email' => 'required',
-            'name' => 'required | min:3 | max:15'
+            'name' => 'required | min:3 | max:50'
         ];
     }
 }

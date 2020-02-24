@@ -11,6 +11,7 @@ use App\Http\Requests\todoValidator;
 use App\Backend\Todo;
 use App\Backend\All_User;
 use App\Backend\Comment;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Thread;
 
@@ -50,12 +51,14 @@ class TodoController extends Controller
     {
 
 
-        $superAdmin = Roles::where('name', '=', 'super_admin')->first();
-        $employee = Roles::where('name', '=', 'employee')->first();
+        $d=Carbon::now();
+        $superAdmin= Roles::where('name','=','super_admin')->first();
+        $employee= Roles::where('name','=','employee')->first();
 
-        $superAdmin = All_User::where('role_id', '=', $superAdmin->id)->get();
-        $employee = All_User::where('role_id', '=', $employee->id)->get();
-        return view('Admin.Todo.create')->with('superadmin', $superAdmin)->with('employee', $employee);
+        $superAdmin= All_User::where('role_id','=',$superAdmin->id)->get();
+        $employee= All_User::where('role_id','=',$employee->id)->get();
+        return view('Admin.Todo.create')->with('superadmin',$superAdmin)->with('employee',$employee)->with('d',$d);
+
     }
 
     /**
@@ -67,7 +70,9 @@ class TodoController extends Controller
     public function store(todoValidator $request,All_User $thread)
     {
         $data = $request->all();
-        $this->Todo->fill($data);
+       /* dd($data);*/
+        $this->Todo->fill($data,$request->assignedDate);
+        /*$this->Todo->fill($d);*/
         $success = $this->Todo->save();
 
 //                dd($assig_user);
@@ -216,9 +221,11 @@ class TodoController extends Controller
     public function GetTaskDetail(Request $request)
     {
 
-        $this->Todo = $this->Todo->where('title', $request->title)->first();
-        $id = $this->Todo->id;
-        $this->Comment = $this->Comment->where('Todo_id', $id)->get();
-        return view('Admin/Todo/Detail')->with('todo', $this->Todo)->with('comment', $this->Comment);
+        $this->Todo=$this->Todo->where('title',$request->title)->first();
+        $d=Carbon::now();
+        $id=$this->Todo->id;
+        $this->Comment=$this->Comment->where('Todo_id',$id)->get();
+        return view('Admin/Todo/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment)->with('d',$d);
+
     }
 }

@@ -103,6 +103,8 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
 
         Route::get('/Employee', 'AdminControllers\EmployeeController@GetList')->name('Employee');
         Route::get('/EmployeeDetails/{title}', 'AdminControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
+        Route::put('/EmployeeComplete{id}','AdminControllers\EmployeeController@Complete')->name('EmployeeComplete');
+        Route::put('/EmployeePending{id}','AdminControllers\EmployeeController@Pending')->name('EmployeePending');
 
 
     });

@@ -82,22 +82,6 @@
                                     </div>
                                 </li>
                                 <li class="list-group-item">
-                                    <b> Comment</b>
-                                    @foreach($comment as $comment)
-                                    <div class="profile-desc-">
-                                        <br>
-                                        <hr>
-                                        {{$comment->created_at}}
-                                        <br>
-                                        <img style="width:30px;" src="{{asset('Uploads/users/thumbnails/'.$comment->User['image'])}}">
-                                        {{$comment->User['name']}}:
-                                        <br>
-                                        {!! $comment->Comment !!}
-
-                                    </div>
-                                    @endforeach
-                                </li>
-                                <li class="list-group-item">
                                     <b>Add Comment</b>
                                     <form  action="{{route('comment.store')}}" method="post" id="form_sample_2"
                                            class="form-horizontal" enctype="multipart/form-data" autocomplete="on">
@@ -117,6 +101,22 @@
                                             <button type="submit" class="btn btn-info m-r-20">Submit</button>
                                         </div>
                                     </form>
+                                </li>
+                                <li class="list-group-item">
+                                    <b> Comment</b>
+                                    @foreach($comment as $comment)
+                                        <div class="profile-desc-">
+                                            <br>
+                                            <hr>
+                                            {{$comment->created_at}}
+                                            <br>
+                                            <img style="width:30px;" src="{{asset('Uploads/users/thumbnails/'.$comment->User['image'])}}">
+                                            {{$comment->User['name']}}:
+                                            <br>
+                                            {!! $comment->Comment !!}
+
+                                        </div>
+                                    @endforeach
                                 </li>
                             </ul>
                         </div>
