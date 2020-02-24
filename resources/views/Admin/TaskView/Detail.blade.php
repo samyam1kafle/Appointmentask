@@ -34,7 +34,7 @@
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
                                     <b>Title </b>
-                                    <div class="profile-desc-item" style="color:lightgreen">{{$todo->title}}</div>
+                                    <div class="profile-desc" style="color:lightgreen">{{$todo->title}}</div>
                                 </li>
 
                                 <li class="list-group-item">
