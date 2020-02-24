@@ -16,8 +16,11 @@ class DepartmentController extends Controller
     public function index()
     {
         $department = Department::orderBy('id','desc')->get();
+
         $departs = Department::where('parent_id','!=',0)->get();
-        // // dd($departs);
+        // dd($departs);
+        // $parent = Department::where('id','=',$departs->id)->all();
+        // dd($parent);
         // foreach($departs as $department){
         //     $sub_dep = Department::where('parent_id','=',$department->id)->get();
             

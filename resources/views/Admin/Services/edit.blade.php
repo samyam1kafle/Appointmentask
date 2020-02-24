@@ -34,7 +34,7 @@
                                   <input type="hidden" name="_method" value="PUT">
                                 <div class="form-body">
                                     <div class="form-group row  margin-top-20">
-                                        <label class="control-label col-md-3">Name
+                                        <label class="control-label col-md-3">Service Name
                                             <span class="required"> * </span>
                                         </label>
                                         <div class="col-md-8">
