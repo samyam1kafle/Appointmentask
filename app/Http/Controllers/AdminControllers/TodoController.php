@@ -4,6 +4,7 @@ namespace App\Http\Controllers\AdminControllers;
 
 use App\Backend\Roles;
 use App\Events\todoEvent;
+use App\Notifications\taskAppointed;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\todoValidator;
@@ -11,7 +12,7 @@ use App\Backend\Todo;
 use App\Backend\All_User;
 use App\Backend\Comment;
 use Illuminate\Support\Facades\Auth;
-
+use Thread;
 
 
 class TodoController extends Controller
@@ -20,7 +21,7 @@ class TodoController extends Controller
     protected $All_User = null;
     protected $Comment = null;
 
-    public function __construct(Todo $Todo, All_User $All_User,Comment $Comment)
+    public function __construct(Todo $Todo, All_User $All_User, Comment $Comment)
     {
         $this->Todo = $Todo;
         $this->All_User = $All_User;
@@ -32,12 +33,12 @@ class TodoController extends Controller
 
 
         $this->Todo = $this->Todo->get();
-        $superAdmin= Roles::where('name','=','super_admin')->first();
-        $employee= Roles::where('name','=','employee')->first();
+        $superAdmin = Roles::where('name', '=', 'super_admin')->first();
+        $employee = Roles::where('name', '=', 'employee')->first();
 
-        $superAdmin= All_User::where('role_id','=',$superAdmin->id)->get();
-        $employee= All_User::where('role_id','=',$employee->id)->get();
-        return view('Admin.Todo.index')->with('Todos', $this->Todo)->with('superadmin',$superAdmin)->with('employee',$employee);
+        $superAdmin = All_User::where('role_id', '=', $superAdmin->id)->get();
+        $employee = All_User::where('role_id', '=', $employee->id)->get();
+        return view('Admin.Todo.index')->with('Todos', $this->Todo)->with('superadmin', $superAdmin)->with('employee', $employee);
     }
 
     /**
@@ -49,12 +50,12 @@ class TodoController extends Controller
     {
 
 
-        $superAdmin= Roles::where('name','=','super_admin')->first();
-        $employee= Roles::where('name','=','employee')->first();
+        $superAdmin = Roles::where('name', '=', 'super_admin')->first();
+        $employee = Roles::where('name', '=', 'employee')->first();
 
-        $superAdmin= All_User::where('role_id','=',$superAdmin->id)->get();
-        $employee= All_User::where('role_id','=',$employee->id)->get();
-        return view('Admin.Todo.create')->with('superadmin',$superAdmin)->with('employee',$employee);
+        $superAdmin = All_User::where('role_id', '=', $superAdmin->id)->get();
+        $employee = All_User::where('role_id', '=', $employee->id)->get();
+        return view('Admin.Todo.create')->with('superadmin', $superAdmin)->with('employee', $employee);
     }
 
     /**
@@ -63,12 +64,24 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(todoValidator $request)
+    public function store(todoValidator $request,All_User $thread)
     {
         $data = $request->all();
         $this->Todo->fill($data);
         $success = $this->Todo->save();
+
+//                dd($assig_user);
+
         if ($success) {
+            $assigned_usr = $this->Todo->assignedTo;
+            $assig_user = All_User::find($assigned_usr);
+            $user_assigning_task = All_User::find($this->Todo->User_id);
+            $thread = $this->Todo;
+//            $user_thread = $user_assigning_task;
+//            dd($user_thread);
+
+            $assig_user->notify(new taskAppointed($thread));
+//            ,$user_thread
             request()->session()->flash('success', 'ToDos list added successfully');
 
         } else {
@@ -101,12 +114,12 @@ class TodoController extends Controller
             request()->session()->flash('error', 'Todos list not found');
             return redirect()->route('Todo.index');
         }
-        $superAdmin= Roles::where('name','=','super_admin')->first();
-        $employee= Roles::where('name','=','employee')->first();
+        $superAdmin = Roles::where('name', '=', 'super_admin')->first();
+        $employee = Roles::where('name', '=', 'employee')->first();
 
-        $superAdmin= All_User::where('role_id','=',$superAdmin->id)->get();
-        $employee= All_User::where('role_id','=',$employee->id)->get();
-        return view('admin.Todo.update')->with('Todo', $this->Todo)->with('superadmin',$superAdmin)->with('employee',$employee);
+        $superAdmin = All_User::where('role_id', '=', $superAdmin->id)->get();
+        $employee = All_User::where('role_id', '=', $employee->id)->get();
+        return view('admin.Todo.update')->with('Todo', $this->Todo)->with('superadmin', $superAdmin)->with('employee', $employee);
     }
 
     /**
@@ -161,48 +174,51 @@ class TodoController extends Controller
     public function pending(Request $request, $id)
     {
         $todo = Todo::findOrFail($id);
-        $todo->status=0;
+        $todo->status = 0;
         $todo->CompletedDate = null;
         $todo->update();
-        return redirect()->route('Todo.index')->with('delete','status changed');
+        return redirect()->route('Todo.index')->with('delete', 'status changed');
     }
 
-    public function complete(Request $request ,$id){
+    public function complete(Request $request, $id)
+    {
 //      dd($request->all());
 
         $todo = Todo::findOrFail($id);
-        $todo->status=1;
+        $todo->status = 1;
         $todo->CompletedDate = date("Y-m-d H:i:s");
         $todo->update();
-        return redirect()->route('Todo.index')->with('delete','status changed');
+        return redirect()->route('Todo.index')->with('delete', 'status changed');
     }
 
-    public function reaassign($id){
+    public function reaassign($id)
+    {
         $this->Todo = $this->Todo->find($id);
-        $superAdmin= Roles::where('name','=','super_admin')->first();
-        $employee= Roles::where('name','=','employee')->first();
+        $superAdmin = Roles::where('name', '=', 'super_admin')->first();
+        $employee = Roles::where('name', '=', 'employee')->first();
 
-        $superAdmin= All_User::where('role_id','=',$superAdmin->id)->get();
-        $employee= All_User::where('role_id','=',$employee->id)->get();
-        return view('admin.Todo.Re-Assign')->with('Todo', $this->Todo)->with('superadmin',$superAdmin)->with('employee',$employee);
+        $superAdmin = All_User::where('role_id', '=', $superAdmin->id)->get();
+        $employee = All_User::where('role_id', '=', $employee->id)->get();
+        return view('admin.Todo.Re-Assign')->with('Todo', $this->Todo)->with('superadmin', $superAdmin)->with('employee', $employee);
 
     }
 
-    public function ReAssign(Request $request ,$id){
+    public function ReAssign(Request $request, $id)
+    {
 
         $todo = Todo::findOrFail($id);
-        $todo->reassignedto=$request->reassignedto;
-        $update=$todo->update();
-        return redirect()->route('Todo.index')->with('success','Task Re-assigned');
+        $todo->reassignedto = $request->reassignedto;
+        $update = $todo->update();
+        return redirect()->route('Todo.index')->with('success', 'Task Re-assigned');
 
     }
 
     public function GetTaskDetail(Request $request)
     {
 
-        $this->Todo=$this->Todo->where('title',$request->title)->first();
-        $id=$this->Todo->id;
-        $this->Comment=$this->Comment->where('Todo_id',$id)->get();
-        return view('Admin/Todo/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment);
+        $this->Todo = $this->Todo->where('title', $request->title)->first();
+        $id = $this->Todo->id;
+        $this->Comment = $this->Comment->where('Todo_id', $id)->get();
+        return view('Admin/Todo/Detail')->with('todo', $this->Todo)->with('comment', $this->Comment);
     }
 }
