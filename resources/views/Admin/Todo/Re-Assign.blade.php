@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    {{--<div class="page-content-wrapper">
+    <!-- {{--<div class="page-content-wrapper">
         <div class="page-content">
             <div class="page-bar">
                 <div class="page-title-breadcrumb">
@@ -584,5 +584,5 @@
                 </div>
             </div>
         </div>
-    </div>--}}
+    </div>--}} -->
 @endsection
