@@ -37,10 +37,10 @@
                             <div class="tab-content">
                                 <div class="active tab-pane" id="activity">
                                     <div class="card-body" id="bar-parent2">
-                                        @if($educ == [])
+                                    @if($educ == [])
                                             <form action="{{route('user_education.store')}}" id="form_sample_2"
                                               class="form-horizontal"
-                                              method="post" autocomplete="on">                                        >
+                                              method="post" autocomplete="on">
                                             {{csrf_field()}}
                                             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                             
