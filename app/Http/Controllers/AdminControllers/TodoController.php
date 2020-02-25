@@ -182,7 +182,7 @@ class TodoController extends Controller
         $todo->status = 0;
         $todo->CompletedDate = null;
         $todo->update();
-        return redirect()->route('Todo.index')->with('delete', 'status changed');
+        return redirect()->back()->with('delete', 'status changed');
     }
 
     public function complete(Request $request, $id)
@@ -193,7 +193,7 @@ class TodoController extends Controller
         $todo->status = 1;
         $todo->CompletedDate = date("Y-m-d H:i:s");
         $todo->update();
-        return redirect()->route('Todo.index')->with('delete', 'status changed');
+        return redirect()->back()->with('delete', 'status changed');
     }
 
     public function reaassign($id)

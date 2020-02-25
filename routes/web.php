@@ -82,8 +82,6 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
 //    todo routes
 
             Route::resource('/Todo', 'AdminControllers\TodoController');
-            Route::put('/Todo-Pending/{id}', 'AdminControllers\TodoController@pending')->name('pending');
-            Route::put('/Todo-Complete/{id}', 'AdminControllers\TodoController@complete')->name('complete');
             Route::put('/Todo-ReAssign/{id}', 'AdminControllers\TodoController@ReAssign')->name('ReAssign');
             Route::put('/Todo-reassign/{id}', 'AdminControllers\TodoController@reaassign')->name('reassign');
             Route::get('/Todo-detail/{title}', 'AdminControllers\TodoController@GetTaskDetail')->name('Todo-detail');
@@ -103,13 +101,14 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
 
         Route::get('/Employee', 'AdminControllers\EmployeeController@GetList')->name('Employee');
         Route::get('/EmployeeDetails/{title}', 'AdminControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
-        Route::put('/EmployeeComplete{id}','AdminControllers\EmployeeController@Complete')->name('EmployeeComplete');
-        Route::put('/EmployeePending{id}','AdminControllers\EmployeeController@Pending')->name('EmployeePending');
+
 
 
     });
     Route::group(['middleware' => ['comment']], function () {
         Route::resource('/comment' , 'AdminControllers\CommentController');
+        Route::put('/Todo-Pending/{id}', 'AdminControllers\TodoController@pending')->name('pending');
+        Route::put('/Todo-Complete/{id}', 'AdminControllers\TodoController@complete')->name('complete');
     });
 
 });
