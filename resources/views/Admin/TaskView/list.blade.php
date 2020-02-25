@@ -71,7 +71,7 @@
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <form action="{{route('EmployeePending',$todos_list->id)}}"
+                                                            <form action="{{route('pending',$todos_list->id)}}"
                                                                   method="post">
                                                                 {{csrf_field()}}
                                                                 <input type="hidden" name="_method" value="PUT">
@@ -84,7 +84,7 @@
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <form action="{{route('EmployeeComplete',$todos_list->id)}}"
+                                                            <form action="{{route('complete',$todos_list->id)}}"
                                                                   method="post">
                                                                 {{csrf_field()}}
                                                                 <input type="hidden" name="_method" value="PUT">
