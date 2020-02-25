@@ -31,9 +31,19 @@
                             <form action="{{route('bookings.update',$book_id->id)}}" id="form_sample_2" class="form-horizontal"
                                   method="post" autocomplete="on">
                                   {{csrf_field()}}
-                                  <input type="hidden" name="_method" value="PUT">                                     
+                                  <input type="hidden" name="_method" value="PUT">  
+                                  <div class="form-group row  margin-top-20">
+                                        <label class="control-label col-md-3">Booking Purpose
+                                            <span class="required"> * </span>
+                                        </label>
+                                        <div class="col-md-8">
+                                            <div class="input-icon right">
+                                                <i class="fa"></i>
+                                                <input type="text" class="form-control" value="{{$book_id->name}}" name="name"/></div>
+                                        </div>
+                                    </div>                                   
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">User ID
+                                        <label class="control-label col-md-3">User
                                             <span class="required"> * </span>
                                         </label>
 
@@ -41,12 +51,11 @@
                                             <select class="form-control  select2" name="User_id">
                                             <option value="0" selected>None</option>
                                                 <optgroup label="User">
-                                                
                                                 @foreach($users as $user)
                                                     @foreach($user as $usr)
-                                                        <option value="{{ $usr->id }}">{{$usr->name}}</option>
+                                                        <option value="{{ $usr->id }}" selected>{{$usr->name}}</option>
                                                     @endforeach
-                                                    @endforeach
+                                                @endforeach
                                                 </optgroup>
 
                                             </select>
@@ -54,7 +63,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">Service ID
+                                        <label class="control-label col-md-3">Service
                                             <span class="required"> * </span>
                                         </label>
                                         <div class="col-md-8">
@@ -63,7 +72,7 @@
                                                 <optgroup label="Services">
                                                    
                                                     @foreach($services as $service)                   
-                                                    <option value="{{ $service->id }}">{{$service->name}}</option>  
+                                                    <option value="{{ $service->id }}" selected>{{$service->name}}</option>  
                                                     @endforeach                                                                                             
                                                 </optgroup>
                                             </select>
@@ -100,7 +109,7 @@
                                         </label>
                                         <div class="col-md-8">
                                             <select class="form-control  select2" name="status">
-                                                <option value=""></option>
+                                                <option value="" disabled selected hidden>{{$book_id->status}}</option>
                                                 <optgroup label="Status">
                                                     <option value="0">Unapprove</option>                                               
                                                     <option value="1">Approve</option>                                             
