@@ -57,7 +57,14 @@
                                         <!-- <td>{{$book->service_id}}</td> -->
                                         <td>{{$book->booking_date}}</td>
                                         <td>{{$book->booking_time}}</td>
-                                        <td>{{$book->status}}</td>
+                                        @if($book->status == 0)
+                                        <td>Unapproved </td>
+                                        @else
+                                        <td>
+                                        Approved
+                                       
+                                        </td>
+                                        @endif
                                         <td class="text-left">
                                         
                                         <form action="{{ route('bookings.edit', $book->id)}}" method="GET" style="display: inline-block">

@@ -85,7 +85,7 @@
                                         </label>
                                         <div class="col-md-8 input-append date form_date" data-date-format="yy-m-d H:i:s"
                                              data-date="2013-02-21T15:25:00Z">
-                                            <input size="30" type="text" value="{{$book_id->booking_date}}" readonly name="date">
+                                            <input size="30" type="text" value="{{$book_id->booking_date}}" readonly name="booking_date">
                                             <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
                                             <span class="add-on"><i class="fa fa-calendar"></i></span>
                                         </div>
@@ -97,7 +97,7 @@
                                             <span class="required"> * </span>
                                         </label>
                                             <div class="col-md-8 input-append date form_time">
-                                                <input size="30" type="text" value="{{$book_id->booking_date}}" name="time" readonly>
+                                                <input size="30" type="text" value="{{$book_id->booking_time}}" name="booking_time" readonly>
                                                 <span class="add-on"><i class="fa fa-remove icon-remove"></i></span>
                                                 <span class="add-on"><i class="fa fa-clock-o"></i></span>
                                             </div>
