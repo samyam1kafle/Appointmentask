@@ -53,7 +53,7 @@
                                                 <optgroup label="User">
                                                     @foreach($users as $user)
                                                     @foreach($user as $usr)
-                                                        <option name="{{ $usr->id }}">{{$usr->name}}</option>
+                                                        <option value="{{ $usr->id }}">{{$usr->name}}</option>
                                                     @endforeach
                                                     @endforeach
                                                 </optgroup>
