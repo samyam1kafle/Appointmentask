@@ -52,8 +52,8 @@
                                     </li>
                                 @endif
                                 <li class="list-group-item">
-                                    <b>Assigned By</b>
-                                    <div class="profile-desc-item " style="color:lightgreen">{{$todo->superadmin['name']}}</div>
+                                    <b>Assigned To</b>
+                                    <div class="profile-desc-item " style="color:lightgreen">{{$todo->employee['name']}}</div>
                                 </li>
                                 @if($todo->reassignedto)
                                     <li class="list-group-item">
