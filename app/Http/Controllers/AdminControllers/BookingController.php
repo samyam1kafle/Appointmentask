@@ -36,9 +36,13 @@ class BookingController extends Controller
         $this->Todo=$this->Todo->get();
         $role = Roles::where('name','=','subscriber')->first();
         $guest = Roles::where('name','=','guest')->first();
+        $employee = Roles::where('name','=','employee')->first();
+        $provider = Roles::where('name','=','admin')->first();
         $users = All_User::where('role_id','=',$role->id)->get();
         $guests = All_User::where('role_id','=',$guest->id)->get();
-        $users = [$users ,$guests];
+        $emply = All_User::where('role_id','=',$employee->id)->get();
+        $providers = All_User::where('role_id','=',$provider->id)->get();
+        $users = [$users ,$guests ,$emply, $providers];
 
         $services = Service::orderBy('id','desc')->get();
 

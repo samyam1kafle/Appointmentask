@@ -39,11 +39,14 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        $role = Roles::where('name','=','subscriber')->first();
-        $guest = Roles::where('name','=','guest')->first();
-        $users = All_User::where('role_id','=',$role->id)->get();
-        $guests = All_User::where('role_id','=',$guest->id)->get();
-        $users = [$users ,$guests];
+        // $role = Roles::where('name','=','subscriber')->first();
+        // $guest = Roles::where('name','=','guest')->first();
+        // $users = All_User::where('role_id','=',$role->id)->get();
+        // $guests = All_User::where('role_id','=',$guest->id)->get();
+        // $users = [$users ,$guests];
+        $provider = Roles::where('name','=','admin')->first();
+        $providers = All_User::where('role_id','=',$provider->id)->get();
+        $users = $providers;
         $department = Department::orderBy('id','desc')->get();
  
         return view('Admin/Services/create',compact('users','department'));
@@ -85,11 +88,13 @@ class ServicesController extends Controller
         $services = Service::all();
         $service_id = Service::findOrFail($id);
 
-        $role = Roles::where('name','=','subscriber')->first();
-        $guest = Roles::where('name','=','guest')->first();
-        $users = All_User::where('role_id','=',$role->id)->get();
-        $guests = All_User::where('role_id','=',$guest->id)->get();
-        $users = [$users ,$guests];
+        // $role = Roles::where('name','=','subscriber')->first();
+        // $guest = Roles::where('name','=','guest')->first();
+        $provider = Roles::where('name','=','admin')->first();
+        // $users = All_User::where('role_id','=',$role->id)->get();
+        // $guests = All_User::where('role_id','=',$guest->id)->get();
+        $providers = All_User::where('role_id','=',$provider->id)->get();
+        $users = $providers;
         $department = Department::orderBy('id','desc')->get();
 
         return view('Admin/Services/edit', compact('services','service_id','users','department'));

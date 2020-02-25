@@ -24,7 +24,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Add New Booking</header>
+                            <header>Edit Booking</header>
 
                         </div>
                         <div class="card-body" id="bar-parent2">

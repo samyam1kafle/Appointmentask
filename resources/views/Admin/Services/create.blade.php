@@ -33,7 +33,7 @@
                                    {{csrf_field()}}
                                 <div class="form-body">
                                     <div class="form-group row  margin-top-20">
-                                        <label class="control-label col-md-3">Service Name
+                                        <label class="control-label col-md-3">Service Title
                                             <span class="required"> * </span>
                                         </label>
                                         <div class="col-md-8">
@@ -44,7 +44,7 @@
                                     </div>                            
                                     
                                     <div class="form-group row">
-                                        <label class="control-label col-md-3">User
+                                        <label class="control-label col-md-3">Service Provider
                                             <span class="required"> * </span>
                                         </label>
 
@@ -52,10 +52,10 @@
                                             <select class="form-control  select2" name="User_id">
                                             <option value="0" selected>None</option>
                                                 <optgroup label="User">
-                                                @foreach($users as $usr)
-                                                     @foreach($usr as $u)                                                                
+                                                @foreach($users as $u)
+                                                                                                                    
                                                     <option value="{{ $u->id }}">{{ $u->name }}</option>
-                                                    @endforeach
+                                                   
                                                 @endforeach
                                                 </optgroup>
 
