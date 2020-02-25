@@ -1,4 +1,3 @@
-
 @extends('Admin.layouts.master')
 @section('main_content')
 <div class="page-content-wrapper">
@@ -54,7 +53,7 @@
                                                 <optgroup label="User">
                                                     @foreach($users as $user)
                                                     @foreach($user as $usr)
-                                                        <option value="{{ $usr->id }}">{{$usr->name}}</option>
+                                                        <option name="{{ $usr->id }}">{{$usr->name}}</option>
                                                     @endforeach
                                                     @endforeach
                                                 </optgroup>

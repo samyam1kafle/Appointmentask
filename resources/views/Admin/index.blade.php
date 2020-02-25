@@ -5,7 +5,15 @@
             <div class="page-bar">
                 <div class="page-title-breadcrumb">
                     <div class=" pull-left">
-                        <div class="page-title">Dashboard</div>
+                        @if($Roles->name=='employee')
+                            <div class="page-title">Employee Dashboard</div>
+                        @endif
+                        @if($Roles->name=='admin')
+                            <div class="page-title">Admin Dashboard</div>
+                        @endif
+                        @if($Roles->name=='super_admin')
+                            <div class="page-title">Super Admin Dashboard</div>
+                        @endif
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
@@ -15,6 +23,7 @@
                     </ol>
                 </div>
             </div>
+            @if(Auth::user()->role_id==1)
             <!-- start widget -->
             <div class="state-overview">
                 <div class="row">
@@ -22,14 +31,12 @@
                         <div class="info-box bg-b-green">
                             <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Total Students</span>
-                                <span class="info-box-number">450</span>
+                                <span class="info-box-text">Total Employee</span>
+                                <span class="info-box-number">{{$employee}}</span>
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 45%"></div>
                                 </div>
-                                <span class="progress-description">
-											45% Increase in 28 Days
-										</span>
+
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -40,14 +47,11 @@
                         <div class="info-box bg-b-yellow">
                             <span class="info-box-icon push-bottom"><i class="material-icons">person</i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">New Students</span>
-                                <span class="info-box-number">155</span>
+                                <span class="info-box-text">Total subscriber</span>
+                                <span class="info-box-number">{{$subscriber}}</span>
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 40%"></div>
                                 </div>
-                                <span class="progress-description">
-											40% Increase in 28 Days
-										</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -58,21 +62,18 @@
                         <div class="info-box bg-b-blue">
                             <span class="info-box-icon push-bottom"><i class="material-icons">school</i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Total Course</span>
-                                <span class="info-box-number">52</span>
+                                <span class="info-box-text">Total Provider</span>
+                                <span class="info-box-number">{{$providers}}</span>
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 85%"></div>
                                 </div>
-                                <span class="progress-description">
-											85% Increase in 28 Days
-										</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
                         <!-- /.info-box -->
                     </div>
                     <!-- /.col -->
-                    <div class="col-xl-3 col-md-6 col-12">
+                    {{--<div class="col-xl-3 col-md-6 col-12">
                         <div class="info-box bg-b-pink">
 									<span class="info-box-icon push-bottom"><i
                                                 class="material-icons">monetization_on</i></span>
@@ -89,10 +90,11 @@
                             <!-- /.info-box-content -->
                         </div>
                         <!-- /.info-box -->
-                    </div>
+                    </div>--}}
                     <!-- /.col -->
                 </div>
             </div>
+            @endif
             <!-- end widget -->
 
         </div>
