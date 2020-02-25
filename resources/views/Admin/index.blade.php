@@ -45,7 +45,7 @@
                     <!-- /.col -->
                     <div class="col-xl-3 col-md-6 col-12">
                         <div class="info-box bg-b-yellow">
-                            <span class="info-box-icon push-bottom"><i class="material-icons">person</i></span>
+                            <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Total subscriber</span>
                                 <span class="info-box-number">{{$subscriber}}</span>
@@ -60,7 +60,7 @@
                     <!-- /.col -->
                     <div class="col-xl-3 col-md-6 col-12">
                         <div class="info-box bg-b-blue">
-                            <span class="info-box-icon push-bottom"><i class="material-icons">school</i></span>
+                            <span class="info-box-icon push-bottom"><i class="material-icons">group</i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Provider</span>
                                 <span class="info-box-number">{{$providers}}</span>
