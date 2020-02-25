@@ -21,9 +21,13 @@ class dashboardController extends Controller
     }
     public function index(){
         $user=@Auth::user()->role_id;
+        $user_id=@Auth::user()->id;
+        $Pending=Todo::where('User_id',$user_id)->where('status','0')->get()->count();
+        $Completed=Todo::where('User_id',$user_id)->where('status','1')->get()->count();
+        $All=Todo::get()->count();
+        /*dd($Pending);*/
         $this->Todo=$this->Todo->get();
         $this->Roles=$this->Roles->where('id',$user)->first();
-        /*dd($this->Roles);*/
         $prov_id = Roles::where('name', '=', 'admin')->first();
         $subs_id = Roles::where('name', '=', 'subscriber')->first();
         $emp_id = Roles::where('name', '=', 'employee')->first();
@@ -34,7 +38,10 @@ class dashboardController extends Controller
             ->with('providers',$providers)
             ->with('subscriber',$subscriber)
             ->with('employee',$employee)
-            ->with('Roles',$this->Roles);
+            ->with('Roles',$this->Roles)
+            ->with('Pending',$Pending)
+            ->with('Completed',$Completed)
+            ->with('All',$All);
 
     }
 }
