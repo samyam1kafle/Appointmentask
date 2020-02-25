@@ -86,8 +86,18 @@ class BookingController extends Controller
         $this->Todo=$this->Todo->get();
         $bookings = Booking::all();
         $book_id = Booking::findOrFail($id);
-        $users = All_User::all();
-        return view('Admin/Booking/edit', compact('bookings','book_id','users'))->with('todo', $this->Todo);
+        $services = Service::orderBy('id','desc')->get();
+        // $users = All_User::all();
+        $role = Roles::where('name','=','subscriber')->first();
+        $guest = Roles::where('name','=','guest')->first();
+        $employee = Roles::where('name','=','employee')->first();
+        $provider = Roles::where('name','=','admin')->first();
+        $users = All_User::where('role_id','=',$role->id)->get();
+        $guests = All_User::where('role_id','=',$guest->id)->get();
+        $emply = All_User::where('role_id','=',$employee->id)->get();
+        $providers = All_User::where('role_id','=',$provider->id)->get();
+        $users = [$users ,$guests ,$emply, $providers];
+        return view('Admin/Booking/edit', compact('bookings','book_id','users','services'))->with('todo', $this->Todo);
     }
 
     /**
