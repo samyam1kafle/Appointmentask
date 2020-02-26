@@ -45,8 +45,8 @@ class ServicesController extends Controller
         // $guests = All_User::where('role_id','=',$guest->id)->get();
         // $users = [$users ,$guests];
         $provider = Roles::where('name','=','admin')->first();
-        $providers = All_User::where('role_id','=',$provider->id)->get();
-        $users = $providers;
+        $users = All_User::where('role_id','=',$provider->id)->get();
+        
         $department = Department::orderBy('id','desc')->get();
  
         return view('Admin/Services/create',compact('users','department'));

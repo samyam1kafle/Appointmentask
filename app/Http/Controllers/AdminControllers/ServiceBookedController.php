@@ -16,7 +16,9 @@ class ServiceBookedController extends Controller
      */
     public function index()
     {
-        return view('Admin/ServiceDetails/ServiceBooked.view');
+        $bookings = booking::orderBy('id','desc')->get();
+        $services = Service::orderBy('id', 'desc')->get();
+        return view('Admin/ServiceDetails/ServiceBooked.view',compact('bookings','services'));
     }
 
     /**
@@ -26,10 +28,10 @@ class ServiceBookedController extends Controller
      */
     public function create()
     {
-        $bookingId= booking::orderBy('id','desc')->get();
-        $serviceId= Service::orderBy('id','desc')->get();
+        // $bookingId= booking::orderBy('id','desc')->get();
+        // $serviceId= Service::orderBy('id','desc')->get();
 
-        return view('Admin/ServiceDetails/ServiceBooked/add',compact('bookingId','serviceId'));
+        // return view('Admin/ServiceDetails/ServiceBooked/add',compact('bookingId','serviceId'));
 
     }
 
@@ -41,11 +43,11 @@ class ServiceBookedController extends Controller
      */
     public function store(Request $request)
     {
-        $serviceId->service_id = $request->service_id;
-        $add = $serviceId->save();
-        if($add){
-            return redirect()->route('service_booked.index')->with('success','New Service Details has been created Successfully');
-        }
+        // $serviceId->service_id = $request->service_id;
+        // $add = $serviceId->save();
+        // if($add){
+        //     return redirect()->route('service_booked.index')->with('success','New Service Details has been created Successfully');
+        // }
     }
 
     /**

@@ -22,19 +22,10 @@
                 <div class="col-md-12">
                     <div class="card card-topline-red">
                         <div class="card-head">
-                            <header>All Service Booked</header>
-                            <div class="tools">
-                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
-                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
-                            </div>
+                            <header>All Service Booked</header>                            
                         </div>
                         <div class="card-body ">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-6">
-                                    <a class="parent-item btn btn-primary" href="{{ route('service_booked.create') }}">Add
-                                        +</a>
-                                </div>
+                            <div class="row">                                
                                 <div class="col-md-6 col-sm-6 col-6">
                                     <div class="btn-group pull-right">
                                         <button class="btn deepPink-bgcolor  btn-outline dropdown-toggle"
@@ -65,34 +56,32 @@
                                     <thead>
                                     <tr>
                                         <th>S.N.</th>
-                                        <th> Booking Id </th>
-                                        <th> Service Id </th>
-                                        <th> Provider Id </th>
-                                        <th> Reciever Id </th>
-                                        <th> Role Id </th>
-                                        <th>Booked Date</th>
-                                        <th>Booked Time</th>
+                                        <th>Booking Purpose</th>
+                                        <th>Service Booked</th>
+                                        <th>Provider</th>
+                                        <th>Receiver</th>                                        
+                                        <th>Booked Date & Time </th>                                        
                                         <th>Available Date</th>
-                                        <th>Available Time</th>
-                                        <th>Description</th>
+                                        <th>Available Time</th>                                        
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($bookings as $key=>$book)
                                     <tr class="odd gradeX">
+                                        <td>{{$key+1}}</td>
+                                        <td>{{$book->name}}</td>
+                                        <td>{{$book->ser_booking['name']}}</td>
+                                        <!-- @foreach($services as $service)
+                                        <td>{{$service->user_service['name']}}</td>
+                                        @endforeach -->
                                         <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{$book->user_booking['name']}}</td>
+                                        <td>{{$book->created_at}}</td>
+                                        <td>{{$book->booking_date}}</td>
+                                        <td>{{$book->booking_time}}</td>                                        
+                                        <td></td>                                       
                                         <td class="valigntop">
                                             <div class="btn-group">
                                                 <button
@@ -105,8 +94,7 @@
                                                 <ul class="dropdown-menu pull-left" role="menu">
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <form action=""
-                                                                  method="GET"
+                                                            <form action=""  method="GET"
                                                                   style="display: inline-block">
                                                                 {{csrf_field()}}
                                                                 {{method_field('PUT')}}
@@ -135,6 +123,7 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
