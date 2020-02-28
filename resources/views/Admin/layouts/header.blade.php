@@ -27,47 +27,11 @@
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="javascript:;" class="fullscreen-btn"><i class="fa fa-arrows-alt"></i></a></li>
 
-                    <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                    {{--notification--}}
 
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                               data-close-others="true" aria-expanded="false">
-                                <i data-count="0" class="fa fa-bell-o"></i>
-                                <span class="notif-count badge headerBadgeColor1">{{count(auth()->user()->unreadNotifications)}} </span>
+                        <notification :userid="{{auth()->user()->id}}"
+                                      :unreads="{{auth()->user()->unreadNotifications}}" id="app"></notification>
 
-
-
-                            </a>
-
-
-                        <ul class="dropdown-menu">
-                            <li class="external">
-                                <h3><span class="bold">Notifications</span></h3>
-                                <span class="notification-label purple-bgcolor">Unread {{count(auth()->user()->unreadNotifications)}}</span>
-                            </li>
-                            <li>
-                                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto;">
-                                    <ul class="dropdown-menu-list small-slimscroll-style" data-handle-color="#637283"
-                                        style="overflow: hidden; width: auto;">
-
-                                        @foreach(auth()->user()->Notifications as $notification)
-
-                                            @include('Admin.notifications.todo_created')
-
-                                        @endforeach
-                                    </ul>
-                                    <div class="slimScrollBar"
-                                         style="background: rgb(158, 165, 171); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div>
-                                    <div class="slimScrollRail"
-                                         style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
-                                </div>
-                                <div class="dropdown-menu-footer">
-                                    <a href="javascript:void(0)">
-                                        <a href="{{route('markedAsRead')}}">Mark all as read </a>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
 
                     <li><a href="{{route('index')}}"><i class="fa fa-home pull-left"
                                                         style="font-size: xx-large"> </i></a></li>
@@ -82,7 +46,7 @@
                            data-close-others="true">
                             <img alt="" class="img-circle "
                                  src="{{@asset('Uploads/users/thumbnails/'.Auth::user()->image)}}"/>
-                            <span class="username username-hide-on-mobile"> {{@Auth::user()->name}} </span>
+                            <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-default">

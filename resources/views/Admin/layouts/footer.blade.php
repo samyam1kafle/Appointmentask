@@ -10,7 +10,8 @@
     </div>
     <!-- end footer -->
     </div>
-
+    {{--vue js--}}
+    <script src="{{asset('js/app.js')}}"></script>
     <!-- start js include path -->
 
     <script src="{{asset('Admin/assets/plugins/jquery/jquery.min.js')}}"></script>
@@ -29,16 +30,6 @@
     <!-- material -->
     <script src="{{asset('Admin/assets/plugins/material/material.min.js')}}"></script>
 
-    <!-- end js include path -->
-        {{--<!-- chart js -->--}}
-        {{--<script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/chart-js/Chart.bundle.js"></script>--}}
-        {{--<script src="{{asset('Admin/assets/plugins/chart-js/utils.js')}}"></script>--}}
-        {{--<script src="{{asset('Admin/assets/js/pages/chart/chartjs/home-data.js')}}"></script>--}}
-
-    {{--<!-- summernote -->--}}
-    {{--<script src="http://radixtouch.in/templates/admin/smart/source/assets/plugins/summernote/summernote.js"></script>--}}
-    {{--<script src="{{asset('Admin/assets/js/pages/summernote/summernote-data.js')}}"></script>--}}
-    <!-- end js include path -->
 
     <!-- Data Table -->
     <script src="{{asset('Admin/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
@@ -76,25 +67,11 @@
     <!--select2-->
 
 
-    {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>--}}
-    {{--<script src="{{asset('vendor/unisharp/laravel-ckeditor/adapters/jquery.js')}}"></script>--}}
-    {{--<script>--}}
-        {{--$('textarea').ckeditor();--}}
-        {{--// $('.textarea').ckeditor(); // if class is prefered.--}}
-    {{--</script>--}}
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
     <script>
         CKEDITOR.replace( 'editor' );
     </script>
 
-    {{--<script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>--}}
-    {{--<script>--}}
-        {{--ClassicEditor--}}
-             {{--.create( document.querySelector( '#editor' ) )--}}
-            {{--.catch( error => {--}}
-                {{--console.error( error );--}}
-            {{--} );--}}
-    {{--</script>--}}
 
     <!--Ck Editor -->
 
@@ -121,7 +98,9 @@
     </script>
 
     <script src="{{asset('Admin/assets/js/front_js/global.js')}}"></script>
+
     <script src="{{asset('Admin/assets/js/front_js/jquery-ui.min.js')}}"></script>
+
     </body>
 
     </html>
