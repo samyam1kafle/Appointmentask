@@ -56,9 +56,10 @@
                                         id="example4">
                                     <thead>
                                     <tr>
-                                        <th>S.N</th>
+                                        <th>#</th>
                                         <th>Service Name</th> 
                                         <th>Booked By</th>
+<<<<<<< HEAD
                                         <th>Appointment Status</th>
                                         <th>Booking </th>
 
@@ -75,7 +76,27 @@
                                         <td>{{$service_detail->complete_id}}</td>
                                         <td>{{$service_detail->booking_id}}</td>
                                         @endforeach
+=======
+                                        <th>Booking Purpose</th>                                       
+                                        <th>Appointment Status</th>                          
+                                                                                
                                     </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($bookings as $key=>$book)
+                                    <tr class="odd gradeX">                                        
+                                        <td>{{ $key+1}}</td>
+                                        <td>{{$book->ser_booking['name']}}</td>
+                                        <td>{{$book->user_booking['name']}}</td>  
+                                        <td>{{$book->name}}</td>                                
+                                        @if($book->status == 0)
+                                        <td>Unapproved </td>
+                                        @else
+                                        <td> Approved </td>                      
+                                        @endif
+>>>>>>> 5cf0073d4d423d013dc4fb5175dc72308df8c90c
+                                    </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

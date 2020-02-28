@@ -22,19 +22,10 @@
                 <div class="col-md-12">
                     <div class="card card-topline-red">
                         <div class="card-head">
-                            <header>All Service Complete</header>
-                            <div class="tools">
-                                <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
-                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
-                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
-                            </div>
+                            <header>All Service Complete</header>                            
                         </div>
                         <div class="card-body ">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-6">
-                                    <a class="parent-item btn btn-primary" href="{{ route('service_complete.create') }}">Add
-                                        +</a>
-                                </div>
+                            <div class="row">                               
                                 <div class="col-md-6 col-sm-6 col-6">
                                     <div class="btn-group pull-right">
                                         <button class="btn deepPink-bgcolor  btn-outline dropdown-toggle"
@@ -65,11 +56,12 @@
                                     <thead>
                                     <tr>
                                         <th>S.N</th>
-                                        <th> Service Booked Id </th>
-                                        <th> Service Reschedule Id </th>
+                                        <th> Service Booked</th>
+                                        <th> Booked By</th>
+                                        <th> Service Reschedule</th>
                                         <th> Completed Date </th>
                                         <th> Completed Time </th>
-                                        <th>Status</th>
+                                        <th> Status</th>
                                         <th> Actions </th>
                                     </tr>
                                     </thead>
@@ -77,12 +69,12 @@
                                     <tr class="odd gradeX">
                                         @foreach($serviceComplete as $key => $servCompletes)
                                         <td>{{$key+1}}</td>
-                                        <td>{{$servCompletes->service_booked_id}}</td>
-                                        <td>{{$servCompletes->service_reschedule_id}}</td>
-                                        <td>{{$servCompletes->complete_date}}</td>
-                                            <td>{{$servCompletes->complete_time}}</td>
-                                            <td>{{$servCompletes->status}}</td>
-                                            <td class="valigntop">
+                                        <td>{{$servCompletes->ser_booking['name']}}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="valigntop">
                                             <div class="btn-group">
                                                 <button
                                                         class="btn btn-xs deepPink-bgcolor dropdown-toggle no-margin"

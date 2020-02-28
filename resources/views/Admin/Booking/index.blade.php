@@ -37,9 +37,9 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Title</th>
-                                        <th>User</th>
-                                        <th>Service</th>
+                                        <th>Booking Purpose</th>
+                                        <th>Booked By</th>
+                                        <th>Service Needed</th>
                                         <th>Booking Date</th>
                                         <th>Booking Time</th>
                                         <th>Booking Status</th>
