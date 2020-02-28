@@ -18,7 +18,8 @@ class CreateBookingsTable extends Migration
             $table->string('name')->default(null);
             $table->unsignedInteger('User_id');
             $table->unsignedInteger('service_id');
-            $table->boolean('status')->default(0);
+            $table->enum('Appointmentstatus',['pending','unapprove','approve'])->default('pending');
+            $table->enum('Servicestatus',['pending','completed','reschedule','cancel'])->default('pending');
             $table->date('booking_date');
             $table->time('booking_time');
             $table->timestamps();

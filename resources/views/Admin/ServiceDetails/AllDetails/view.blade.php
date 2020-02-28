@@ -57,26 +57,62 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Service Name</th> 
+                                        <th>Service Name</th>
                                         <th>Booked By</th>
-                                        <th>Booking Purpose</th>                                       
-                                        <th>Appointment Status</th>                          
-                                                                                
+                                        <th>Booking purpose</th>
+                                        <th>Service Status</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($bookings as $key=>$book)
-                                    <tr class="odd gradeX">                                        
-                                        <td>{{ $key+1}}</td>
-                                        <td>{{$book->ser_booking['name']}}</td>
-                                        <td>{{$book->user_booking['name']}}</td>  
-                                        <td>{{$book->name}}</td>                                
-                                        @if($book->status == 0)
-                                        <td>Unapproved </td>
-                                        @else
-                                        <td> Approved </td>                      
-                                        @endif
-                                    </tr>
+                                        <tr class="odd gradeX">
+                                            <td>{{ $key+1}}</td>
+                                            <td>{{$book->ser_booking['name']}}</td>
+                                            <td>{{$book->user_booking['name']}}</td>
+                                            <td>{{$book->name}}</td>
+                                            <td class="valigntop">
+                                                <div class="btn-group">
+                                                    <button
+                                                            class="btn btn-xs  dropdown-toggle no-margin"
+                                                            type="button" data-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                        @if($book->Servicestatus=='pending')
+                                                            Pending
+                                                        @endif
+                                                        @if($book->Servicestatus=='completed')
+                                                            completed
+                                                        @endif
+                                                        @if($book->Servicestatus=='cancel')
+                                                            cancel
+                                                        @endif
+                                                        @if($book->Servicestatus=='reschedule')
+                                                            Reschedule
+                                                        @endif
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu pull-left" role="menu">
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <a href="{{route('StatusPending',$book->id)}}">
+                                                                    <button class="btn "
+                                                                            type="submit">Pending
+                                                                    </button>
+                                                                </a>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <a href="{{route('StatusCompleted',$book->id)}}">
+                                                                    <button class="btn "
+                                                                            type="submit">Completed
+                                                                    </button>
+                                                                </a>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                     </tbody>
                                 </table>

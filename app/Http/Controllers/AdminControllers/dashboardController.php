@@ -24,7 +24,7 @@ class dashboardController extends Controller
         $user_id=@Auth::user()->id;
         $Pending=Todo::where('User_id',$user_id)->where('status','0')->get()->count();
         $Completed=Todo::where('User_id',$user_id)->where('status','1')->get()->count();
-        $All=Todo::get()->count();
+        $All=Todo::get()->where('User_id',$user_id)->count();
         /*dd($Pending);*/
         $this->Todo=$this->Todo->get();
         $this->Roles=$this->Roles->where('id',$user)->first();

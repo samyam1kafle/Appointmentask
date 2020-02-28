@@ -36,7 +36,7 @@ class ServiceDetailsController extends Controller
      */
     public function create()
     {
-        $subscriber = Roles::where('name', '=', 'subscriber')->first();
+       /* $subscriber = Roles::where('name', '=', 'subscriber')->first();
         $guest = Roles::where('name', '=', 'guest')->first();
         $admin = Roles::where('name', '=', 'admin')->first();
         $subscriberId = All_User::where('role_id', '=', $subscriber->id)->get();
@@ -48,7 +48,7 @@ class ServiceDetailsController extends Controller
         $servCancelId = service_cancel::orderBy('id', 'desc')->get();
         $servCompleteId = service_complete::orderBy('id', 'desc')->get();
         $servRescheduleId = service_reschedule::orderBy('id', 'desc')->get();
-        return view('Admin/ServiceDetails/AllDetails/add', compact('users',  'bookingId', 'servBookedId', 'servCancelId', 'servCompleteId', 'servRescheduleId'));
+        return view('Admin/ServiceDetails/AllDetails/add', compact('users',  'bookingId', 'servBookedId', 'servCancelId', 'servCompleteId', 'servRescheduleId'));*/
     }
 
     /**
@@ -141,5 +141,53 @@ class ServiceDetailsController extends Controller
         // $service_details->delete();
 
         // return redirect()->route('service_details.index')->with('completed', 'Selected Service Details has been deleted');
+    }
+
+    public function Pending(){
+        $bookings = booking::orderBy('id','desc')->where('Servicestatus','pending')->get();
+        return view('Admin/ServiceDetails/ServicePending/index', compact('bookings'));
+    }
+
+    public function Cancel(){
+        $bookings = booking::orderBy('id','desc')->where('Servicestatus','cancel')->get();
+        return view('Admin/ServiceDetails/ServiceCancel/view',compact('bookings'));
+    }
+
+    public function Completed(){
+        $bookings = booking::orderBy('id','desc')->where('Servicestatus','completed')->get();
+        return view('Admin/ServiceDetails/ServiceComplete/view',compact('bookings'));
+    }
+
+    public function Reschedule(){
+        $bookings = booking::orderBy('id','desc')->where('Servicestatus','reschedule')->get();
+        return view('Admin.ServiceDetails.ServiceReschedule.view',compact('bookings'));
+    }
+
+    /*public function Booked(){
+        $bookings = booking::orderBy('id','desc')->get();
+        $services = Service::orderBy('id', 'desc')->get();
+        return view('Admin/ServiceDetails/ServiceBooked.view',compact('bookings','services'));
+    }*/
+
+    public function StatusPending(Request $request,$id){
+        $booking=booking::findorfail($id);
+        $booking->Servicestatus= 'pending';
+        $booking->update();
+        return redirect()->back()->with('delete', 'status changed');
+    }
+
+    public function StatusCompleted(Request $request,$id){
+           $booking=booking::findorfail($id);
+           $booking->Servicestatus= 'completed';
+           $booking->update();
+           return redirect()->back()->with('delete', 'status changed');
+    }
+
+    public function StatudCancel(){
+
+    }
+
+    public function StatusReschedule(){
+
     }
 }
