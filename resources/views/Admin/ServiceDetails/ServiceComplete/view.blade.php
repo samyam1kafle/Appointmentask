@@ -69,7 +69,7 @@
                                     <tr class="odd gradeX">
                                         @foreach($serviceComplete as $key => $servCompletes)
                                         <td>{{$key+1}}</td>
-                                        <td></td>
+                                        <td>{{$servCompletes->ser_booking['name']}}</td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

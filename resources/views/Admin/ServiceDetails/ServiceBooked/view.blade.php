@@ -72,11 +72,7 @@
                                     <tr class="odd gradeX">
                                         <td>{{$key+1}}</td>
                                         <td>{{$book->name}}</td>
-                                        <td>{{$book->ser_booking['name']}}</td>
-                                        <!-- @foreach($services as $service)
-                                        <td>{{$service->user_service['name']}}</td>
-                                        @endforeach -->
-                                        <td></td>
+                                        <td>{{$book->ser_booking['name']}}</td>                                                                              <td></td>
                                         <td>{{$book->user_booking['name']}}</td>
                                         <td>{{$book->created_at}}</td>
                                         <td>{{$book->booking_date}}</td>

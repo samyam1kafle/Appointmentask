@@ -66,8 +66,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach($bookings as $key=>$book)
-                                    <tr class="odd gradeX">
-                                        
+                                    <tr class="odd gradeX">                                        
                                         <td>{{ $key+1}}</td>
                                         <td>{{$book->ser_booking['name']}}</td>
                                         <td>{{$book->user_booking['name']}}</td>  
@@ -75,10 +74,7 @@
                                         @if($book->status == 0)
                                         <td>Unapproved </td>
                                         @else
-                                        <td>
-                                        Approved
-                                       
-                                        </td>
+                                        <td> Approved </td>                      
                                         @endif
                                     </tr>
                                     @endforeach

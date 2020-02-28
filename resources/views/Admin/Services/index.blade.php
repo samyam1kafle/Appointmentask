@@ -44,7 +44,7 @@
                                     <tbody>
                                     @foreach($services as $service)
                                     <tr>
-                                    <!-- {{dd($service)}} -->
+                                    
                                         <td>{{$service->id}}</td>
                                         <td>{{$service->name}}</td>
                                         <td>{{$service->user_service['name']}}</td>

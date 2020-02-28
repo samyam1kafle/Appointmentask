@@ -24,9 +24,9 @@ class ServiceDetailsController extends Controller
     public function index()
     {
         $bookings = booking::orderBy('id','desc')->get();
-        $services = Service::orderBy('id', 'desc')->get();
+        // $services = Service::orderBy('id', 'desc')->get();
         // dd($services);
-        return view('Admin/ServiceDetails/AllDetails/view', compact('bookings','services'));
+        return view('Admin/ServiceDetails/AllDetails/view', compact('bookings'));
     }
 
     /**
@@ -36,19 +36,19 @@ class ServiceDetailsController extends Controller
      */
     public function create()
     {
-        // $subscriber = Roles::where('name', '=', 'subscriber')->first();
-        // $guest = Roles::where('name', '=', 'guest')->first();
-        // $admin = Roles::where('name', '=', 'admin')->first();
-        // $subscriberId = All_User::where('role_id', '=', $subscriber->id)->get();
-        // $guestId = All_User::where('role_id', '=', $guest->id)->get();
-        // $adminId = All_User::where('role_id', '=', $admin->id)->get();
-        // $users = [$subscriberId, $guestId, $adminId];
-        // $bookingId = booking::orderBy('id', 'desc')->get();
-        // $servBookedId = service_booked::orderBy('id', 'desc')->get();
-        // $servCancelId = service_cancel::orderBy('id', 'desc')->get();
-        // $servCompleteId = service_complete::orderBy('id', 'desc')->get();
-        // $servRescheduleId = service_reschedule::orderBy('id', 'desc')->get();
-        // return view('Admin/ServiceDetails/AllDetails/add', compact('users',  'bookingId', 'servBookedId', 'servCancelId', 'servCompleteId', 'servRescheduleId'));
+        $subscriber = Roles::where('name', '=', 'subscriber')->first();
+        $guest = Roles::where('name', '=', 'guest')->first();
+        $admin = Roles::where('name', '=', 'admin')->first();
+        $subscriberId = All_User::where('role_id', '=', $subscriber->id)->get();
+        $guestId = All_User::where('role_id', '=', $guest->id)->get();
+        $adminId = All_User::where('role_id', '=', $admin->id)->get();
+        $users = [$subscriberId, $guestId, $adminId];
+        $bookingId = booking::orderBy('id', 'desc')->get();
+        $servBookedId = service_booked::orderBy('id', 'desc')->get();
+        $servCancelId = service_cancel::orderBy('id', 'desc')->get();
+        $servCompleteId = service_complete::orderBy('id', 'desc')->get();
+        $servRescheduleId = service_reschedule::orderBy('id', 'desc')->get();
+        return view('Admin/ServiceDetails/AllDetails/add', compact('users',  'bookingId', 'servBookedId', 'servCancelId', 'servCompleteId', 'servRescheduleId'));
     }
 
     /**
