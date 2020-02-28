@@ -22,10 +22,10 @@ class dashboardController extends Controller
     public function index(){
         $user=@Auth::user()->role_id;
         $user_id=@Auth::user()->id;
-        $Pending=Todo::where('User_id',$user_id)->where('status','0')->get()->count();
-        $Completed=Todo::where('User_id',$user_id)->where('status','1')->get()->count();
-        $All=Todo::get()->where('User_id',$user_id)->count();
-        /*dd($Pending);*/
+        /*dd($user_id);*/
+        $Pending=Todo::where('assignedTo',$user_id)->where('status','0')->get()->count();
+        $Completed=Todo::where('assignedTo',$user_id)->where('status','1')->get()->count();
+        $All=Todo::get()->where('assignedTo',$user_id)->count();
         $this->Todo=$this->Todo->get();
         $this->Roles=$this->Roles->where('id',$user)->first();
         $prov_id = Roles::where('name', '=', 'admin')->first();
