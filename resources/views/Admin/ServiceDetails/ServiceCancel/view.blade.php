@@ -51,53 +51,68 @@
                             </div>
                             <div class="table-scrollable">
                                 <table
-                                        class="table table-striped table-bordered table-hover table-checkable order-column"
+                                        class="table table-striped table-bordered table-hover table-checkable order-column valign-middle"
                                         id="example4">
                                     <thead>
                                     <tr>
-                                        <th> S.N </th>
-                                        <th> Service Name </th>
-                                        <th> Booked By </th>
-                                        <th> Status </th>
-                                        <th> Actions </th>
+                                        <th>#</th>
+                                        <th>Service Name</th>
+                                        <th>Booked By</th>
+                                        <th>Booking purpose</th>
+                                        <th>Service Status</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr class="odd gradeX">
-                                        @foreach($serv_cancel as $key => $servCancel)
-                                        <td>{{ $key+1 }}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="valigntop">
-
-                                                        <a href="javascript:;">
-                                                            <form action="{{ route('service_cancel.edit', $servCancel->id)}}"
-                                                                  method="GET"
-                                                                  style="display: inline-block">
-                                                                {{csrf_field()}}
-                                                                {{method_field('PUT')}}
-                                                                <button class="btn btn-primary btn-sm"
-                                                                        type="submit"><span
-                                                                            class="note-icon-pencil"></span> Update
-                                                                </button>
-                                                            </form>
-                                                        </a>
-
-                                                        <a href="javascript:;">
-                                                            <form action="{{ route('service_cancel.destroy', $servCancel->id)}}"
-                                                                  method="post"
-                                                                  style="display: inline-block">
-                                                                {{csrf_field()}}
-                                                                {{method_field('DELETE')}}
-                                                                <button class="btn btn-danger btn-sm" type="submit">
-                                                                    <span class="fa fa-trash-o"></span> Delete
-                                                                </button>
-                                                            </form>
-                                                        </a>
-                                        </td>
-                                            @endforeach
-                                    </tr>
+                                    @foreach($bookings as $key=>$book)
+                                        <tr class="odd gradeX">
+                                            <td>{{ $key+1}}</td>
+                                            <td>{{$book->ser_booking['name']}}</td>
+                                            <td>{{$book->user_booking['name']}}</td>
+                                            <td>{{$book->name}}</td>
+                                            <td class="valigntop">
+                                                <div class="btn-group">
+                                                    <button
+                                                            class="btn btn-xs  dropdown-toggle no-margin"
+                                                            type="button" data-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                        @if($book->Servicestatus=='pending')
+                                                            Pending
+                                                        @endif
+                                                        @if($book->Servicestatus=='completed')
+                                                            completed
+                                                        @endif
+                                                        @if($book->Servicestatus=='cancel')
+                                                            cancel
+                                                        @endif
+                                                        @if($book->Servicestatus=='Reschedule')
+                                                            Reschedule
+                                                        @endif
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu pull-left" role="menu">
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <a href="{{route('StatusPending',$book->id)}}">
+                                                                    <button class="btn "
+                                                                            type="submit">Pending
+                                                                    </button>
+                                                                </a>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <a href="{{route('StatusCompleted',$book->id)}}">
+                                                                    <button class="btn "
+                                                                            type="submit">Completed
+                                                                    </button>
+                                                                </a>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

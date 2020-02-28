@@ -85,14 +85,20 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
             Route::put('/Todo-ReAssign/{id}', 'AdminControllers\TodoController@ReAssign')->name('ReAssign');
             Route::put('/Todo-reassign/{id}', 'AdminControllers\TodoController@reaassign')->name('reassign');
             Route::get('/Todo-detail/{title}', 'AdminControllers\TodoController@GetTaskDetail')->name('Todo-detail');
+
         });
         Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
         Route::resource('/services', 'AdminControllers\ServicesController');
         Route::resource('/service_details', 'AdminControllers\ServiceDetailsController');
-        Route::resource('/service_booked', 'AdminControllers\ServiceBookedController');
-        Route::resource('/service_complete', 'AdminControllers\ServiceCompleteController');
-        Route::resource('/service_cancel', 'AdminControllers\ServiceCancelController');
-        Route::resource('/service_reschedule', 'AdminControllers\ServiceRescheduleController');
+        Route::get('/service_pending', 'AdminControllers\ServiceDetailsController@Pending')->name('service_pending');
+        Route::get('/service_booked', 'AdminControllers\ServiceDetailsController@Booked')->name('service_booked');
+        Route::get('/service_complete', 'AdminControllers\ServiceDetailsController@Completed')->name('service_complete');
+        Route::get('/service_cancel', 'AdminControllers\ServiceDetailsController@Cancel')->name('service_cancel');
+        Route::get('/service_reschedule', 'AdminControllers\ServiceDetailsController@Reschedule')->name('service_reschedule');
+        Route::get('/StatusPending/{id}', 'AdminControllers\ServiceDetailsController@StatusPending')->name('StatusPending');
+        Route::get('/StatusCompleted/{id}', 'AdminControllers\ServiceDetailsController@StatusCompleted')->name('StatusCompleted');
+        Route::get('/StatusCancel/{id}', 'AdminControllers\ServiceDetailsController@StatudCancel')->name('StatusCancel');
+        Route::get('/StatusReschedule/{id}', 'AdminControllers\ServiceDetailsController@StatusReschedule')->name('StatusReschedule');
 
     });
 

@@ -57,45 +57,62 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Service Name</th> 
+                                        <th>Service Name</th>
                                         <th>Booked By</th>
-<<<<<<< HEAD
-                                        <th>Appointment Status</th>
-                                        <th>Booking </th>
-
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr class="odd gradeX">
-                                        @foreach($service_details as $key=> $service_detail)
-                                        <td>{{ $key+1 }}</td>
-                                        <td>{{$service_detail->users}}</td>
-                                        <td>{{$service_detail->booked_id}}</td>
-                                        <td>{{$service_detail->cancel_id}}</td>
-                                        <td>{{$service_detail->reschedule_id}}</td>
-                                        <td>{{$service_detail->complete_id}}</td>
-                                        <td>{{$service_detail->booking_id}}</td>
-                                        @endforeach
-=======
-                                        <th>Booking Purpose</th>                                       
-                                        <th>Appointment Status</th>                          
-                                                                                
+                                        <th>Booking purpose</th>
+                                        <th>Service Status</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($bookings as $key=>$book)
-                                    <tr class="odd gradeX">                                        
-                                        <td>{{ $key+1}}</td>
-                                        <td>{{$book->ser_booking['name']}}</td>
-                                        <td>{{$book->user_booking['name']}}</td>  
-                                        <td>{{$book->name}}</td>                                
-                                        @if($book->status == 0)
-                                        <td>Unapproved </td>
-                                        @else
-                                        <td> Approved </td>                      
-                                        @endif
->>>>>>> 5cf0073d4d423d013dc4fb5175dc72308df8c90c
-                                    </tr>
+                                        <tr class="odd gradeX">
+                                            <td>{{ $key+1}}</td>
+                                            <td>{{$book->ser_booking['name']}}</td>
+                                            <td>{{$book->user_booking['name']}}</td>
+                                            <td>{{$book->name}}</td>
+                                            <td class="valigntop">
+                                                <div class="btn-group">
+                                                    <button
+                                                            class="btn btn-xs  dropdown-toggle no-margin"
+                                                            type="button" data-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                        @if($book->Servicestatus=='pending')
+                                                            Pending
+                                                        @endif
+                                                        @if($book->Servicestatus=='completed')
+                                                            completed
+                                                        @endif
+                                                        @if($book->Servicestatus=='cancel')
+                                                            cancel
+                                                        @endif
+                                                        @if($book->Servicestatus=='reschedule')
+                                                            Reschedule
+                                                        @endif
+                                                        <i class="fa fa-angle-down"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu pull-left" role="menu">
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <a href="{{route('StatusPending',$book->id)}}">
+                                                                    <button class="btn "
+                                                                            type="submit">Pending
+                                                                    </button>
+                                                                </a>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <a href="{{route('StatusCompleted',$book->id)}}">
+                                                                    <button class="btn "
+                                                                            type="submit">Completed
+                                                                    </button>
+                                                                </a>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                     </tbody>
                                 </table>

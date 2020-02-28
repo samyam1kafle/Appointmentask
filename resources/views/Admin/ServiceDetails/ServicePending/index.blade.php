@@ -11,10 +11,10 @@
                         <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
                                                                href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="">Service Details</a>&nbsp;<i
+                        <li><a class="parent-item" href="">All Pending Service</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li class="active">Service Booked</li>
+                        <li class="active">Service Pending</li>
                     </ol>
                 </div>
             </div>
@@ -22,10 +22,10 @@
                 <div class="col-md-12">
                     <div class="card card-topline-red">
                         <div class="card-head">
-                            <header>All Service Booked</header>                            
+                            <header>All Pending Service</header>
                         </div>
                         <div class="card-body ">
-                            <div class="row">                                
+                            <div class="row">
                                 <div class="col-md-6 col-sm-6 col-6">
                                     <div class="btn-group pull-right">
                                         <button class="btn deepPink-bgcolor  btn-outline dropdown-toggle"
@@ -85,7 +85,7 @@
                                                             cancel
                                                         @endif
                                                         @if($book->Servicestatus=='Reschedule')
-                                                            Reschedule
+                                                                Reschedule
                                                         @endif
                                                         <i class="fa fa-angle-down"></i>
                                                     </button>
