@@ -56,26 +56,28 @@
                                         id="example4">
                                     <thead>
                                     <tr>
-                                        <th>S.N</th>
+                                        <th>#</th>
                                         <th>Service Name</th> 
-                                        <th>Booked By</th>                                       
-                                        <th>Appointment Status</th>                                        
-                                        <th>Booking </th>
-                                        
+                                        <th>Booked By</th>
+                                        <th>Booking Purpose</th>                                       
+                                        <th>Appointment Status</th>                          
+                                                                                
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr class="odd gradeX">
-                                        @foreach($service_details as $key=> $service_detail)
-                                        <td>{{ $key+1 }}</td>
-                                        <td>{{$service_detail->users}}</td>
-                                        <td>{{$service_detail->booked_id}}</td>
-                                        <td>{{$service_detail->cancel_id}}</td>
-                                        <td>{{$service_detail->reschedule_id}}</td>
-                                        <td>{{$service_detail->complete_id}}</td>
-                                        <td>{{$service_detail->booking_id}}</td>                                        
-                                        @endforeach
+                                    @foreach($bookings as $key=>$book)
+                                    <tr class="odd gradeX">                                        
+                                        <td>{{ $key+1}}</td>
+                                        <td>{{$book->ser_booking['name']}}</td>
+                                        <td>{{$book->user_booking['name']}}</td>  
+                                        <td>{{$book->name}}</td>                                
+                                        @if($book->status == 0)
+                                        <td>Unapproved </td>
+                                        @else
+                                        <td> Approved </td>                      
+                                        @endif
                                     </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -1,9 +1,6 @@
 
-
 @extends('Admin.layouts.master')
 @section('main_content')
-
-
         <!-- start page content -->
         <div class="page-content-wrapper">
             <div class="page-content">
@@ -38,7 +35,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Name</th>
-                                        <th>User</th>
+                                        <th>Provider</th>
                                         <th>Department</th>
                                         <th>Description</th>
                                         <th>Action</th>
@@ -47,6 +44,7 @@
                                     <tbody>
                                     @foreach($services as $service)
                                     <tr>
+                                    
                                         <td>{{$service->id}}</td>
                                         <td>{{$service->name}}</td>
                                         <td>{{$service->user_service['name']}}</td>
