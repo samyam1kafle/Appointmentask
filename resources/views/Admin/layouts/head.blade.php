@@ -9,6 +9,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta name="description" content="Responsive Admin Template"/>
     <meta name="author" content="SmartUniversity"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Smart University | Bootstrap Responsive Admin Template</title>
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css"/>
@@ -47,25 +48,35 @@
           type="text/css"/>
     <!--Date-time picker css -->
     {{--<link href="{{asset('Admin/assets/plugins/bootstrap-datepicker/datepicker.css')}}" rel="stylesheet">--}}
-    <link href="{{asset('Admin/assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet"
+    <link href="{{asset('Admin/assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css')}}"
+          rel="stylesheet"
           media="screen">
     <!--Date-time picker css -->
 
     <!--Validation Form Css-->
-    <link href="{{asset('Admin/assets/css/pages/formlayout.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('Admin/assets/css/pages/formlayout.css')}}" rel="stylesheet" type="text/css"/>
     <!-- End Section-->
     <!-- dropzone -->
     <link href="{{asset('Admin/assets/plugins/dropzone/dropzone.css')}}" rel="stylesheet" media="screen">
 
     <!--select2-->
 
-    <link href="{{asset('Admin/assets/plugins/select2/css/select2.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('Admin/assets/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('Admin/assets/plugins/select2/css/select2.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('Admin/assets/plugins/select2/css/select2-bootstrap.min.css')}}" rel="stylesheet"
+          type="text/css"/>
 
     <!--Toastr-->
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
+
+    {{--<script>--}}
+        {{--window.Laravel = {!! json_encode([--}}
+        {{--'csrfToken' => csrf_token(),--}}
+        {{--]) !!};--}}
+
+    {{--</script>--}}
 </head>
 <!-- END HEAD -->
-<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme"
+>
 <div class="page-wrapper">
 @endsection

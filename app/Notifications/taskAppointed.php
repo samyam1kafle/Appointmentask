@@ -3,18 +3,16 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Messages\BroadcastMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
 
 class taskAppointed extends Notification
 {
     use Queueable;
 
-    protected $thread;
-//    protected $user_thread;
+    public $thread;
 
     /**
      * Create a new notification instance.
@@ -24,8 +22,7 @@ class taskAppointed extends Notification
     public function __construct($thread)
     {
         $this->thread = $thread;
-//        $this->user_thread = $user_thread;
-//        ,$user_thread
+
     }
 
     /**
@@ -37,7 +34,7 @@ class taskAppointed extends Notification
     public function via($notifiable)
     {
 
-        return ['database'];
+        return ['database', 'broadcast'];
     }
 
 //    /**
@@ -53,16 +50,34 @@ class taskAppointed extends Notification
 //                    ->action('Notification Action', url('/'))
 //                    ->line('Thank you for using our application!');
 //    }
-
+    /**
+     * Get the array representation of the notification.
+     *
+     * @param  mixed $notifiable
+     * @return array
+     */
     public function toDatabase($notifiable)
     {
 
         return [
-//            'assignedTime'=>Carbon::now()
             'thread' => $this->thread,
-            'user' => Auth::user(),
-//            'assignedBy'=>$this->user_thread
+            'user' => auth()->user()
         ];
+    }
+
+    /**
+     * Get the array representation of the notification.
+     *
+     * @param  mixed $notifiable
+     * @return array|BroadcastMessage
+     */
+    public function toBroadcast($notifiable)
+    {
+
+        return new BroadcastMessage([
+            'thread' => $this->thread,
+            'user' => auth()->user(),
+        ]);
     }
 
     /**
