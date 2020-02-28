@@ -96,20 +96,8 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
 
     });
 
-    Route::group(['middleware' => ['employee']], function () {
-//    Task details route
-
-        Route::get('/Employee', 'AdminControllers\EmployeeController@GetList')->name('Employee');
-        Route::get('/EmployeeDetails/{title}', 'AdminControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
 
 
-
-    });
-    Route::group(['middleware' => ['comment']], function () {
-        Route::resource('/comment' , 'AdminControllers\CommentController');
-        Route::put('/Todo-Pending/{id}', 'AdminControllers\TodoController@pending')->name('pending');
-        Route::put('/Todo-Complete/{id}', 'AdminControllers\TodoController@complete')->name('complete');
-    });
 
 });
 

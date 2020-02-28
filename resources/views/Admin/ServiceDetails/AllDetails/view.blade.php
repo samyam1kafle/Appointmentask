@@ -58,10 +58,10 @@
                                     <tr>
                                         <th>S.N</th>
                                         <th>Service Name</th> 
-                                        <th>Booked By</th>                                       
-                                        <th>Appointment Status</th>                                        
+                                        <th>Booked By</th>
+                                        <th>Appointment Status</th>
                                         <th>Booking </th>
-                                        
+
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -73,7 +73,7 @@
                                         <td>{{$service_detail->cancel_id}}</td>
                                         <td>{{$service_detail->reschedule_id}}</td>
                                         <td>{{$service_detail->complete_id}}</td>
-                                        <td>{{$service_detail->booking_id}}</td>                                        
+                                        <td>{{$service_detail->booking_id}}</td>
                                         @endforeach
                                     </tr>
                                     </tbody>

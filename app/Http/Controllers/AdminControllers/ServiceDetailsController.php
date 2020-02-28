@@ -23,8 +23,9 @@ class ServiceDetailsController extends Controller
      */
     public function index()
     {
+        $booking=booking::get();
         $service_details = service_detail::orderBy('id', 'desc')->get();
-        return view('Admin/ServiceDetails/AllDetails/view', compact('service_details'));
+        return view('Admin/ServiceDetails/AllDetails/view', compact('service_details','booking'));
     }
 
     /**

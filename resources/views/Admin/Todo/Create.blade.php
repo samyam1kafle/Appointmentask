@@ -63,7 +63,7 @@
                                         <div class="col-md-8">
                                             <div class="input-icon right ">
                                                 <i class="fa"></i>
-                                                <select class="form-control col-12"  required
+                                                <select class="form-control col-12 select2"  required
                                                         name="assignedTo">
                                                     <option value=""  disabled selected hidden>--Select--</option>
                                                     @if(isset($employee))

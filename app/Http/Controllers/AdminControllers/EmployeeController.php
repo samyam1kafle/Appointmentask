@@ -37,5 +37,5 @@ class EmployeeController extends Controller
         $this->Comment=$this->Comment->where('Todo_id',$id)->get();
         return view('Admin/TaskView/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment);
     }
-    
+
 }

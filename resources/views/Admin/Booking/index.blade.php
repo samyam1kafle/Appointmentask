@@ -51,7 +51,7 @@
                                     <tr>
                                         <td>{{$book->id}}</td>
                                         <td>{{$book->name}}</td>
-                                        <td>{{$book->user_booking['name']}}</td>
+                                        <td>{{$book->c}}</td>
                                         <td>{{$book->ser_booking['name']}}</td>                                        
                                         <!-- <td>{{$book->user}}</td> -->
                                         <!-- <td>{{$book->service_id}}</td> -->
