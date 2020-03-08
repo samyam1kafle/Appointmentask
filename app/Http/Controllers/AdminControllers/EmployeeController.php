@@ -32,7 +32,8 @@ class EmployeeController extends Controller
 
     public function GetTaskDetail(Request $request)
     {
-        $this->Todo=$this->Todo->where('title',$request->title)->first();
+        $user=@Auth::user()->id;
+        $this->Todo=$this->Todo->where('id',$request->id)->first();
         $id=$this->Todo->id;
         $this->Comment=$this->Comment->where('Todo_id',$id)->get();
         return view('Admin/TaskView/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment);

@@ -104,7 +104,7 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
     Route::group(['middleware' => ['employee']], function () {
 //    Task details route
         Route::get('/Employee', 'AdminControllers\EmployeeController@GetList')->name('Employee');
-        Route::get('/EmployeeDetails/{title}', 'AdminControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
+        Route::get('/EmployeeDetails/{id}', 'AdminControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
     });
     Route::group(['middleware' => ['comment']], function () {
         Route::resource('/comment' , 'AdminControllers\CommentController');

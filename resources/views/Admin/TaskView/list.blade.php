@@ -42,7 +42,7 @@
 
                                @foreach($todo as $todos_list)
                                     <tr>
-                                            <td><a href="{{route('EmployeeDetails',$todos_list->title)}}">{{$todos_list->title}}</a></td>
+                                            <td><a href="{{route('EmployeeDetails',$todos_list->id)}}">{{$todos_list->title}}</a></td>
 
                                         <td>{{$todos_list->superadmin['name']}}</td>
                                         <td class="valigntop">
