@@ -6034,7 +6034,7 @@
                 guard = length > 2 ? sources[2] : undefined;
 
               customizer = (assigner.length > 3 && typeof customizer == 'function')
-                ? (length-- , customizer)
+                ? (length--, customizer)
                 : undefined;
 
               if (guard && isIterateeCall(sources[0], sources[1], guard)) {
@@ -54909,7 +54909,7 @@
 
             },
               [
-                _vm._v(value.data.thread.title)
+                _vm._v("You have been assigned a task with title => " + value.data.thread.title)
               ])
           ],
           )

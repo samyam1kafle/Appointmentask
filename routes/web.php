@@ -85,7 +85,7 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
             Route::put('/Todo-ReAssign/{id}', 'AdminControllers\TodoController@ReAssign')->name('ReAssign');
             Route::put('/Todo-reassign/{id}', 'AdminControllers\TodoController@reaassign')->name('reassign');
             Route::get('/Todo-detail/{title}', 'AdminControllers\TodoController@GetTaskDetail')->name('Todo-detail');
-
+            
         });
         Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
         Route::resource('/services', 'AdminControllers\ServicesController');

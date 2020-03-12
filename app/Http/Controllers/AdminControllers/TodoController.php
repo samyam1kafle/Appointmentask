@@ -13,6 +13,8 @@ use App\Backend\All_User;
 use App\Backend\Comment;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailUser;
 use Thread;
 
 
@@ -92,6 +94,8 @@ class TodoController extends Controller
         } else {
             request()->session()->flash('error', 'sorry there was an error adding ToDos list');
         }
+
+        Mail::to($assig_user->email)->send(new MailUser());
         return redirect()->route('Todo.index');
     }
 
@@ -136,6 +140,7 @@ class TodoController extends Controller
      */
     public function update(todoValidator $request, $id)
     {
+        
         $this->Todo = $this->Todo->find($id);
         if (!$this->Todo) {
             request()->session()->flash('error', 'Todos not found');
@@ -150,6 +155,12 @@ class TodoController extends Controller
         } else {
             request()->session()->flash('error', 'sorry there was an error updating Todos list');
         }
+        $assigned_usr = $this->Todo->assignedTo;
+        $assig_user = All_User::find($assigned_usr);
+        $thread = $this->Todo;        
+        $assig_user->notify(new taskAppointed($thread));
+
+        Mail::to($assig_user->email)->send(new MailUser());
         return redirect()->route('Todo.index');
     }
 
@@ -228,4 +239,5 @@ class TodoController extends Controller
         return view('Admin/Todo/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment)->with('d',$d);
 
     }
+   
 }
