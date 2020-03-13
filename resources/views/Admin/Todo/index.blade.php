@@ -37,11 +37,13 @@
                                 <tr>
                                     <th>Title</th>
                                     <th>Assigned To</th>
+                                    <th>Task Status</th>
                                     @foreach($Todos as $Todos_data)
                                     @if($Todos_data->reassignedto)
                                     <th>Re-Assigned To</th>
                                     @endif
                                     @endforeach
+                                    <th>Set Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -54,6 +56,11 @@
                                             @if($Todos_data->reassignedto)
                                         <td>{{@$Todos_data->reassignto['name']}}</td>
                                             @endif
+                                        <td> @if($Todos_data->status==0)
+                                                        Pending
+                                                    @else
+                                                        Completed
+                                                    @endif</td>    
                                         <td class="valigntop">
                                             <div class="btn-group">
                                                 <button
@@ -116,10 +123,13 @@
                                                         </a>
                                                     </li>
 
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <form action="{{ route('Todo.edit', $Todos_data->id)}}"
-                                                                  method="GET"
+                                                    
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td class="text-left">                                                                                          
+                                                <a href="javascript:;">
+                                                    <form action="{{ route('Todo.edit', $Todos_data->id)}}"  method="GET"
                                                                   style="display: inline-block">
                                                                 {{csrf_field()}}
                                                                 <input type="hidden" name="_method" value="PUT">
@@ -127,9 +137,7 @@
                                                                     <span class="fa fa-pencil"></span></button>
                                                             </form>
                                                         </a>
-                                                    </li>
-
-                                                    <li>
+                                                   
                                                         <a href="javascript:;">
                                                             <form action="{{ route('Todo.destroy', $Todos_data->id)}}"
                                                                   method="post" style="display: inline-block">
@@ -138,12 +146,10 @@
                                                                 <button class="btn btn-danger btn-sm" type="submit">
                                                                     <span class="fa fa-trash-o"></span></button>
                                                             </form>
-                                                        </a>
-                                                    </li>
-
-                                                </ul>
+                                                        </a>                                               
+                                                </td>
                                             </div>
-                                        </td>
+                                            
                                     </tr>
                                 @endforeach
                                 </tbody>
