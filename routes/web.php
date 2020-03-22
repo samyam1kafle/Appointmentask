@@ -85,7 +85,7 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
             Route::put('/Todo-ReAssign/{id}', 'AdminControllers\TodoController@ReAssign')->name('ReAssign');
             Route::put('/Todo-reassign/{id}', 'AdminControllers\TodoController@reaassign')->name('reassign');
             Route::get('/Todo-detail/{title}', 'AdminControllers\TodoController@GetTaskDetail')->name('Todo-detail');
-
+            
         });
         Route::resource('/Date_Time', 'AdminControllers\Date_TimeController');
         Route::resource('/services', 'AdminControllers\ServicesController');
@@ -97,14 +97,14 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
         Route::get('/service_reschedule', 'AdminControllers\ServiceDetailsController@Reschedule')->name('service_reschedule');
         Route::get('/StatusPending/{id}', 'AdminControllers\ServiceDetailsController@StatusPending')->name('StatusPending');
         Route::get('/StatusCompleted/{id}', 'AdminControllers\ServiceDetailsController@StatusCompleted')->name('StatusCompleted');
-        Route::get('/StatusCancel/{id}', 'AdminControllers\ServiceDetailsController@StatudCancel')->name('StatusCancel');
+        Route::get('/StatusCancel/{id}', 'AdminControllers\ServiceDetailsController@StatusCancel')->name('StatusCancel');
         Route::get('/StatusReschedule/{id}', 'AdminControllers\ServiceDetailsController@StatusReschedule')->name('StatusReschedule');
 
     });
     Route::group(['middleware' => ['employee']], function () {
 //    Task details route
         Route::get('/Employee', 'AdminControllers\EmployeeController@GetList')->name('Employee');
-        Route::get('/EmployeeDetails/{title}', 'AdminControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
+        Route::get('/EmployeeDetails/{id}', 'AdminControllers\EmployeeController@GetTaskDetail')->name('EmployeeDetails');
     });
     Route::group(['middleware' => ['comment']], function () {
         Route::resource('/comment' , 'AdminControllers\CommentController');

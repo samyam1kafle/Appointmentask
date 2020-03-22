@@ -35,6 +35,7 @@
                                 <tr>
                                     <th>Title</th>
                                     <th>Assign By</th>
+                                    <th>Task Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -42,9 +43,14 @@
 
                                @foreach($todo as $todos_list)
                                     <tr>
-                                            <td><a href="{{route('EmployeeDetails',$todos_list->title)}}">{{$todos_list->title}}</a></td>
+                                            <td><a href="{{route('EmployeeDetails',$todos_list->id)}}">{{$todos_list->title}}</a></td>
 
                                         <td>{{$todos_list->superadmin['name']}}</td>
+                                        <td> @if($todos_list->status==0)
+                                                        Pending
+                                                    @else
+                                                        Completed
+                                                    @endif</td>
                                         <td class="valigntop">
                                             <div class="btn-group">
                                                 <button

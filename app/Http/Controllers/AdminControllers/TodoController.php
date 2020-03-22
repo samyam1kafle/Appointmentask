@@ -13,6 +13,8 @@ use App\Backend\All_User;
 use App\Backend\Comment;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailUser;
 use Thread;
 
 
@@ -72,6 +74,7 @@ class TodoController extends Controller
         $data = $request->all();
        /* dd($data);*/
         $this->Todo->fill($data,$request->assignedDate);
+        $this->Todo->fill($data,$request->reAssignedDate);
         /*$this->Todo->fill($d);*/
         $success = $this->Todo->save();
 
@@ -92,6 +95,8 @@ class TodoController extends Controller
         } else {
             request()->session()->flash('error', 'sorry there was an error adding ToDos list');
         }
+
+        Mail::to($assig_user->email)->send(new MailUser());
         return redirect()->route('Todo.index');
     }
 
@@ -136,6 +141,7 @@ class TodoController extends Controller
      */
     public function update(todoValidator $request, $id)
     {
+        $d=Carbon::now();
         $this->Todo = $this->Todo->find($id);
         if (!$this->Todo) {
             request()->session()->flash('error', 'Todos not found');
@@ -150,7 +156,13 @@ class TodoController extends Controller
         } else {
             request()->session()->flash('error', 'sorry there was an error updating Todos list');
         }
-        return redirect()->route('Todo.index');
+        $assigned_usr = $this->Todo->assignedTo;
+        $assig_user = All_User::find($assigned_usr);
+        $thread = $this->Todo;        
+        $assig_user->notify(new taskAppointed($thread));
+
+        Mail::to($assig_user->email)->send(new MailUser());
+        return redirect()->route('Todo.index',compact('d'));
     }
 
     /**
@@ -198,23 +210,26 @@ class TodoController extends Controller
 
     public function reaassign($id)
     {
+        $d=Carbon::now();
         $this->Todo = $this->Todo->find($id);
         $superAdmin = Roles::where('name', '=', 'super_admin')->first();
         $employee = Roles::where('name', '=', 'employee')->first();
 
         $superAdmin = All_User::where('role_id', '=', $superAdmin->id)->get();
         $employee = All_User::where('role_id', '=', $employee->id)->get();
-        return view('admin.Todo.Re-Assign')->with('Todo', $this->Todo)->with('superadmin', $superAdmin)->with('employee', $employee);
+
+        
+        return view('admin.Todo.Re-Assign',compact('d'))->with('Todo', $this->Todo)->with('superadmin', $superAdmin)->with('employee', $employee);
 
     }
 
     public function ReAssign(Request $request, $id)
     {
-
+        $d=Carbon::now();
         $todo = Todo::findOrFail($id);
         $todo->reassignedto = $request->reassignedto;
         $update = $todo->update();
-        return redirect()->route('Todo.index')->with('success', 'Task Re-assigned');
+        return redirect()->route('Todo.index',compact('d'))->with('success', 'Task Re-assigned');
 
     }
 
@@ -228,4 +243,5 @@ class TodoController extends Controller
         return view('Admin/Todo/Detail')->with('todo',$this->Todo)->with('comment',$this->Comment)->with('d',$d);
 
     }
+   
 }

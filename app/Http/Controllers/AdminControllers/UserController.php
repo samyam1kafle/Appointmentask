@@ -10,6 +10,8 @@ use App\Http\Requests\UserValidator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserCreateMail;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
@@ -63,12 +65,12 @@ class UserController extends Controller
             'status' => 1
         ]);
         $users = $user->save();
+        Mail::to($user->email)->send(new UserCreateMail());
         if ($users) {
             return redirect()->route('user.index')->with('success', 'User registered successfully');
         } else {
             return redirect()->back()->with('Error', 'There occurred some problem while adding the user please try again after a while.');
-        }
-
+        }       
     }
 
     /**
