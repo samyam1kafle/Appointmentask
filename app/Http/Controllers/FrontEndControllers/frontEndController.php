@@ -134,7 +134,7 @@ class frontEndController extends Controller
         $this->Todo = $this->Todo->get();
         Session::flush();
         Auth::logout();
-        return redirect()->route('index')->with('todo', $this->Todo)->with('success', 'Logged Out Successfully');
+        return redirect()->route('login')->with('todo', $this->Todo)->with('success', 'Logged Out Successfully');
     }
 
     public function markasread()

@@ -62,5 +62,6 @@ class Kernel extends HttpKernel
         'employee'=>\App\Http\Middleware\employee::class,
         'provider'=>\App\Http\Middleware\provider::class,
         'comment'=>\App\Http\Middleware\comment::class,
+        'adminguest'=>\App\Http\Middleware\RedirectIfAdminAuth::class,
     ];
 }
