@@ -4,11 +4,13 @@
 </head>
 <body>
  <div>
-  <h2>Hello user, <h2>
+  <h2>Hello User, <h2>
   <p>GCN has assigned some tasks for you,<br> 
-  Please Login to your dashboard for more details</p><br>
+  Please Login to your Dashboard for more details or   
+  <a href="https://tasks.gcn.com.np/">Click here...</a></p>
+ <br>
   Thanks,<br>
-  GCN
+    Green Computing Nepal
 
  </div>
 </body>

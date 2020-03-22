@@ -37,14 +37,18 @@
                                 <tr>
                                     <th>Title</th>
                                     <th>Assigned To</th>
+                                    <th>Assigned Date </th>
+                                    <th>Deadline</th>
                                     <th>Task Status</th>
+                                    <th>Set Status</th>
+                                    <th>Action</th>
                                     @foreach($Todos as $Todos_data)
                                     @if($Todos_data->reassignedto)
                                     <th>Re-Assigned To</th>
+                                    <th>Re-Assigned Date </th>
+                                    <th>Re-Deadline</th>
                                     @endif
-                                    @endforeach
-                                    <th>Set Status</th>
-                                    <th>Action</th>
+                                    @endforeach                                    
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -53,14 +57,14 @@
                                     <tr>
                                         <td><a href="{{route('Todo-detail',$Todos_data->title)}}">{{$Todos_data->title}}</a></td>
                                         <td>{{$Todos_data->employee['name']}}</td>
-                                            @if($Todos_data->reassignedto)
-                                        <td>{{@$Todos_data->reassignto['name']}}</td>
-                                            @endif
+                                        <td>{{$Todos_data->assignedDate}}</td>
+                                        <td>{{$Todos_data->DeadLine}}</td>
                                         <td> @if($Todos_data->status==0)
                                                         Pending
                                                     @else
                                                         Completed
-                                                    @endif</td>    
+                                                    @endif</td>  
+                                        
                                         <td class="valigntop">
                                             <div class="btn-group">
                                                 <button
@@ -74,16 +78,7 @@
                                                     @endif
                                                     <i class="fa fa-angle-down"></i>
                                                 </button>
-                                                <ul class="dropdown-menu pull-left" role="menu">
-                                                    <li>
-                                                        <a href="javascript:;">
-                                                            <a href="{{route('Todo-detail',$Todos_data->title)}}">
-                                                                <button class="btn "
-                                                                        type="submit">View Detail
-                                                                </button>
-                                                            </a>
-                                                        </a>
-                                                    </li>
+                                                <ul class="dropdown-menu pull-left" role="menu">                                                   
                                                     <li>
                                                         <a href="javascript:;">
                                                             <form action="{{route('pending',$Todos_data->id)}}"
@@ -126,7 +121,7 @@
                                                     
                                                 </ul>
                                             </div>
-                                        </td>
+                                        </td>                                       
                                         <td class="text-left">                                                                                          
                                                 <a href="javascript:;">
                                                     <form action="{{ route('Todo.edit', $Todos_data->id)}}"  method="GET"
@@ -148,6 +143,11 @@
                                                             </form>
                                                         </a>                                               
                                                 </td>
+                                            @if($Todos_data->reassignedto)
+                                                <td>{{@$Todos_data->reassignto['name']}}</td>
+                                                <td>{{$Todos_data->reAssignedDate}}</td>
+                                                <td>{{$Todos_data->reDeadLine}}</td>                                        
+                                            @endif
                                             </div>
                                             
                                     </tr>

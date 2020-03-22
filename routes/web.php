@@ -97,7 +97,7 @@ Route::resource('/personal', 'AdminControllers\UsersUpdateControllers\personalDe
         Route::get('/service_reschedule', 'AdminControllers\ServiceDetailsController@Reschedule')->name('service_reschedule');
         Route::get('/StatusPending/{id}', 'AdminControllers\ServiceDetailsController@StatusPending')->name('StatusPending');
         Route::get('/StatusCompleted/{id}', 'AdminControllers\ServiceDetailsController@StatusCompleted')->name('StatusCompleted');
-        Route::get('/StatusCancel/{id}', 'AdminControllers\ServiceDetailsController@StatudCancel')->name('StatusCancel');
+        Route::get('/StatusCancel/{id}', 'AdminControllers\ServiceDetailsController@StatusCancel')->name('StatusCancel');
         Route::get('/StatusReschedule/{id}', 'AdminControllers\ServiceDetailsController@StatusReschedule')->name('StatusReschedule');
 
     });
