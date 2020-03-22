@@ -33,7 +33,7 @@
                                       :unreads="{{auth()->user()->unreadNotifications}}" id="app"></notification>
 
 
-                    <li><a href="{{route('index')}}"><i class="fa fa-home pull-left"
+                    <li><a href="{{route('login')}}"><i class="fa fa-home pull-left"
                                                         style="font-size: xx-large"> </i></a></li>
 
                     <!-- start language menu -->

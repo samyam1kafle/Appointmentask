@@ -15,10 +15,10 @@ Auth::routes(['verify' => true]);
 
 
 Route::group(['prefix' => '/'], function () {
+/*
+    Route::get('/', 'FrontEndControllers\frontEndController@index')->name('index');*/
 
-    Route::get('/', 'FrontEndControllers\frontEndController@index')->name('index');
-
-    Route::any('/login/user', 'FrontEndControllers\frontEndController@login_index')->name('login');
+    Route::any('/', 'FrontEndControllers\frontEndController@login_index')->name('login')->middleware('adminguest');
 
     Route::any('/logout/user', 'FrontEndControllers\frontEndController@logout')->name('log-out');
 
