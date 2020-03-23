@@ -12,20 +12,24 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserCreateMail;
+use App\Backend\Todo;
+use DB;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $Todo = null;
+    public function __construct(Todo $Todo)
+    {
+        $this->Todo =$Todo;
+
+    }
     public function index()
     {
         $users = All_User::orderBy('id', 'desc')->get();
-        return view('Admin/Users/index', compact('users'));
+        $todo=$this->Todo->get();
+        return view('Admin/Users/index', compact('users'))->with('todo',$todo);
     }
 
     /**
@@ -142,11 +146,20 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+
         $user = All_User::findOrFail($id);
+        /*$id=$user->id;*/
+        /*dd($id);*/
+        $todo=$this->Todo->where('assignedTo',$id)->get();
+        foreach ($todo as $data) {
+            DB::table('todos')->where('assignedTo', $id)->delete();
+        };
         if ($user != null) {
-            if ($user->image != null) {
+            /*if ($user->image != null) {
                 unlink(public_path() . '/Uploads/users/thumbnails/' . $user->image);
-            }
+            }*/
+            /*$destroy= $todo->delete();
+            dd($destroy);*/
             $destroy = $user->delete();
             if ($destroy) {
                 return redirect()->route('user.index')->with('success', 'User deleted successfully');

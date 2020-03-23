@@ -19,6 +19,7 @@ class Todo extends Model
 
     public function employee(){
         return $this->belongsTo('App\Backend\All_User','assignedTo');
+
     }
     public function reassignto(){
         return $this->belongsTo('App\Backend\All_User','reassignedto');

@@ -104,7 +104,9 @@
                                                         </li>
                                                         <li>
                                                             <a href="javascript:;">
+                                                                @foreach($todo as $todo_data)
                                                                 <form action="{{ route('user.destroy', $user->id)}}"
+                                                                      @endforeach
                                                                       method="post"
                                                                       style="display: inline-block">
                                                                     {{csrf_field()}}

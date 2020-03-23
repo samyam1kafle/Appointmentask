@@ -44,7 +44,6 @@ class All_User extends Auth implements MustVerifyEmail , \Illuminate\Contracts\A
     public function todos(){
         return $this->hasMany('App\Backend\Todo');
     }
-
     public function services(){
         return $this->hasOne('App\Backend\Service','service_id');
     }
