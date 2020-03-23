@@ -26,7 +26,8 @@ class EmployeeController extends Controller
     public function GetList()
     {
         $user=@Auth::user()->id;
-        $this->Todo=$this->Todo->where('assignedTo',$user)/*->where('reassignedto',$user)*/->get();
+        /*dd($user);*/
+        $this->Todo=$this->Todo->where('assignedTo',$user||'reassignedto',$user)->get();
         return view('Admin/TaskView/list')->with('todo',$this->Todo);
     }
 

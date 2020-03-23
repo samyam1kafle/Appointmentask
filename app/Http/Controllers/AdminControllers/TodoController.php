@@ -223,13 +223,31 @@ class TodoController extends Controller
 
     }
 
-    public function ReAssign(Request $request, $id)
+    public function ReAssign(Request $request, $id,All_User $thread)
     {
+        /*dd($request->all())*/;
+        $user=@Auth::user();
         $d=Carbon::now();
         $todo = Todo::findOrFail($id);
         $todo->reassignedto = $request->reassignedto;
+        $todo->reAssignedDate = $request->reAssignedDate;
+        $todo->reDeadLine = $request->reDeadLine;
         $update = $todo->update();
-        return redirect()->route('Todo.index',compact('d'))->with('success', 'Task Re-assigned');
+        if ($update) {
+            $assigned_usr = $todo->reassignedto;
+            $assig_user = All_User::find($assigned_usr);
+            $thread = $todo;
+//            $user_thread = $user_assigning_task;
+//            dd($user_thread);
+
+            $assig_user->notify(new taskAppointed($thread));
+            request()->session()->flash('success', 'Task Re-Assigned successfully');
+        } else {
+            request()->session()->flash('error', 'sorry there was an error Re_Assigning Task');
+        }
+        Mail::to($assig_user->email)->send(new MailUser());
+        return redirect()->route('Todo.index', compact('d'));
+//            ,$user_thread
 
     }
 

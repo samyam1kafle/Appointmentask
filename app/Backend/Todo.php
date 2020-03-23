@@ -8,7 +8,7 @@ class Todo extends Model
 {
     protected $fillable = [
         'User_id', 'title', 'description', 'assignedDate', 'CompletedDate', 'assignedTo', 
-        'requestedBy','reassignedto','DeadLine', 'status','remarks','reAssignedTo','reDeadLine'
+        'requestedBy','reassignedto','DeadLine', 'status','remarks','reAssignedDate','reDeadLine'
     ];
     public function user_todo(){
         return $this->belongsTo('App\Backend\All_User','User_id');
