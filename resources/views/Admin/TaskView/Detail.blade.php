@@ -45,6 +45,10 @@
                                     <b>Assigned Date </b>
                                     <div class="profile-desc-item " style="color:lightgreen">{{$todo->assignedDate}}</div>
                                 </li>
+                                <li class="list-group-item">
+                                    <b>Assigned To </b>
+                                    <div class="profile-desc-item " style="color:lightgreen">{{$todo->employee['name']}}</div>
+                                </li>
                                 @if($todo->CompletedDate)
                                 <li class="list-group-item">
                                     <b>Completed Date</b>
@@ -55,16 +59,24 @@
                                     <b>Assigned By</b>
                                     <div class="profile-desc-item " style="color:lightgreen">{{$todo->superadmin['name']}}</div>
                                 </li>
-                                @if($todo->reassignedto)
                                 <li class="list-group-item">
-                                    <b>Re-Assigned To</b>
-                                    <div class="profile-desc-item " style="color:lightgreen">{{$todo->reassignedto}}</div>
-                                </li>
-                                @endif
-                                 <li class="list-group-item">
                                     <b>Dead Line</b>
                                     <div class="profile-desc-item " style="color:lightgreen">{{$todo->DeadLine}}</div>
                                 </li>
+                            @if($todo->reassignedto)
+                                    <li class="list-group-item">
+                                    <b>Re-Assigned To</b>
+                                    <div class="profile-desc-item " style="color:lightgreen">{{$todo->reassignto['name']}}</div>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Re-Assigned Date</b>
+                                    <div class="profile-desc-item " style="color:lightgreen">{{$todo->reAssignedDate}}</div>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Re-Assigned Deadline</b>
+                                    <div class="profile-desc-item " style="color:lightgreen">{{$todo->reDeadLine}}</div>
+                                </li>
+                                @endif
                                 <li class="list-group-item">
                                     <b>Status</b>
                                     <div class="profile-desc-item " style="color:lightgreen">
