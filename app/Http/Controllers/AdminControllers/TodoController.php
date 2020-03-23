@@ -173,6 +173,7 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
+        dd($id);
         $this->Todo = $this->Todo->find($id);
         if (!$this->Todo) {
             request()->session()->flash('error', 'Todos list not found');
