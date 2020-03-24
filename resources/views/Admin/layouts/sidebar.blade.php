@@ -36,13 +36,12 @@
                                 <span class="selected"></span>
                                 {{--<span class="arrow open"></span>--}}
                             </a>
-                        </li>
-
+                        </li><!-- 
                         <li class="nav-item">
                             <a href="event.html" class="nav-link nav-toggle"> <i class="material-icons">event</i>
                                 <span class="title">Event Management</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-item">
                             <a href="#" class="nav-link nav-toggle"> <i class="material-icons">book</i>

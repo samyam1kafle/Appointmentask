@@ -80,7 +80,7 @@
                                 <div class="form-group">
                                     <div class="offset-md-3 col-md-9">
                                         <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                        <button type="reset" class="btn btn-default">Cancel</button>
+                                        <a class="btn btn-default" href="{{route('department.index')}}">Cancel</a> 
                                     </div>
                                 </div>
                             </form>

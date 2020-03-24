@@ -13,7 +13,7 @@
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="">Users</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        <li><a class="parent-item" href="{{route('user.index')}}">Users</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
                         <li class="active">Create users</li>
                     </ol>
@@ -161,7 +161,7 @@
                                 <div class="form-group">
                                     <div class="offset-md-3 col-md-9">
                                         <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                        <button type="reset" class="btn btn-default">Cancel</button>
+                                        <a class="btn btn-default" href="{{route('user.index')}}">Cancel</a>
                                     </div>
                                 </div>
                             </form>

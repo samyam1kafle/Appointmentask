@@ -12,7 +12,7 @@
                                                                href="{{route('admin-dashboard')}}">Home</a>&nbsp;<i
                                     class="fa fa-angle-right"></i>
                         </li>
-                        <li><a class="parent-item" href="">Department</a>&nbsp;<i class="fa fa-angle-right"></i>
+                        <li><a class="parent-item" href="{{route('department.index')}}">Department</a>&nbsp;<i class="fa fa-angle-right"></i>
                         </li>
                         <li class="active">Edit Department</li>
                     </ol>
@@ -22,7 +22,7 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="card card-box">
                         <div class="card-head">
-                            <header>Edit & Update Department</header>
+                            <header>Update Department</header>
 
                         </div>
                         <div class="card-body" id="bar-parent2">
@@ -80,7 +80,7 @@
                         <div class="form-group">
                             <div class="offset-md-3 col-md-9">
                                 <button type="submit" class="btn btn-info m-r-20">Submit</button>
-                                <button type="reset" class="btn btn-default">Cancel</button>
+                                <a class="btn btn-default" href="{{route('department.index')}}">Cancel</a>                                
                             </div>
                         </div>
                         </form>
