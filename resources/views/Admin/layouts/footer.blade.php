@@ -1,7 +1,7 @@
 @section('footer')
     <!-- start footer -->
     <div class="page-footer">
-        <div class="page-footer-inner"> 2020 &copy; Appointment dashboard By
+        <div class="page-footer-inner"> 2020 &copy; TaskAppointment dashboard By
             <a href="mailto:itservicesnepal@gmail.com" target="_top" class="makerCss">GCN</a>
         </div>
         <div class="scroll-to-top">

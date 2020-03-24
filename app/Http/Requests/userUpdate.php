@@ -25,7 +25,7 @@ class userUpdate extends FormRequest
     {
         return [
             'role_id' => 'required',
-            'image' => 'required',
+            // 'image' => 'required',
             'gender' => 'required',
             'department_id' => 'required',
             'email' => 'required',

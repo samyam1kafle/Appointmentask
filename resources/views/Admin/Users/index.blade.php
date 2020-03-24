@@ -104,9 +104,8 @@
                                                         </li>
                                                         <li>
                                                             <a href="javascript:;">
-                                                                @foreach($todo as $todo_data)
-                                                                <form action="{{ route('user.destroy', $user->id)}}"
-                                                                      @endforeach
+                                                                @foreach($todo as $todo_data) @endforeach
+                                                                <form action="{{ route('user.destroy', $user->id)}}"                                                                     
                                                                       method="post"
                                                                       style="display: inline-block">
                                                                     {{csrf_field()}}
@@ -115,6 +114,7 @@
                                                                         <span class="fa fa-trash-o"></span> Delete
                                                                     </button>
                                                                 </form>
+                                                                
                                                             </a>
                                                         </li>
 
