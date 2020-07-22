@@ -2,8 +2,8 @@
 @include('Admin.layouts.header')
 @include('Admin.layouts.sidebar')
 @include('Admin.layouts.footer')
-@yield('head')
 
+@yield('head')
 @yield('header')
 @yield('sidebar')
 @yield('main_content')

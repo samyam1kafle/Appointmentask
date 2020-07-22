@@ -36,6 +36,7 @@
                                     <th>Title</th>
                                     <th>Assign By</th>
                                     <th>Task Status</th>
+                                    <th>Completed Date</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -51,6 +52,7 @@
                                                     @else
                                                         Completed
                                                     @endif</td>
+                                        <td>{{$todos_list->CompletedDate}}</td>
                                         <td class="valigntop">
                                             <div class="btn-group">
                                                 <button
